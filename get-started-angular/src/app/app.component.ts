@@ -3,13 +3,13 @@ import { Model, SurveyNG, StylesManager } from "survey-angular";
 
 const surveyJson = {
   questions: [{
-      name: "FirstName",
-      title: "Enter your first name:",
-      type: "text"
+    name: "FirstName",
+    title: "Enter your first name:",
+    type: "text"
   }, {
-      name: "LastName",
-      title: "Enter your last name:",
-      type: "text"
+    name: "LastName",
+    title: "Enter your last name:",
+    type: "text"
   }]
 };
 
