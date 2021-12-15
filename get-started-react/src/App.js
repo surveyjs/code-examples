@@ -7,7 +7,7 @@ import { Survey, StylesManager, Model } from 'survey-react';
 StylesManager.applyTheme("modern");
 
 const surveyJson = {
-  questions: [{
+  elements: [{
     name: "FirstName",
     title: "Enter your first name:",
     type: "text"

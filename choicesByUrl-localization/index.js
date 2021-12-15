@@ -3,7 +3,7 @@ Survey
     .applyTheme("modern");
 
 var json = {
-    questions: [
+    elements: [
         {
             type: "checkbox",
             name: "test",
