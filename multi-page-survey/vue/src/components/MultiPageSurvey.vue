@@ -1,5 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { Model, StylesManager, SurveyNG } from "survey-angular";
+<template>
+  <div>
+    <Survey :survey="survey" id="surveyContainer" />
+    <div v-if="isSurveyCompleted">
+      <p>Result JSON:</p>
+      <code style="white-space:pre;">
+        {{surveyResults}}
+      </code>
+    </div>
+  </div>
+</template>
+
+<script>
+import 'survey-vue/modern.min.css';
+import { Survey, StylesManager, Model } from 'survey-vue';
+
+StylesManager.applyTheme("modern");
 
 const surveyJson = {
   pages: [{
@@ -58,28 +73,31 @@ const surveyJson = {
   showPreviewBeforeComplete: "showAnsweredQuestions"
 };
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent implements OnInit {
-  title = 'SurveyJS for Angular - Multi-Page Survey';
-  surveyResults: String = "";
-  isSurveyCompleted: Boolean = false;
-  constructor() {
-      this.displayResults = this.displayResults.bind(this);
-  }
-  displayResults (sender) {
-    this.surveyResults = JSON.stringify(sender.data, null, 4);
-    this.isSurveyCompleted = true;
-  }
-  ngOnInit() {
-    StylesManager.applyTheme("modern");
-
+export default {
+  name: 'MultiPageSurvey',
+  components: {
+    Survey
+  },
+  data() {
     const survey = new Model(surveyJson);
     survey.onComplete.add(this.displayResults);
 
-    SurveyNG.render("surveyContainer", { model: survey });
-  }
+    return {
+      survey,
+      surveyResults: "",
+      isSurveyCompleted: false 
+    }
+  },
+  methods: {
+    displayResults (sender) {
+      this.surveyResults = JSON.stringify(sender.data, null, 4);
+      this.isSurveyCompleted = true;
+    }
+  },
 }
+</script>
+<style scoped>
+#surveyContainer {
+    width: 50%
+}
+</style>
