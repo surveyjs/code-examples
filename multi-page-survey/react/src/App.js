@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useRef } from 'react';
 import './App.css'
 
 import 'survey-react/modern.min.css';
@@ -64,7 +64,8 @@ const surveyJson = {
 };
 
 function App() {
-  const survey = new Model(surveyJson);
+  // useRef allows the Model object to persist between state changes
+  const survey = useRef(new Model(surveyJson)).current;
   const [surveyResults, setSurveyResults] = useState("");
   const [isSurveyCompleted, setIsSurveyCompleted] = useState(false);
 
