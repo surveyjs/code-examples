@@ -56,15 +56,17 @@ const surveyJson = {
     visibleIf: "{satisfaction-score} =< 2"
   }],
   showQuestionNumbers: "off",
+  pageNextText: "Forward",
+  completeText: "Submit",
+  showPrevButton: false,
   firstPageIsStarted: true,
   startSurveyText: "Take the Survey",
-  showPrevButton: false,
   completedHtml: "Thank you for your feedback!",
   showPreviewBeforeComplete: "showAnsweredQuestions"
 };
 
 function App() {
-  // useRef allows the Model object to persist between state changes
+  // useRef enables the Model object to persist between state changes
   const survey = useRef(new Model(surveyJson)).current;
   const [surveyResults, setSurveyResults] = useState("");
   const [isSurveyCompleted, setIsSurveyCompleted] = useState(false);

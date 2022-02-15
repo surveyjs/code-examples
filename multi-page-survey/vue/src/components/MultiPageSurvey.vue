@@ -66,9 +66,11 @@ const surveyJson = {
     visibleIf: "{satisfaction-score} =< 2"
   }],
   showQuestionNumbers: "off",
+  pageNextText: "Forward",
+  completeText: "Submit",
+  showPrevButton: false,
   firstPageIsStarted: true,
   startSurveyText: "Take the Survey",
-  showPrevButton: false,
   completedHtml: "Thank you for your feedback!",
   showPreviewBeforeComplete: "showAnsweredQuestions"
 };
@@ -98,6 +100,6 @@ export default {
 </script>
 <style scoped>
 #surveyContainer {
-    width: 50%
+    width: 50%;
 }
 </style>

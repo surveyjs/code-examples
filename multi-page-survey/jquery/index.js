@@ -50,9 +50,11 @@ const surveyJson = {
         visibleIf: "{satisfaction-score} =< 2"
     }],
     showQuestionNumbers: "off",
+    pageNextText: "Forward",
+    completeText: "Submit",
+    showPrevButton: false,
     firstPageIsStarted: true,
     startSurveyText: "Take the Survey",
-    showPrevButton: false,
     completedHtml: "Thank you for your feedback!",
     showPreviewBeforeComplete: "showAnsweredQuestions"
 };

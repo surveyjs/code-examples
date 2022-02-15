@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Model, StylesManager, SurveyNG } from "survey-angular";
 
+StylesManager.applyTheme("modern");
+
 const surveyJson = {
   pages: [{
     elements: [{
@@ -51,9 +53,11 @@ const surveyJson = {
     visibleIf: "{satisfaction-score} =< 2"
   }],
   showQuestionNumbers: "off",
+  pageNextText: "Forward",
+  completeText: "Submit",
+  showPrevButton: false,
   firstPageIsStarted: true,
   startSurveyText: "Take the Survey",
-  showPrevButton: false,
   completedHtml: "Thank you for your feedback!",
   showPreviewBeforeComplete: "showAnsweredQuestions"
 };
@@ -75,8 +79,6 @@ export class AppComponent implements OnInit {
     this.isSurveyCompleted = true;
   }
   ngOnInit() {
-    StylesManager.applyTheme("modern");
-
     const survey = new Model(surveyJson);
     survey.onComplete.add(this.displayResults);
 
