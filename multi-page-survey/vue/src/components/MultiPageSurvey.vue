@@ -98,8 +98,3 @@ export default {
   },
 }
 </script>
-<style scoped>
-#surveyContainer {
-    width: 50%;
-}
-</style>
