@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Model, SurveyNG, StylesManager } from "survey-angular";
 
+StylesManager.applyTheme("modern");
+
 const surveyJson = {
   elements: [{
     name: "FirstName",
@@ -24,9 +26,7 @@ export class AppComponent implements OnInit {
     const results = JSON.stringify(sender.data);
     alert(results);
   }
-  ngOnInit() {
-    StylesManager.applyTheme("modern");
-    
+  ngOnInit() {    
     const survey = new Model(surveyJson);
     survey.onComplete.add(this.alertResults);
     SurveyNG.render("surveyContainer", { model: survey });
