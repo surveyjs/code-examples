@@ -17,7 +17,7 @@ const surveyJson = {
       html: "You are about to start a quiz on American history. <br>You will have 10 seconds for every question and 25 seconds to end the quiz.<br>Enter your name below and click <b>Start Quiz</b> to begin."
     }, {
       type: "text",
-      name: "name",
+      name: "username",
       titleLocation: "hidden",
       isRequired: true
     }]
@@ -57,12 +57,12 @@ const surveyJson = {
       correctAnswer: "The foundation of the British parliamentary system"
     }]
   }],
-  completedHtml: "<h4>You got <b>{correctedAnswers}</b> out of <b>{questionCount}</b> correct answers.</h4>",
+  completedHtml: "<h4>You got <b>{correctAnswers}</b> out of <b>{questionCount}</b> correct answers.</h4>",
   completedHtmlOnCondition: [{
-    expression: "{correctedAnswers} == 0",
+    expression: "{correctAnswers} == 0",
     html: "<h4>Unfortunately, none of your answers are correct. Please try again.</h4>"
   }, {
-    expression: "{correctedAnswers} == {questionCount}",
+    expression: "{correctAnswers} == {questionCount}",
     html: "<h4>Congratulations! You answered all the questions correctly!</h4>"
   }]
 };
