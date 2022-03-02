@@ -24,7 +24,7 @@ const surveyJson = {
             name: "civilwar",
             title: "When was the American Civil War?",
             choices: [
-                "1796-1803", "1810-1814", "1861-1865", "1914-1918", "1939-1945"
+                "1796-1803", "1810-1814", "1861-1865", "1939-1945"
             ],
             correctAnswer: "1861-1865"
         }]
