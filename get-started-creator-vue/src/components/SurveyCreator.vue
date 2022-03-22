@@ -33,7 +33,7 @@ export default {
     const creator = new SurveyCreator(creatorOptions);
     creator.text = window.localStorage.getItem("survey-json") || JSON.stringify(defaultJson);
     creator.saveSurveyFunc = (saveNo, callback) => { 
-      window.localStorage.setItem("survey-json", this.creator.text);
+      window.localStorage.setItem("survey-json", creator.text);
       callback(saveNo, true);
       // saveSurveyJson(
       //     "https://your-web-service.com/",
@@ -62,5 +62,6 @@ export default {
 <style scoped>
 #surveyCreator {
   height: 100vh;
+  width: 100vw;
 }
 </style>

@@ -1,6 +1,4 @@
-import { Component } from "react";
 import { SurveyCreatorComponent, SurveyCreator } from "survey-creator-react";
-// Import CSS files for SurveyJS (survey-core) and Survey Creator
 import "survey-core/defaultV2.min.css";
 import "survey-creator-core/survey-creator-core.min.css";
 
@@ -24,29 +22,22 @@ const defaultJson = {
   }]
 };
 
-export class SurveyCreatorWidget extends Component {
-  constructor() {
-    super();
-    this.creator = new SurveyCreator(creatorOptions);
-  }
-  componentDidMount() {
-    this.creator.text = window.localStorage.getItem("survey-json") || JSON.stringify(defaultJson);
-    this.creator.saveSurveyFunc = (saveNo, callback) => { 
-      window.localStorage.setItem("survey-json", this.creator.text);
-      callback(saveNo, true);
-      // saveSurveyJson(
-      //     "https://your-web-service.com/",
-      //     creator.JSON,
-      //     saveNo,
-      //     callback
-      // );
-    };
-  }
-  render() {
-    return (
-      <SurveyCreatorComponent creator={this.creator} />
-    );
-  }
+export function SurveyCreatorWidget() {
+  const creator = new SurveyCreator(creatorOptions);
+  creator.text = window.localStorage.getItem("survey-json") || JSON.stringify(defaultJson);
+  creator.saveSurveyFunc = (saveNo, callback) => { 
+    window.localStorage.setItem("survey-json", creator.text);
+    callback(saveNo, true);
+    // saveSurveyJson(
+    //     "https://your-web-service.com/",
+    //     creator.JSON,
+    //     saveNo,
+    //     callback
+    // );
+  };
+  return (
+    <SurveyCreatorComponent creator={creator} />
+  )
 }
 
 // function saveSurveyJson(url, json, saveNo, callback) {
