@@ -37,14 +37,14 @@ const surveyJson = {
     }, {
         elements: [{
             name: "how-can-we-improve",
-            title: "How can we improve our product?",
+            title: "In your opinion, how could we improve our product?",
             type: "comment"
         }],
         visibleIf: "{satisfaction-score} = 3"
     }, {
         elements: [{
             name: "disappointing-experience",
-            title: "Let us know about your disappointing experience with our product",
+            title: "Please let us know why you had such a disappointing experience with our product",
             type: "comment"
         }],
         visibleIf: "{satisfaction-score} =< 2"
