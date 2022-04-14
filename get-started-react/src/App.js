@@ -1,8 +1,9 @@
 import { useCallback } from 'react';
 
-import 'survey-react/modern.min.css';
-// import 'survey-react/survey.min.css';
-import { Survey, StylesManager, Model } from 'survey-react';
+import 'survey-core/modern.min.css';
+// import 'survey-core/survey.min.css';
+import { StylesManager, Model } from 'survey-core';
+import { Survey } from 'survey-react-ui';
 
 StylesManager.applyTheme("modern");
 

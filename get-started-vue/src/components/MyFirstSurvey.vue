@@ -3,9 +3,10 @@
 </template>
 
 <script>
-import 'survey-vue/modern.min.css';
-// import 'survey-vue/survey.min.css';
-import { Survey, StylesManager, Model } from 'survey-vue';
+import 'survey-core/modern.min.css';
+// import 'survey-core/survey.min.css';
+import { Model, StylesManager } from 'survey-core';
+import { Survey } from 'survey-vue-ui';
 
 StylesManager.applyTheme("modern");
 
