@@ -3,8 +3,10 @@
 </template>
 
 <script>
+// Modern theme
 import 'survey-core/modern.min.css';
-// import 'survey-core/survey.min.css';
+// Default V2 theme
+// import 'survey-core/defaultV2.min.css';
 import { Model, StylesManager } from 'survey-core';
 import { Survey } from 'survey-vue-ui';
 

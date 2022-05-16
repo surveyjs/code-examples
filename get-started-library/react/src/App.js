@@ -1,7 +1,9 @@
 import { useCallback } from 'react';
 
+// Modern theme
 import 'survey-core/modern.min.css';
-// import 'survey-core/survey.min.css';
+// Default V2 theme
+// import 'survey-core/defaultV2.min.css';
 import { StylesManager, Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 
