@@ -39,8 +39,9 @@ const exportToPdfOptions = {
   fontSize: 12
 };
 
-const savePdf = function () {
+const savePdf = function (surveyData) {
   const surveyPdf = new SurveyPDF(surveyJson, exportToPdfOptions);
+  surveyPdf.data = surveyData;
   surveyPdf.save();
 };
 
@@ -50,7 +51,7 @@ function App() {
   survey.addNavigationItem({
     id: "pdf-export",
     title: "Save as PDF",
-    action: savePdf
+    action: () => savePdf(survey.data)
   });
 
   return (

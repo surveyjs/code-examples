@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Model, StylesManager, SurveyNG } from "survey-angular";
-import { SurveyPDF } from "survey-pdf";
+import { SurveyPDF, IDocOptions } from "survey-pdf";
 
 StylesManager.applyTheme("modern");
 
@@ -32,12 +32,13 @@ const surveyJson = {
   completedHtml: "Thank you for your feedback!",
 };
 
-const exportToPdfOptions = {
+const exportToPdfOptions: IDocOptions = {
   fontSize: 12
 };
 
-const savePdf = function () {
+const savePdf = function (surveyData: any) {
   const surveyPdf = new SurveyPDF(surveyJson, exportToPdfOptions);
+  surveyPdf.data = surveyData;
   surveyPdf.save();
 };
 
@@ -54,7 +55,7 @@ export class AppComponent implements OnInit {
     survey.addNavigationItem({
       id: "pdf-export",
       title: "Save as PDF",
-      action: savePdf
+      action: () => savePdf(survey.data)
     });
 
     SurveyNG.render("surveyContainer", { model: survey });
