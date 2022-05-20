@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Model, SurveyNG, StylesManager } from "survey-angular";
 
+// const SURVEY_ID = 1;
+
 StylesManager.applyTheme("modern");
 
 const surveyJson = {
@@ -25,6 +27,10 @@ export class AppComponent implements OnInit {
   alertResults (sender) {
     const results = JSON.stringify(sender.data);
     alert(results);
+    // saveSurveyResults(
+    //   "https://your-web-service.com/" + SURVEY_ID,
+    //   sender.data
+    // )
   }
   ngOnInit() {    
     const survey = new Model(surveyJson);
@@ -32,3 +38,16 @@ export class AppComponent implements OnInit {
     SurveyNG.render("surveyContainer", { model: survey });
   }
 }
+
+// function saveSurveyResults(url, json) {
+//   const request = new XMLHttpRequest();
+//   request.open('POST', url);
+//   request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+//   request.addEventListener('load', () => {
+//     // Handle "load"
+//   });
+//   request.addEventListener('error', () => {
+//     // Handle "error"
+//   });
+//   request.send(JSON.stringify(json));
+// }

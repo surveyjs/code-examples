@@ -10,6 +10,8 @@ import 'survey-core/modern.min.css';
 import { Model, StylesManager } from 'survey-core';
 import { Survey } from 'survey-vue-ui';
 
+// const SURVEY_ID = 1;
+
 StylesManager.applyTheme("modern");
 
 const surveyJson = {
@@ -41,7 +43,24 @@ export default {
     alertResults (sender) {
       const results = JSON.stringify(sender.data);
       alert(results);
+      // saveSurveyResults(
+      //   "https://your-web-service.com/" + SURVEY_ID,
+      //   sender.data
+      // )
     }
   },
 }
+
+// function saveSurveyResults(url, json) {
+//   const request = new XMLHttpRequest();
+//   request.open('POST', url);
+//   request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+//   request.addEventListener('load', () => {
+//     // Handle "load"
+//   });
+//   request.addEventListener('error', () => {
+//     // Handle "error"
+//   });
+//   request.send(JSON.stringify(json));
+// }
 </script>
