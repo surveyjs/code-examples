@@ -1,4 +1,7 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import './App.css'
+
+import { useState, useEffect } from 'react';
+import 'survey-analytics/survey.analytics.min.css';
 import { Model } from 'survey-core';
 import { VisualizationPanel } from 'survey-analytics';
 
@@ -47,23 +50,32 @@ const vizPanelOptions = {
   allowHideQuestions: false
 }
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent implements AfterViewInit {
-  title = 'SurveyJS Analytics for Angular';
-  @ViewChild("surveyVizPanel") elem: ElementRef | undefined;
-
-  ngAfterViewInit(): void {
+export default function App() {
+  const [survey, setSurvey] = useState(null);
+  const [vizPanel, setVizPanel] = useState(null);
+  if (!survey) {
     const survey = new Model(surveyJson);
+    setSurvey(survey);
+  }
+
+  if (!vizPanel && !!survey) {
     const vizPanel = new VisualizationPanel(
       survey.getAllQuestions(),
       surveyResults,
       vizPanelOptions
     );
     vizPanel.showHeader = false;
-    vizPanel.render(this.elem?.nativeElement);
+    setVizPanel(vizPanel);
   }
+
+  useEffect(() => {
+    vizPanel.render(document.getElementById("surveyVizPanel"));
+    return () => {
+      document.getElementById("surveyVizPanel").innerHTML = "";
+    }
+  }, [vizPanel]);
+
+  return (
+    <div id="surveyVizPanel" />
+  );
 }

@@ -1,3 +1,5 @@
+// const SURVEY_ID = 1;
+
 Survey
     .StylesManager
     .applyTheme("modern");
@@ -19,6 +21,10 @@ const survey = new Survey.Model(surveyJson);
 function alertResults (sender) {
     const results = JSON.stringify(sender.data);
     alert(results);
+    // saveSurveyResults(
+    //     "https://your-web-service.com/" + SURVEY_ID,
+    //     sender.data
+    // )
 }
 
 survey.onComplete.add(alertResults);
@@ -26,3 +32,16 @@ survey.onComplete.add(alertResults);
 $(function() {
     $("#surveyContainer").Survey({ model: survey });
 });
+
+// function saveSurveyResults(url, json) {
+//     const request = new XMLHttpRequest();
+//     request.open('POST', url);
+//     request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+//     request.addEventListener('load', () => {
+//         // Handle "load"
+//     });
+//     request.addEventListener('error', () => {
+//         // Handle "error"
+//     });
+//     request.send(JSON.stringify(json));
+// }

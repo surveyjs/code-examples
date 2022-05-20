@@ -1,4 +1,5 @@
-Survey.StylesManager.applyTheme("modern");
+// Uncomment the following line if you also display the survey on the page
+// Survey.StylesManager.applyTheme("modern");
 
 const surveyJson = {
     elements: [{
@@ -26,7 +27,7 @@ const surveyJson = {
 
 const survey = new Survey.Model(surveyJson);
 
-const data = [{
+const surveyResults = [{
     "satisfaction-score": 5,
     "nps-score": 10
 }, {
@@ -49,7 +50,7 @@ const vizPanelOptions = {
 
 const vizPanel = new SurveyAnalytics.VisualizationPanel(
     survey.getAllQuestions(),
-    data,
+    surveyResults,
     vizPanelOptions
 );
 vizPanel.showHeader = false;

@@ -31,7 +31,7 @@ const surveyJson = {
   completedHtml: "Thank you for your feedback!",
 };
 
-const data = [{
+const surveyResults = [{
   "satisfaction-score": 5,
   "nps-score": 10
 }, {
@@ -58,7 +58,7 @@ export default {
     const survey = new Model(surveyJson);
     const vizPanel = new VisualizationPanel(
       survey.getAllQuestions(),
-      data,
+      surveyResults,
       vizPanelOptions
     );
     vizPanel.showHeader = false;
