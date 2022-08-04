@@ -1,0 +1,19 @@
+svg {
+    height: 32px;
+    width: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.icon-name {
+    font-size: 14px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin-top: 5px;
+    color: #86929d;
+}
+
+.container {
+    display: inline-block;
+    width: 280px;
+    padding: 0 15px 15px 0;
+}
