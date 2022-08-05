@@ -7,6 +7,6 @@ Object.keys(Survey.SvgRegistry.icons).map(name => {
     <svg class="sd-detail-panel__icon">
       <use xlink:href="#icon-` + name + `\"></use>
     </svg>
-    <span class="icon-name">` + name + `</span>`;
+    <span class="icon-name">icon-` + name + `</span>`;
   document.getElementById("icons").appendChild(element);
 });
