@@ -60,7 +60,7 @@ const surveyJson = {
 };
 
 // const survey = new Survey.Model(surveyJson);
-const surveyWindow = new Survey.SurveyWindowModel(surveyJson);
+const popupSurvey = new Survey.PopupSurveyModel(surveyJson);
 
 function displayResults (sender) {
     const results = JSON.stringify(sender.data, null, 4);
@@ -68,12 +68,11 @@ function displayResults (sender) {
     document.querySelector("#resultsContainer").style.display = "block"
 }
 
-surveyWindow.survey.onComplete.add(displayResults);
+popupSurvey.survey.onComplete.add(displayResults);
 
-surveyWindow.isExpanded = true;
+popupSurvey.isExpanded = true;
 
 document.addEventListener("DOMContentLoaded", function() {
     // survey.render("surveyContainer");
-surveyWindow.show();
-
+    popupSurvey.show();
 });

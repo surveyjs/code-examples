@@ -3,7 +3,7 @@ import './App.css'
 
 import 'survey-core/defaultV2.min.css';
 import { StylesManager, Model } from 'survey-core';
-import { Survey, SurveyWindow } from 'survey-react-ui';
+import { Survey, PopupSurvey } from 'survey-react-ui';
 
 StylesManager.applyTheme("defaultV2");
 
@@ -82,7 +82,7 @@ function App() {
   return (
     <>
       {/* <Survey model={survey} id="surveyContainer" /> */}
-      <SurveyWindow model={survey} id="surveyContainer" />
+      <PopupSurvey model={survey} isExpanded={true} id="surveyContainer" />
       {isSurveyCompleted && (
         <>
           <p>Result JSON:</p>
