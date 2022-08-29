@@ -3,7 +3,7 @@ import { Model, SurveyNG, StylesManager } from "survey-angular";
 
 // const SURVEY_ID = 1;
 
-StylesManager.applyTheme("modern");
+StylesManager.applyTheme("defaultV2");
 
 const surveyJson = {
   elements: [{

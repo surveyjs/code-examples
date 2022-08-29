@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Model, StylesManager, SurveyNG } from "survey-angular";
 
-StylesManager.applyTheme("modern");
+StylesManager.applyTheme("defaultV2");
 
 const surveyJson = {
   title: "American History",

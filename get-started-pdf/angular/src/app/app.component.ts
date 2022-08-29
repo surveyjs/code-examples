@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Model, StylesManager, SurveyNG } from "survey-angular";
 import { SurveyPDF, IDocOptions } from "survey-pdf";
 
-StylesManager.applyTheme("modern");
+StylesManager.applyTheme("defaultV2");
 
 const surveyJson = {
   elements: [{

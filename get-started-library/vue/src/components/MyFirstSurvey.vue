@@ -3,16 +3,16 @@
 </template>
 
 <script>
+  // Default V2 theme
+import 'survey-core/defaultV2.min.css';
 // Modern theme
-import 'survey-core/modern.min.css';
-// Default V2 theme
-// import 'survey-core/defaultV2.min.css';
+// import 'survey-core/modern.min.css';
 import { Model, StylesManager } from 'survey-core';
 import { Survey } from 'survey-vue-ui';
 
 // const SURVEY_ID = 1;
 
-StylesManager.applyTheme("modern");
+StylesManager.applyTheme("defaultV2");
 
 const surveyJson = {
   elements: [{

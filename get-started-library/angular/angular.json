@@ -25,7 +25,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/survey-angular/modern.min.css"
+              "node_modules/survey-angular/defaultV2.min.css"
             ],
             "scripts": []
           },

@@ -1,4 +1,4 @@
-Survey.StylesManager.applyTheme("modern");
+Survey.StylesManager.applyTheme("defaultV2");
 
 const surveyJson = {
     elements: [{

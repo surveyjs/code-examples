@@ -2,7 +2,7 @@
 
 Survey
     .StylesManager
-    .applyTheme("modern");
+    .applyTheme("defaultV2");
 
 const surveyJson = {
     elements: [{

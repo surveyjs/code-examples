@@ -1,4 +1,4 @@
-Survey.StylesManager.applyTheme("modern");
+Survey.StylesManager.applyTheme("defaultV2");
 
 const surveyJson = {
     pages: [{
@@ -71,4 +71,5 @@ survey.onComplete.add(displayResults);
 
 $(function() {
     $("#surveyContainer").Survey({ model: survey });
+    $("#surveyContainer").SurveyWindow({ model: survey, isExpanded: true });
 });

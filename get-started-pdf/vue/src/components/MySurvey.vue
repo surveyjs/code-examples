@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import 'survey-core/modern.min.css';
+import 'survey-core/defaultV2.min.css';
 import { StylesManager, Model } from 'survey-core';
 import { Survey } from 'survey-vue-ui';
 import { SurveyPDF } from 'survey-pdf';
 
-StylesManager.applyTheme("modern");
+StylesManager.applyTheme("defaultV2");
 
 const surveyJson = {
   elements: [{

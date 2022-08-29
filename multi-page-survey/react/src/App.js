@@ -1,11 +1,11 @@
 import { useCallback, useState, useRef } from 'react';
 import './App.css'
 
-import 'survey-core/modern.min.css';
+import 'survey-core/defaultV2.min.css';
 import { StylesManager, Model } from 'survey-core';
-import { Survey } from 'survey-react-ui';
+import { Survey, SurveyWindow } from 'survey-react-ui';
 
-StylesManager.applyTheme("modern");
+StylesManager.applyTheme("defaultV2");
 
 const surveyJson = {
   pages: [{
@@ -81,7 +81,8 @@ function App() {
 
   return (
     <>
-      <Survey model={survey} id="surveyContainer" />
+      {/* <Survey model={survey} id="surveyContainer" /> */}
+      <SurveyWindow model={survey} id="surveyContainer" />
       {isSurveyCompleted && (
         <>
           <p>Result JSON:</p>

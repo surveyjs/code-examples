@@ -1,4 +1,4 @@
-Survey.StylesManager.applyTheme("modern");
+Survey.StylesManager.applyTheme("defaultV2");
 
 const surveyJson = {
     pages: [{
@@ -59,7 +59,8 @@ const surveyJson = {
     showPreviewBeforeComplete: "showAnsweredQuestions"
 };
 
-const survey = new Survey.Model(surveyJson);
+// const survey = new Survey.Model(surveyJson);
+const surveyWindow = new Survey.SurveyWindowModel(surveyJson);
 
 function displayResults (sender) {
     const results = JSON.stringify(sender.data, null, 4);
@@ -67,8 +68,12 @@ function displayResults (sender) {
     document.querySelector("#resultsContainer").style.display = "block"
 }
 
-survey.onComplete.add(displayResults);
+surveyWindow.survey.onComplete.add(displayResults);
+
+surveyWindow.isExpanded = true;
 
 document.addEventListener("DOMContentLoaded", function() {
-    survey.render("surveyContainer");
+    // survey.render("surveyContainer");
+surveyWindow.show();
+
 });
