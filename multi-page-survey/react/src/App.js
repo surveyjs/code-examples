@@ -81,8 +81,7 @@ function App() {
 
   return (
     <>
-      {/* <Survey model={survey} id="surveyContainer" /> */}
-      <PopupSurvey model={survey} isExpanded={true} id="surveyContainer" />
+      <Survey model={survey} id="surveyContainer" />
       {isSurveyCompleted && (
         <>
           <p>Result JSON:</p>

@@ -59,8 +59,7 @@ const surveyJson = {
     showPreviewBeforeComplete: "showAnsweredQuestions"
 };
 
-// const survey = new Survey.Model(surveyJson);
-const popupSurvey = new Survey.PopupSurveyModel(surveyJson);
+const survey = new Survey.Model(surveyJson);
 
 function displayResults (sender) {
     const results = JSON.stringify(sender.data, null, 4);

@@ -71,5 +71,4 @@ survey.onComplete.add(displayResults);
 
 $(function() {
     $("#surveyContainer").Survey({ model: survey });
-    $("#surveyContainer").PopupSurvey({ model: survey, isExpanded: true });
 });
