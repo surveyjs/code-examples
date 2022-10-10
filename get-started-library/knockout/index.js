@@ -16,7 +16,7 @@ const surveyJson = {
     }]
 };
 
-const survey = new Survey.Model(surveyJson);
+const survey = new SurveyKnockout.Survey(surveyJson);
 
 function alertResults (sender) {
     const results = JSON.stringify(sender.data);
