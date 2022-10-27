@@ -18,7 +18,7 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
-    "rxjs": "~7.5.0",
+    "rxjs": "~7.4.0",
     "survey-angular": "^1.9.28",
     "survey-pdf": "^1.9.28",
     "tslib": "^2.3.0",
