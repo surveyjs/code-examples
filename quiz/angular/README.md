@@ -1,6 +1,6 @@
 # Create a Quiz (SurveyJS for Angular)
 
-This example is used in the following help topic: [Create a Quiz](https://surveyjs.io/Documentation/Library?id=design-survey-create-a-quiz). It was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+This example is used in the following help topic: [Create a Quiz](https://surveyjs.io/Documentation/Library?id=design-survey-create-a-quiz). It was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
 
 ## Development server
 
