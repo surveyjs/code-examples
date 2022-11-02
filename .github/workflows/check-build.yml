@@ -29,6 +29,6 @@ jobs:
 
     - name: Build get-started-library/vue
       run: |
-        cd ../vue
+        cd get-started-library/vue
         npm install
         npm run build
