@@ -27,8 +27,8 @@ jobs:
         npm install
         npm run build
 
-    - name: Build get-started-library/vue
-      run: |
-        cd get-started-library/vue
-        npm install
-        npm run build
+#     - name: Build get-started-library/vue
+#       run: |
+#         cd get-started-library/vue
+#         npm install
+#         npm run build
