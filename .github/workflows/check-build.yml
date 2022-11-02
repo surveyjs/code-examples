@@ -29,17 +29,17 @@ jobs:
 
     - name: Build get-started-library/knockout
       run: |
-        cd get-started-library/knockout
+        cd ../knockout
         npm install
         npm run build
         
     - name: Build get-started-library/vue
       run: |
-        cd get-started-library/vue
+        cd ../vue
         npm install
         npm run build
         
-    - name: Build get-started-library/jquery
+    - name: ../jquery
       run: |
         cd get-started-library/jquery
         npm install
