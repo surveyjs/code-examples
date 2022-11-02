@@ -27,21 +27,8 @@ jobs:
         npm install
         npm run build
 
-    - name: Build get-started-library/knockout
-      run: |
-        cd ../knockout
-        npm install
-        npm run build
-        
     - name: Build get-started-library/vue
       run: |
         cd ../vue
         npm install
         npm run build
-        
-    - name: ../jquery
-      run: |
-        cd get-started-library/jquery
-        npm install
-        npm run build
-        
