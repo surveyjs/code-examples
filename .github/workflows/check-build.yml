@@ -3,7 +3,7 @@ name: Check Build in NodeJS Different Versions
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
   build:
