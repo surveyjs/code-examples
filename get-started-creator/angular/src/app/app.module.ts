@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { SurveyCreatorAngularModule } from 'survey-creator-angular';
+import { SurveyCreatorModule } from 'survey-creator-angular';
 
 import { AppComponent } from './app.component';
 import { SurveyCreatorComponent } from './survey-creator/survey-creator.component';
@@ -12,7 +12,7 @@ import { SurveyCreatorComponent } from './survey-creator/survey-creator.componen
   ],
   imports: [
     BrowserModule,
-    SurveyCreatorAngularModule
+    SurveyCreatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

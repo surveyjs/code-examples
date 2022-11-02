@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { SurveyAngularModule } from "survey-angular-ui";
+import { SurveyModule } from "survey-angular-ui";
 
 import { AppComponent } from './app.component';
 
@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    SurveyAngularModule
+    SurveyModule
   ],
   providers: [],
   bootstrap: [AppComponent]
