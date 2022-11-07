@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Model, SurveyNG, StylesManager } from "survey-angular";
+import { Model, StylesManager } from "survey-core";
 
 // const SURVEY_ID = 1;
 
@@ -24,6 +24,7 @@ const surveyJson = {
 })
 export class AppComponent implements OnInit {
   title = 'My First Survey';
+  surveyModel: Model;
   alertResults (sender) {
     const results = JSON.stringify(sender.data);
     alert(results);
@@ -35,7 +36,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {    
     const survey = new Model(surveyJson);
     survey.onComplete.add(this.alertResults);
-    SurveyNG.render("surveyContainer", { model: survey });
+    this.surveyModel = survey;
   }
 }
 

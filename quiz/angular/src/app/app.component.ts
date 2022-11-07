@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Model, StylesManager, SurveyNG } from "survey-angular";
+import { Model, StylesManager } from "survey-core";
 
 StylesManager.applyTheme("defaultV2");
 
@@ -74,9 +74,9 @@ const surveyJson = {
 })
 export class AppComponent implements OnInit {
   title = 'SurveyJS for Angular - Quiz';
-  constructor() { }
+  surveyModel: Model;
   ngOnInit() {
     const survey = new Model(surveyJson);
-    SurveyNG.render("surveyContainer", { model: survey });
+    this.surveyModel = survey;
   }
 }

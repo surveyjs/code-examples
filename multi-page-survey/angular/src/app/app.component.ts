@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Model, StylesManager, SurveyNG } from "survey-angular";
+import { Model, StylesManager } from "survey-core";
 
 StylesManager.applyTheme("defaultV2");
 
@@ -69,10 +69,11 @@ const surveyJson = {
 })
 export class AppComponent implements OnInit {
   title = 'SurveyJS for Angular - Multi-Page Survey';
+  surveyModel: Model;
   surveyResults: String = "";
   isSurveyCompleted: Boolean = false;
   constructor() {
-      this.displayResults = this.displayResults.bind(this);
+    this.displayResults = this.displayResults.bind(this);
   }
   displayResults (sender) {
     this.surveyResults = JSON.stringify(sender.data, null, 4);
@@ -82,6 +83,6 @@ export class AppComponent implements OnInit {
     const survey = new Model(surveyJson);
     survey.onComplete.add(this.displayResults);
 
-    SurveyNG.render("surveyContainer", { model: survey });
+    this.surveyModel = survey;
   }
 }

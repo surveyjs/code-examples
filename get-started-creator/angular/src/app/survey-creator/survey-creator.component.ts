@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { SurveyCreator } from "survey-creator-knockout";
+import { SurveyCreatorModel } from "survey-creator-core";
 
 const creatorOptions = {
   showLogicTab: true,
@@ -22,13 +22,14 @@ const defaultJson = {
 };
 
 @Component({
-  selector: 'survey-creator',
+  selector: 'survey-creator-component',
   templateUrl: './survey-creator.component.html',
   styleUrls: ['./survey-creator.component.css']
 })
 export class SurveyCreatorComponent implements OnInit {
+  surveyCreatorModel: SurveyCreatorModel;
   ngOnInit() {
-    const creator = new SurveyCreator(creatorOptions);
+    const creator = new SurveyCreatorModel(creatorOptions);
     creator.text = window.localStorage.getItem("survey-json") || JSON.stringify(defaultJson);
 
     creator.saveSurveyFunc = (saveNo: number, callback: Function) => { 
@@ -41,7 +42,7 @@ export class SurveyCreatorComponent implements OnInit {
       //     callback
       // );
     };
-    creator.render("surveyCreator");
+    this.surveyCreatorModel = creator;
   }
 }
 

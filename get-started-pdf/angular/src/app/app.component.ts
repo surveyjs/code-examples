@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Model, StylesManager, SurveyNG } from "survey-angular";
+import { Model, StylesManager } from "survey-core";
 import { SurveyPDF, IDocOptions } from "survey-pdf";
 
 StylesManager.applyTheme("defaultV2");
@@ -49,6 +49,7 @@ const savePdf = function (surveyData: any) {
 })
 export class AppComponent implements OnInit {
   title = 'Export Survey to PDF - SurveyJS for Angular';
+  surveyModel: Model;
   ngOnInit() {
     const survey = new Model(surveyJson);
 
@@ -58,6 +59,6 @@ export class AppComponent implements OnInit {
       action: () => savePdf(survey.data)
     });
 
-    SurveyNG.render("surveyContainer", { model: survey });
+    this.surveyModel = survey;
   }
 }
