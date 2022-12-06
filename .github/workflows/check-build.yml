@@ -11,7 +11,6 @@ jobs:
 
     strategy:
       fail-fast: false
-      continue-on-error: true
       matrix:
         node-version: [12.x, 14.x, 16.x, 18.x]
     
@@ -64,7 +63,6 @@ jobs:
 
     strategy:
       fail-fast: false
-      continue-on-error: true
       matrix:
         node-version: [12.x, 14.x, 16.x, 18.x]
     
@@ -77,36 +75,42 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Build get-started-library/angular
+      continue-on-error: true
       run: |
         cd get-started-analytics/angular
         npm install
         npm run build
 
     - name: Build get-started-creator/angular
+      continue-on-error: true
       run: |
         cd get-started-creator/angular
         npm install
         npm run build
 
     - name: Build get-started-analytics/angular
+      continue-on-error: true
       run: |
         cd get-started-analytics/angular
         npm install
         npm run build
 
     - name: Build get-started-pdf/angular
+      continue-on-error: true
       run: |
         cd get-started-pdf/angular
         npm install
         npm run build
 
     - name: Build multi-page-survey/angular
+      continue-on-error: true
       run: |
         cd multi-page-survey/angular
         npm install
         npm run build
 
     - name: Build quiz/angular
+      continue-on-error: true
       run: |
         cd quiz/angular
         npm install
@@ -117,7 +121,6 @@ jobs:
 
     strategy:
       fail-fast: false
-      continue-on-error: true
       matrix:
         node-version: [12.x, 14.x, 16.x, 18.x]
     
