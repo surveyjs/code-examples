@@ -3,7 +3,7 @@ name: Check Build in NodeJS Different Versions
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "test-workflows" ]
 
 jobs:
   build:
@@ -27,8 +27,110 @@ jobs:
         npm install
         npm run build
 
-#     - name: Build get-started-library/vue
-#       run: |
-#         cd get-started-library/vue
-#         npm install
-#         npm run build
+    - name: Build get-started-library/vue
+      run: |
+        cd get-started-library/vue
+        npm install
+        npm run build
+    
+    - name: Build get-started-library/angular
+      run: |
+        cd get-started-analytics/angular
+        npm install
+        npm run build
+
+    - name: Build get-started-creator/react
+      run: |
+        cd get-started-creator/react
+        npm install
+        npm run build
+
+    - name: Build get-started-creator/vue
+      run: |
+        cd get-started-creator/vue
+        npm install
+        npm run build
+    
+    - name: Build get-started-creator/angular
+      run: |
+        cd get-started-creator/angular
+        npm install
+        npm run build
+
+    - name: Build get-started-analytics/react
+      run: |
+        cd get-started-analytics/react
+        npm install
+        npm run build
+
+    - name: Build get-started-analytics/vue
+      run: |
+        cd get-started-analytics/vue
+        npm install
+        npm run build
+    
+    - name: Build get-started-analytics/angular
+      run: |
+        cd get-started-analytics/angular
+        npm install
+        npm run build
+
+    - name: Build get-started-pdf/react
+      run: |
+        cd get-started-pdf/react
+        npm install
+        npm run build
+
+    - name: Build get-started-pdf/vue
+      run: |
+        cd get-started-pdf/vue
+        npm install
+        npm run build
+    
+    - name: Build get-started-pdf/angular
+      run: |
+        cd get-started-pdf/angular
+        npm install
+        npm run build
+
+    - name: Build integrate-third-party-react-components
+      run: |
+        cd integrate-third-party-react-components
+        npm install
+        npm run build
+
+    - name: Build multi-page-survey/react
+      run: |
+        cd multi-page-survey/react
+        npm install
+        npm run build
+
+    - name: Build multi-page-survey/vue
+      run: |
+        cd multi-page-survey/vue
+        npm install
+        npm run build
+    
+    - name: Build multi-page-survey/angular
+      run: |
+        cd multi-page-survey/angular
+        npm install
+        npm run build
+
+    - name: Build quiz/react
+      run: |
+        cd quiz/react
+        npm install
+        npm run build
+
+    - name: Build quiz/vue
+      run: |
+        cd quiz/vue
+        npm install
+        npm run build
+    
+    - name: Build quiz/angular
+      run: |
+        cd quiz/angular
+        npm install
+        npm run build
