@@ -25,7 +25,6 @@
     ],
     "strictPropertyInitialization": false
   },
-  "exclude": ["node_modules/survey-creator-core"],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
