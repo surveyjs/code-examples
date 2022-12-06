@@ -6,7 +6,109 @@ on:
     branches: [ "test-workflows" ]
 
 jobs:
-  build:
+  build-vue:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x, 18.x]
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Build get-started-library/vue
+      run: |
+        cd get-started-library/vue
+        npm install
+        npm run build
+
+    - name: Build get-started-creator/vue
+      run: |
+        cd get-started-creator/vue
+        npm install
+        npm run build
+
+    - name: Build get-started-analytics/vue
+      run: |
+        cd get-started-analytics/vue
+        npm install
+        npm run build
+
+    - name: Build get-started-pdf/vue
+      run: |
+        cd get-started-pdf/vue
+        npm install
+        npm run build
+
+    - name: Build multi-page-survey/vue
+      run: |
+        cd multi-page-survey/vue
+        npm install
+        npm run build
+
+    - name: Build quiz/vue
+      run: |
+        cd quiz/vue
+        npm install
+        npm run build
+
+  build-angular:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x, 18.x]
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Build get-started-library/angular
+      run: |
+        cd get-started-analytics/angular
+        npm install
+        npm run build
+
+    - name: Build get-started-creator/angular
+      run: |
+        cd get-started-creator/angular
+        npm install
+        npm run build
+
+    - name: Build get-started-analytics/angular
+      run: |
+        cd get-started-analytics/angular
+        npm install
+        npm run build
+
+    - name: Build get-started-pdf/angular
+      run: |
+        cd get-started-pdf/angular
+        npm install
+        npm run build
+
+    - name: Build multi-page-survey/angular
+      run: |
+        cd multi-page-survey/angular
+        npm install
+        npm run build
+
+    - name: Build quiz/angular
+      run: |
+        cd quiz/angular
+        npm install
+        npm run build
+
+  build-react:
     runs-on: ubuntu-latest
 
     strategy:
@@ -27,33 +129,9 @@ jobs:
         npm install
         npm run build
 
-    - name: Build get-started-library/vue
-      run: |
-        cd get-started-library/vue
-        npm install
-        npm run build
-    
-    - name: Build get-started-library/angular
-      run: |
-        cd get-started-analytics/angular
-        npm install
-        npm run build
-
     - name: Build get-started-creator/react
       run: |
         cd get-started-creator/react
-        npm install
-        npm run build
-
-    - name: Build get-started-creator/vue
-      run: |
-        cd get-started-creator/vue
-        npm install
-        npm run build
-    
-    - name: Build get-started-creator/angular
-      run: |
-        cd get-started-creator/angular
         npm install
         npm run build
 
@@ -63,33 +141,9 @@ jobs:
         npm install
         npm run build
 
-    - name: Build get-started-analytics/vue
-      run: |
-        cd get-started-analytics/vue
-        npm install
-        npm run build
-    
-    - name: Build get-started-analytics/angular
-      run: |
-        cd get-started-analytics/angular
-        npm install
-        npm run build
-
     - name: Build get-started-pdf/react
       run: |
         cd get-started-pdf/react
-        npm install
-        npm run build
-
-    - name: Build get-started-pdf/vue
-      run: |
-        cd get-started-pdf/vue
-        npm install
-        npm run build
-    
-    - name: Build get-started-pdf/angular
-      run: |
-        cd get-started-pdf/angular
         npm install
         npm run build
 
@@ -105,32 +159,12 @@ jobs:
         npm install
         npm run build
 
-    - name: Build multi-page-survey/vue
-      run: |
-        cd multi-page-survey/vue
-        npm install
-        npm run build
-    
-    - name: Build multi-page-survey/angular
-      run: |
-        cd multi-page-survey/angular
-        npm install
-        npm run build
-
     - name: Build quiz/react
       run: |
         cd quiz/react
         npm install
         npm run build
 
-    - name: Build quiz/vue
-      run: |
-        cd quiz/vue
-        npm install
-        npm run build
     
-    - name: Build quiz/angular
-      run: |
-        cd quiz/angular
-        npm install
-        npm run build
+    
+    
