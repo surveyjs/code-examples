@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
+      continue-on-error: true
       matrix:
         node-version: [12.x, 14.x, 16.x, 18.x]
     
@@ -61,6 +63,8 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
+      continue-on-error: true
       matrix:
         node-version: [12.x, 14.x, 16.x, 18.x]
     
@@ -112,6 +116,8 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
+      continue-on-error: true
       matrix:
         node-version: [12.x, 14.x, 16.x, 18.x]
     
