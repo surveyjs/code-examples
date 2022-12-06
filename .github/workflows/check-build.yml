@@ -5,6 +5,9 @@ on:
   push:
     branches: [ "test-workflows" ]
 
+env:
+  NODE_OPTIONS: "--max-old-space-size=8192"
+  
 jobs:
   build-vue:
     runs-on: ubuntu-latest
@@ -75,42 +78,36 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Build get-started-library/angular
-      continue-on-error: true
       run: |
         cd get-started-analytics/angular
         npm install
         npm run build
 
     - name: Build get-started-creator/angular
-      continue-on-error: true
       run: |
         cd get-started-creator/angular
         npm install
         npm run build
 
     - name: Build get-started-analytics/angular
-      continue-on-error: true
       run: |
         cd get-started-analytics/angular
         npm install
         npm run build
 
     - name: Build get-started-pdf/angular
-      continue-on-error: true
       run: |
         cd get-started-pdf/angular
         npm install
         npm run build
 
     - name: Build multi-page-survey/angular
-      continue-on-error: true
       run: |
         cd multi-page-survey/angular
         npm install
         npm run build
 
     - name: Build quiz/angular
-      continue-on-error: true
       run: |
         cd quiz/angular
         npm install
