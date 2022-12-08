@@ -24,7 +24,11 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-
+    
+    - name: Override NODE options for the most recent version
+      if: matrix.node-version == '18.x'
+      run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
+    
     - name: Build get-started-library/vue
       run: |
         cd get-started-library/vue
