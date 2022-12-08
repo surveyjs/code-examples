@@ -64,6 +64,10 @@ jobs:
         cd quiz/vue
         npm install
         npm run build
+    
+    - name: Reset overrided NODE options
+      if: matrix.node-version == '18.x'
+      run: echo "NODE_OPTIONS=" >> $GITHUB_ENV
 
   build-angular:
     runs-on: ubuntu-latest
