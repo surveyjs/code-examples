@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "survey-vue-ui": "^1.9.24",
+    "survey-vue-ui": "latest",
     "vue": "^2.6.11"
   },
   "devDependencies": {
