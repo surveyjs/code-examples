@@ -16,7 +16,7 @@ const surveyJson = {
     }]
 };
 
-const survey = new SurveyKnockout.Survey(surveyJson);
+const survey = new Survey.Model(surveyJson);
 
 function alertResults (sender) {
     const results = JSON.stringify(sender.data);
@@ -30,7 +30,9 @@ function alertResults (sender) {
 survey.onComplete.add(alertResults);
 
 document.addEventListener("DOMContentLoaded", function() {
-    survey.render("surveyContainer");
+    ko.applyBindings({
+        model: survey
+    });
 });
 
 // function saveSurveyResults(url, json) {

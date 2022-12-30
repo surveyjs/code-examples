@@ -47,5 +47,7 @@ survey.addNavigationItem({
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    survey.render("surveyContainer");
+    ko.applyBindings({
+        model: survey
+    });
 });

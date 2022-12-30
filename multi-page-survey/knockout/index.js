@@ -72,6 +72,5 @@ popupSurvey.survey.onComplete.add(displayResults);
 popupSurvey.isExpanded = true;
 
 document.addEventListener("DOMContentLoaded", function() {
-    // survey.render("surveyContainer");
     popupSurvey.show();
 });

@@ -67,5 +67,7 @@ const surveyJson = {
 const survey = new Survey.Model(surveyJson);
 
 document.addEventListener("DOMContentLoaded", function() {
-    survey.render("surveyContainer");
+    ko.applyBindings({
+        model: survey
+    });
 });
