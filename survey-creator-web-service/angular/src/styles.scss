@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+}
+.App {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    text-align: center;
+}
+#root {
+    min-height: 100vh;
+    background-color: #f3f3f3;
+}
+.survey-list {
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    padding-top: 0;
+}
+.App__header a,
+.survey-list a {
+    color: #161616;
+    text-decoration: none;
+}
+.App__header h1 {
+    margin: 0;
+    padding: 16px;
+    font-weight: 700;
+}
+.survey-list ul {
+    list-style-type: none;
+    box-sizing: border-box;
+    padding-left: 16px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.survey-list li {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    line-height: 24px;
+    font-size: 16px;
+    gap: 8px;
+}
+.survey-list li a {
+    font-size: 16px;
+}
+.add-btn {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 16px 48px;
+    background: white;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #19b394;
+    border: 2px solid transparent;
+    outline: none;
+}
+.add-btn:hover,
+.add-btn:focus {
+    border-color: #19b394;
+}
+
+.btn {
+    appearance: none;
+    border: none;
+    background: transparent;
+    padding: 8px 24px;
+    border-radius: 100px;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    outline: none;
+    cursor: pointer;
+}
+.btn--danger {
+    color: #e60a3e;
+}
+.edit-link {
+    margin-left: auto;
+    outline: none;
+}
+.btn--primary {
+    color: #19b394;
+}
+.btn--danger:hover,
+.btn--danger:focus {
+    background-color: rgba(230, 10, 62, 0.1);
+}
+.btn--primary:hover,
+.btn--primary:focus {
+    background-color: rgba(25, 179, 148, 0.1);
+}
+.back-btn {
+    margin-bottom: 8px;
+}

@@ -1,0 +1,14 @@
+<div class="survey-list">
+    <ul *ngFor="let item of items">
+        <li key={item.id}>
+            <a [routerLink]="['/editsurvey']" [queryParams]="{ id: item.id }">{{item.name}}</a>
+            <a class="edit-link" [routerLink]="['editsurvey']" [queryParams]="{ id: item.id }">
+              <button type="button" class="btn btn--primary">
+                Edit
+              </button>
+            </a>
+            <button type="button" class="btn btn--danger" (click)="removeSurvey(item.id)">Remove</button>
+          </li>
+    </ul>
+    <button class="add-btn" type="button" (click)="addNewSurvey()">Add New Survey</button>
+</div>
