@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Serializer } from "survey-core";
 import { SurveyCreatorModel } from "survey-creator-core";
-import { getSurveyJSON, getSurveyName, saveSurveyJSON, saveSurveyName } from "../WebdataService";
+import { getSurveyJSON, getSurveyName, saveSurveyJSON, saveSurveyName } from "../WebDataService";
 
 Serializer.findProperty("survey", "title").isRequired = true;
 

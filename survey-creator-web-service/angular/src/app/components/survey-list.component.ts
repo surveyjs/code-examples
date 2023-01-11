@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { createSurvey, deleteSurvey, getSurveyItems } from "../WebdataService";
+import { createSurvey, deleteSurvey, getSurveyItems } from "../WebDataService";
 
 interface SurveyListItem {
   name: string;
