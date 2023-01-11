@@ -121,6 +121,12 @@ jobs:
         npm install
         npm run build
 
+    - name: Build survey-creator-web-service/angular
+      run: |
+        cd survey-creator-web-service/angular
+        npm install
+        npm run build
+
   build-react:
     runs-on: ubuntu-latest
 
@@ -179,6 +185,8 @@ jobs:
         npm install
         npm run build
 
-    
-    
-    
+    - name: Build survey-creator-web-service/react
+      run: |
+        cd survey-creator-web-service/react
+        npm install
+        npm run build
