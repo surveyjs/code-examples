@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Model, StylesManager } from "survey-core";
-
-StylesManager.applyTheme("defaultV2");
+import { Model } from "survey-core";
 
 const surveyJson = {
   pages: [{

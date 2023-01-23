@@ -12,10 +12,8 @@
 
 <script>
 import 'survey-core/defaultV2.min.css';
-import { StylesManager, Model } from 'survey-core';
+import { Model } from 'survey-core';
 import { Survey } from 'survey-vue-ui';
-
-StylesManager.applyTheme("defaultV2");
 
 const surveyJson = {
   pages: [{

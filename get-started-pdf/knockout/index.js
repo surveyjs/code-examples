@@ -1,5 +1,3 @@
-Survey.StylesManager.applyTheme("defaultV2");
-
 const surveyJson = {
     elements: [{
         name: "satisfaction-score",

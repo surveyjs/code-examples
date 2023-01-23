@@ -1,9 +1,5 @@
 // const SURVEY_ID = 1;
 
-Survey
-    .StylesManager
-    .applyTheme("defaultV2");
-
 const surveyJson = {
     elements: [{
         name: "FirstName",

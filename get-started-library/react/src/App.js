@@ -4,12 +4,10 @@ import { useCallback } from 'react';
 import 'survey-core/defaultV2.min.css';
 // Modern theme
 // import 'survey-core/modern.min.css';
-import { StylesManager, Model } from 'survey-core';
+import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 
 // const SURVEY_ID = 1;
-
-StylesManager.applyTheme("defaultV2");
 
 const surveyJson = {
   elements: [{

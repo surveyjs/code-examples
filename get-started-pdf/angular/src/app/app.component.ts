@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Model, StylesManager } from "survey-core";
+import { Model } from "survey-core";
 import { SurveyPDF, IDocOptions } from "survey-pdf";
-
-StylesManager.applyTheme("defaultV2");
 
 const surveyJson = {
   elements: [{

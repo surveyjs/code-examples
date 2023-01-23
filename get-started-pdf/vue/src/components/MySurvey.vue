@@ -6,11 +6,9 @@
 
 <script>
 import 'survey-core/defaultV2.min.css';
-import { StylesManager, Model } from 'survey-core';
+import { Model } from 'survey-core';
 import { Survey } from 'survey-vue-ui';
 import { SurveyPDF } from 'survey-pdf';
-
-StylesManager.applyTheme("defaultV2");
 
 const surveyJson = {
   elements: [{

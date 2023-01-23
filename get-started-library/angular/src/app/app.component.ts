@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Model, StylesManager } from "survey-core";
+import { Model } from "survey-core";
 
 // const SURVEY_ID = 1;
-
-StylesManager.applyTheme("defaultV2");
 
 const surveyJson = {
   elements: [{
