@@ -38,7 +38,7 @@ export function registerColorPicker() {
 // Specify display names for the question type and its properties 
 const locale = localization.getLocale("");
 locale.qt[CUSTOM_TYPE] = "Color Picker";
-locale.pe.colorPickerType = "Color Picker type";
+locale.pe.colorPickerType = "Color picker type";
 locale.pe.disableAlpha = "Disable alpha channel";
 
 // Register an SVG icon for the question type
@@ -138,6 +138,9 @@ PropertyGridEditorCollection.register({
     return prop.type === "color";
   },
   getJSON: function () {
-    return { type: CUSTOM_TYPE };
+    return {
+      type: CUSTOM_TYPE,
+      colorPickerType: "Compact"
+    };
   }
 });
