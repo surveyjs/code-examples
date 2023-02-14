@@ -2,7 +2,8 @@ import { createElement } from "react";
 import { SliderPicker, SketchPicker, CompactPicker } from "react-color";
 import { ElementFactory, Question, Serializer, SvgRegistry } from "survey-core";
 import { SurveyQuestionElementBase, ReactQuestionFactory } from "survey-react-ui";
-import { localization, PropertyGridEditorCollection } from "survey-creator-react";
+import { PropertyGridEditorCollection } from "survey-creator-react";
+import { localization } from "survey-creator-core";
 import { ReactComponent as ColorPickerIcon } from "../color-picker.svg";
 import ReactDOMServer from "react-dom/server";
 

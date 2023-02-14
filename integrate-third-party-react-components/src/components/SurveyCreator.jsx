@@ -7,9 +7,19 @@ import "survey-creator-core/survey-creator-core.css";
 registerColorPicker();
 addBackgroundColorProperty();
 
+const surveyJson = {
+  elements: [{
+    type: "color-picker",
+    name: "question1",
+    title: "Pick a color",
+    colorPickerType: "Sketch"
+  }]
+};
+
 export function SurveyCreatorWidget () {
   const creator = new SurveyCreator();
   creator.onActiveTabChanged.add(handleActiveTabChange);
+  creator.JSON = surveyJson;
   return <SurveyCreatorComponent creator={creator} />;
 }
 

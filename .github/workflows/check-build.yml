@@ -127,6 +127,12 @@ jobs:
         npm install
         npm run build
 
+    - name: Build integrate-third-party-angular-components
+      run: |
+        cd integrate-third-party-angular-components
+        npm install
+        npm run build
+
   build-react:
     runs-on: ubuntu-latest
 
