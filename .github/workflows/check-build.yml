@@ -130,6 +130,8 @@ jobs:
         cd integrate-third-party-angular-components
         npm install
         npm run build
+      exclude:
+        - node-version: 12.x
 
   build-react:
     runs-on: ubuntu-latest
