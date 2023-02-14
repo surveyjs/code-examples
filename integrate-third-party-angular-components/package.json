@@ -21,7 +21,10 @@
     "@angular/router": "^14.1.0",
     "ngx-color": "^8.0.3",
     "rxjs": "~7.5.0",
+    "survey-angular-ui": "latest",
+    "survey-core": "latest",
     "survey-creator-angular": "latest",
+    "survey-creator-core": "latest",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
