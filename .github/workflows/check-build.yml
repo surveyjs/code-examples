@@ -1,9 +1,7 @@
 
 name: Check Build in NodeJS Different Versions
 
-on:
-  push:
-    branches: [ "main" ]
+on: [push, pull_request]
 
 env:
   NODE_OPTIONS: "--max-old-space-size=8192"
