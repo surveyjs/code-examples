@@ -1,21 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { SurveyComponent } from './components/survey.component';
-import { CreatorComponent } from './components/creator.component';
+import { SurveyCreatorComponent } from './components/survey-creator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreatorComponent,
-    SurveyComponent
+    SurveyCreatorComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
