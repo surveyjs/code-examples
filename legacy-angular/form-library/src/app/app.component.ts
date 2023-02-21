@@ -8,7 +8,6 @@ const json = require("../assets/survey.json");
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
-  title = 'angular8';
   ngAfterViewInit() {
     SurveyNG.render("surveyElement", {
       model: new Model(json)
