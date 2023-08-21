@@ -7,7 +7,7 @@ This example is used in the following help topic: [Create a Quiz](https://survey
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Compile and hot-reload for development
 ```
 npm run dev
 ```

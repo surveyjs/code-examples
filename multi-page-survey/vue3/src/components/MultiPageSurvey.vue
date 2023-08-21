@@ -1,20 +1,9 @@
-<template>
-  <div>
-    <SurveyComponent :model="survey" />
-    
-    <div v-if="isSurveyCompleted">
-      <p>Result JSON:</p>
-      <code style="white-space: pre;">{{ surveyResults }}</code>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import 'survey-core/defaultV2.min.css';
 import { Model } from 'survey-core';
 import { ref } from 'vue'; 
 
-const surveyJson =   {
+const surveyJson = {
   pages: [{
     elements: [{
       type: "html",
@@ -75,11 +64,22 @@ const surveyJson =   {
 
 const survey = new Model(surveyJson);
 
-const isSurveyCompleted = ref(false);
-const surveyResults = ref('');
+const isSurveyCompleted = ref<boolean>(false);
+const surveyResults = ref<string>("");
 
-survey.onComplete.add((sender, options) => {
+survey.onComplete.add(sender => {
   surveyResults.value = JSON.stringify(sender.data, null, 3);
   isSurveyCompleted.value = true;
 });
 </script>
+
+<template>
+  <div>
+    <SurveyComponent :model="survey" />
+    
+    <div v-if="isSurveyCompleted">
+      <p>Result JSON:</p>
+      <code style="white-space: pre;">{{ surveyResults }}</code>
+    </div>
+  </div>
+</template>

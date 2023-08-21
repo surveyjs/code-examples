@@ -38,10 +38,7 @@ Open the `angular.json` file and reference a style sheet that implements the req
             // ...
             "styles": [
               "src/styles.css",
-              // Default V2 theme
-              "node_modules/survey-angular/defaultV2.min.css",
-              // Modern theme
-              // "node_modules/survey-angular/modern.min.css"
+              "node_modules/survey-angular/defaultV2.min.css"
             ],
             // ...
           }

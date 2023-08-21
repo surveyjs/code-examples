@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import MultipageSurvey from './components/MultipageSurvey.vue'
+import MultiPageSurvey from './components/MultiPageSurvey.vue'
 </script>
 
 <template>
-  <MultipageSurvey />
+  <MultiPageSurvey />
 </template>
 
