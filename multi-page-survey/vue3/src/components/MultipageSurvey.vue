@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import 'survey-core/defaultV2.min.css';
 import { Model } from 'survey-core';
-import { ref } from 'vue'; // Import the ref function
+import { ref } from 'vue'; 
 
 const surveyJson =  {
     pages: [{
@@ -58,12 +58,10 @@ const surveyJson =  {
 
 const survey = new Model(surveyJson);
 
-// Define additional variables
 const isSurveyCompleted = ref(false);
 const surveyResults = ref('');
 
 survey.onComplete.add((sender, options) => {
-  // Update the variables when the survey is completed
   surveyResults.value = JSON.stringify(sender.data, null, 3);
   isSurveyCompleted.value = true;
 });
