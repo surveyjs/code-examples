@@ -24,6 +24,14 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+  "cssnano": {
+    "preset": [
+      "default",
+      {
+        "calc": false
+      }
+    ]
+  },
   "browserslist": [
     ">0.2%",
     "not dead",

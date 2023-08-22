@@ -1,4 +1,4 @@
-# Create a Quiz (SurveyJS for Vue 2)
+# Create a Quiz (SurveyJS for Vue 3)
 
 This example is used in the following help topic: [Create a Quiz](https://surveyjs.io/Documentation/Library?id=design-survey-create-a-quiz).
 
@@ -7,7 +7,7 @@ This example is used in the following help topic: [Create a Quiz](https://survey
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Compile and hot-reload for development
 ```
-npm run serve
+npm run dev
 ```
