@@ -4,13 +4,13 @@ This example demonstrates how to generate a PDF form using the [SurveyJS](https:
 
 ## Run the project
 
-1. Install npm packages.\
+1. Install npm packages.
  
     ```
     npm install
     ```
 
-1. Execute the `index.js` file to generate a PDF form as a `survey-result.pdf` file. You will find this file in the project folder.\
+1. Execute the `index.js` file to generate a PDF form as a `survey-result.pdf` file. You will find this file in the project folder.
 
     ```
     node index.js
