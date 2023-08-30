@@ -1,38 +1,43 @@
-# Create PDF Surveys on a Server-Side Node.js framework
+# Create PDF Forms in Node.js
 
-This example demonstrates how to export a survey to PDF on a server-side Node.js framework. 
+This example demonstrates how to generate a PDF form using the [SurveyJS](https://surveyjs.io/) form builder libraries and the Node.js server-side framework. 
 
-### Run the Demo
-To run the demo, do the following.
+## Run the project
 
-* Install NPM packages. 
- Open a terminal and run the following command to install NPM packages.
- ```
- npm install
- ```
- * Run the `index.js` file to export a survey.
- ```
- node index.js
- ```
- * The exported PDF will appear within the application folder. Review the `survey-result.pdf` file.
+1. Install npm packages.\
+ 
+    ```
+    npm install
+    ```
 
-### How to Export Surveys
+1. Execute the `index.js` file to generate a PDF form as a `survey-result.pdf` file. You will find this file in the project folder.\
 
-To export a survey on Node.js environment, follow these steps:
+    ```
+    node index.js
+    ```
 
-* Install the [survey-pdf](https://www.npmjs.com/package/survey-pdf) package.
-* Create a [SurveyPDF](https://surveyjs.io/pdf-generator/documentation/api-reference/surveypdf) instance. Its constructor accepts two parameters: a survey JSON schema and export properties. 
+## How to Generate PDF Forms
 
-* Define question answers.
-To specify question answers, define the `data` property of a SurveyJS PDF object. If a survey contains default values and you wish to preserve them, call the `mergeData` function. 
-> For more information on how to programmatically define question values, refer to the following help topic: [Populate Form Fields](https://surveyjs.io/form-library/documentation/design-survey/pre-populate-form-fields).
+To generate a PDF form in a Node.js environment, follow these steps:
 
-* To save a PDF document with the exported survey, call the [save(fileName)](https://surveyjs.io/pdf-generator/documentation/api-reference/surveypdf#save) method on the SurveyPDF instance.
+1. Install the [`survey-pdf`](https://www.npmjs.com/package/survey-pdf) npm package.
 
-### Limitations of Exporting Surveys on Node.js
+2. Create a [`SurveyPDF`](https://surveyjs.io/pdf-generator/documentation/api-reference/surveypdf) instance. Its constructor accepts two parameters: a survey JSON schema and a [PDF document configuration](https://surveyjs.io/pdf-generator/documentation/api-reference/idocoptions). 
 
-When exporting surveys on Node.js environment, take note that the following question types are not supported:
+3. Specify the `data` property of a `SurveyPDF` instance to define question answers. If a survey contains default values, and you wish to preserve them, call the `mergeData(newObj)` method instead. For more information on how to programmatically define question answers, refer to the following help topic: [Populate Form Fields](https://surveyjs.io/form-library/documentation/design-survey/pre-populate-form-fields).
+
+4. Call the [save(fileName)](https://surveyjs.io/pdf-generator/documentation/api-reference/surveypdf#save) method on the `SurveyPDF` instance to save a PDF form.
+
+## Limitations
+
+The following question types are not supported when you generate PDF forms in Node.js:
+
 * [HTML](https://surveyjs.io/form-library/documentation/api-reference/add-custom-html-to-survey)
-* [Image](https://surveyjs.io/form-library/documentation/api-reference/add-image-to-survey) 
+* [Image](https://surveyjs.io/form-library/documentation/api-reference/add-image-to-survey)
 * [Image Picker](https://surveyjs.io/form-library/documentation/api-reference/add-image-to-survey)
 * [Signature Pad](https://surveyjs.io/form-library/documentation/api-reference/signature-pad-model)
+
+## SurveyJS PDF Generator Resources
+
+- [Documentation](https://surveyjs.io/pdf-generator/documentation/overview)
+- [Live Examples](https://surveyjs.io/pdf-generator/examples/)
