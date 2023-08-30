@@ -2,7 +2,7 @@ const SurveyPDF = require("survey-pdf");
 
 const surveyPDF = new SurveyPDF.SurveyPDF({
   "title": "COVID-19 Screening Form",
-  "description": "All fields with an asterisk (*) are required fields and must be filled out in order to process the information in strict confidentiality.",
+  "description": "All fields with an asterisk (*) are required fields and must be filled out in order to process information in strict confidentiality.",
   "questionErrorLocation": "bottom",
   "pages": [
     {

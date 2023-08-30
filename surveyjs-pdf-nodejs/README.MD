@@ -24,7 +24,8 @@ To generate a PDF form in a Node.js environment, follow these steps:
 
 2. Create a [`SurveyPDF`](https://surveyjs.io/pdf-generator/documentation/api-reference/surveypdf) instance. Its constructor accepts two parameters: a survey JSON schema and a [PDF document configuration](https://surveyjs.io/pdf-generator/documentation/api-reference/idocoptions). 
 
-3. Specify the `data` property of a `SurveyPDF` instance to define question answers. If a survey contains default values, and you wish to preserve them, call the `mergeData(newObj)` method instead. For more information on how to programmatically define question answers, refer to the following help topic: [Populate Form Fields](https://surveyjs.io/form-library/documentation/design-survey/pre-populate-form-fields).
+3. Specify the `data` property of a `SurveyPDF` instance to define question answers. If a survey contains default values and you wish to preserve them, call the `mergeData(newObj)` method instead. For more information on how to programmatically define question answers, refer to the following help topic: [Populate Form Fields](https://surveyjs.io/form-library/documentation/design-survey/pre-populate-form-fields).
+
 
 4. Call the [save(fileName)](https://surveyjs.io/pdf-generator/documentation/api-reference/surveypdf#save) method on the `SurveyPDF` instance to save a PDF form.
 
