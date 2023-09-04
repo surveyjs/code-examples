@@ -2,13 +2,14 @@
   "name": "survey-pdf-node",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.js",  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jsdom": "^22.1.0",
     "survey-pdf": "^1.9.104"
   }
 }
