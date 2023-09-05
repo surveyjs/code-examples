@@ -22,7 +22,7 @@ To generate a PDF form in a Node.js environment, follow these steps:
 
 1. Install the [`survey-pdf`](https://www.npmjs.com/package/survey-pdf) npm package.
 
-2. (Optional) If your survey contains HTML and Signature Pad questions, install the [`jsdom`](https://www.npmjs.com/package/jsdom) package to create a simulated web environment in a Node.js application. Create a JSDOM instance and reference the `window` and `document` objects from the JSDOM instance in a global scope.
+2. (Optional) If your survey contains [HTML](https://surveyjs.io/form-library/documentation/api-reference/add-custom-html-to-survey) and [Signature Pad](https://surveyjs.io/form-library/documentation/api-reference/signature-pad-model) questions, install the [`jsdom`](https://www.npmjs.com/package/jsdom) package to create a simulated web environment in a Node.js application. Create a JSDOM instance and reference the `window` and `document` objects from the JSDOM instance in a global scope.
 
 3. Create a [`SurveyPDF`](https://surveyjs.io/pdf-generator/documentation/api-reference/surveypdf) instance. Its constructor accepts two parameters: a survey JSON schema and a [PDF document configuration](https://surveyjs.io/pdf-generator/documentation/api-reference/idocoptions). 
 
