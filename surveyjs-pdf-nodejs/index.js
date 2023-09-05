@@ -217,7 +217,6 @@ const json = {
  }
 const surveyPDF = new SurveyPDF.SurveyPDF(json, { htmlRenderAs: "standard" });
 
-
 surveyPDF.data = {
   "first-name": "Jane",
   "last-name": "Doe",
