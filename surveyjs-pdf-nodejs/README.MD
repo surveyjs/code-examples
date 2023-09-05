@@ -37,8 +37,8 @@ Take note of the following considerations when exporting PDF forms in Node.js:
 * Complex HTML is not supported
 In Node.js, [HTML](https://surveyjs.io/form-library/documentation/api-reference/add-custom-html-to-survey) questions are rendered in 'standard' [HTML render mode](https://surveyjs.io/pdf-generator/documentation/api-reference/idocoptions#htmlRenderAs) only. The `htmlRenderAs: 'image'` mode is not supported. HTML questions can render simple HTML markup. Complex HTML markup is not supported.
 
-* Images should be referenced as Base-64 encoded URLs.
-The `imageUrl` of [Image](https://surveyjs.io/form-library/documentation/api-reference/add-image-to-survey) and [Image Picker](https://surveyjs.io/form-library/documentation/api-reference/add-image-to-survey) questions should be set to Base64 encoded URLs. Links are not supported.
+* Images should be referenced as as data URIs (Base64-encoded images)
+Images embedded to a survey, such as a survey [logo](https://surveyjs.io/form-library/documentation/api-reference/survey-data-model#logo) or images from the [Image](https://surveyjs.io/form-library/documentation/api-reference/add-image-to-survey) and [Image Picker](https://surveyjs.io/form-library/documentation/api-reference/add-image-to-survey) questions, should be set to Base64 encoded URIs. Direct linking (URLs) are not supported.
 
 ## SurveyJS PDF Generator Resources
 
