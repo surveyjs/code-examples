@@ -28,12 +28,12 @@ const surveyJson = {
 
 const survey = new Survey.Model(surveyJson);
 
-const exportToPdfOptions = {
+const pdfDocOptions = {
     fontSize: 12
 };
 
 const savePdf = function (surveyData) {
-    const surveyPdf = new SurveyPDF.SurveyPDF(surveyJson, exportToPdfOptions);
+    const surveyPdf = new SurveyPDF.SurveyPDF(surveyJson, pdfDocOptions);
     surveyPdf.data = surveyData;
     surveyPdf.save();
 };

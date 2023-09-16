@@ -30,12 +30,12 @@ const surveyJson = {
   completedHtml: "Thank you for your feedback!",
 };
 
-const exportToPdfOptions: IDocOptions = {
+const pdfDocOptions: IDocOptions = {
   fontSize: 12
 };
 
 const savePdf = function (surveyData: any) {
-  const surveyPdf = new SurveyPDF(surveyJson, exportToPdfOptions);
+  const surveyPdf = new SurveyPDF(surveyJson, pdfDocOptions);
   surveyPdf.data = surveyData;
   surveyPdf.save();
 };
