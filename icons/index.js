@@ -1,4 +1,11 @@
-Survey.SvgRegistry.renderIcons();
+function renderIcons() {
+  let iconsDiv = document.createElement("div");
+  iconsDiv.id = "sv-icon-holder-global-container";
+  iconsDiv.innerHTML = "<svg>" + Survey.SvgRegistry.iconsRenderedHtml() + "</svg>";
+  iconsDiv.style.display = "none";
+  document.head.appendChild(iconsDiv);
+}
+renderIcons();
 
 Object.keys(Survey.SvgRegistry.icons).map(name => {
   const element = document.createElement("div");
