@@ -7,13 +7,13 @@ env:
   NODE_OPTIONS: "--max-old-space-size=8192"
 
 jobs:
-  build-vue:
+  build-vue2:
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
       matrix:
-        node-version: [12.x, 14.x, 16.x, 18.x]
+        node-version: [12.x, 14.x, 16.x]
     
     steps:
     - uses: actions/checkout@v3
@@ -22,10 +22,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    
-    - name: Override NODE options for the most recent version
-      if: matrix.node-version == '18.x'
-      run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
     
     - name: Build get-started-library/vue
       run: |
@@ -62,8 +58,52 @@ jobs:
         cd quiz/vue
         npm install
         npm run build
+
+  build-vue3:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [18.x]
     
-    - name: Reset overrided NODE options
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    
+    - name: Override NODE options for the most recent version
+      if: matrix.node-version == '18.x'
+      run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
+    
+    - name: Build get-started-library/vue3
+      run: |
+        cd get-started-library/vue3
+        npm install
+        npm run build
+
+    - name: Build get-started-creator/vue3
+      run: |
+        cd get-started-creator/vue3
+        npm install
+        npm run build
+
+    - name: Build multi-page-survey/vue3
+      run: |
+        cd multi-page-survey/vue3
+        npm install
+        npm run build
+
+    - name: Build quiz/vue3
+      run: |
+        cd quiz/vue3
+        npm install
+        npm run build
+    
+    - name: Reset overridden NODE options
       if: matrix.node-version == '18.x'
       run: echo "NODE_OPTIONS=" >> $GITHUB_ENV
 
