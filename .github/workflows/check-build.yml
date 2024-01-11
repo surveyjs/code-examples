@@ -102,6 +102,12 @@ jobs:
         cd quiz/vue3
         npm install
         npm run build
+
+    - name: Build integrate-third-party-vue-components
+      run: |
+        cd integrate-third-party-vue-components
+        npm install
+        npm run build
     
     - name: Reset overridden NODE options
       if: matrix.node-version == '18.x'

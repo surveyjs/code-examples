@@ -11,7 +11,7 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
-    "survey-creator-vue": "^1.9.121",
+    "survey-creator-vue": "latest",
     "vue": "^3.3.10"
   },
   "devDependencies": {
