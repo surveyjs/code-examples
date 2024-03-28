@@ -1,6 +1,6 @@
-# Get Started with SurveyJS Analytics - React
+# Get Started with SurveyJS Dashboard for React
 
-This example is used in the following help topic: [Add Survey Analytics to a React Application](https://surveyjs.io/Documentation/Analytics?id=get-started-react). It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This example is used in the following help topic: [Add SurveyJS Dashboard to a React Application](https://surveyjs.io/dashboard/documentation/get-started-react). It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Development server
 

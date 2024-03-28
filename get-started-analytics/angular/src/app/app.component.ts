@@ -53,7 +53,7 @@ const vizPanelOptions = {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
-  title = 'SurveyJS Analytics for Angular';
+  title = 'SurveyJS Dashboard for Angular';
   @ViewChild("surveyVizPanel") elem: ElementRef | undefined;
 
   ngAfterViewInit(): void {

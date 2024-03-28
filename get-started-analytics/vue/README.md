@@ -1,6 +1,6 @@
-# Get Started with SurveyJS Analytics - Vue
+# Get Started with SurveyJS Dashboard for Vue
 
-This example is used in the following help topic: [Add Survey Analytics to a Vue Application](https://surveyjs.io/Documentation/Analytics?id=get-started-vue).
+This example is used in the following help topic: [Add SurveyJS Dashboard to a Vue Application](https://surveyjs.io/dashboard/documentation/get-started-vue).
 
 ## Project setup
 ```
