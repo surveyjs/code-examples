@@ -40,11 +40,12 @@ function generateData() {
     return data;
 }
 
-const surveyAnalyticsTabulator = new SurveyAnalyticsTabulator.Tabulator(
+const surveyDataTable = new SurveyAnalyticsTabulator.Tabulator(
     survey,
     generateData()
 );
+surveyDataTable.showHeader = false;
 
 document.addEventListener("DOMContentLoaded", function() {
-    surveyAnalyticsTabulator.render(document.getElementById("surveyResultsTable"));
+    surveyDataTable.render(document.getElementById("surveyDataTable"));
 });
