@@ -40,13 +40,13 @@ function generateData() {
     return data;
 }
 
+Survey.slk(
+    "OWQyYzczMzktMWI5NS00OTMxLWE0YjgtMDRhMGY0NzZhOWZhJmRvbWFpbnM6c3VydmV5anMuaW8sc3VydmV5anN0ZXN0LmF6dXJld2Vic2l0ZXMubmV0OzE9MjIyNC0wMi0wOCwyPTIyMjQtMDItMDgsND0yMjI0LTAyLTA4"
+);
+
 const surveyDataTable = new SurveyAnalyticsTabulator.Tabulator(
     survey,
     generateData()
-);
-
-Survey.slk(
-	"OWQyYzczMzktMWI5NS00OTMxLWE0YjgtMDRhMGY0NzZhOWZhJmRvbWFpbnM6c3VydmV5anMuaW87MT0yMjI0LTAyLTA4LDI9MjIyNC0wMi0wOCw0PTIyMjQtMDItMDg="
 );
 
 document.addEventListener("DOMContentLoaded", function() {
