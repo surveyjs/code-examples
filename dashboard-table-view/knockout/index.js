@@ -44,7 +44,10 @@ const surveyDataTable = new SurveyAnalyticsTabulator.Tabulator(
     survey,
     generateData()
 );
-surveyDataTable.showHeader = false;
+
+Survey.slk(
+	"OWQyYzczMzktMWI5NS00OTMxLWE0YjgtMDRhMGY0NzZhOWZhJmRvbWFpbnM6c3VydmV5anMuaW87MT0yMjI0LTAyLTA4LDI9MjIyNC0wMi0wOCw0PTIyMjQtMDItMDg="
+);
 
 document.addEventListener("DOMContentLoaded", function() {
     surveyDataTable.render(document.getElementById("surveyDataTable"));
