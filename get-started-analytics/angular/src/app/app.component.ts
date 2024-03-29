@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { Model } from 'survey-core';
 import { VisualizationPanel } from 'survey-analytics';
 
@@ -53,8 +53,6 @@ const vizPanelOptions = {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
-  @ViewChild("surveyVizPanel") elem?: ElementRef;
-
   ngAfterViewInit(): void {
     const survey = new Model(surveyJson);
     const vizPanel = new VisualizationPanel(
@@ -62,6 +60,6 @@ export class AppComponent implements AfterViewInit {
       surveyResults,
       vizPanelOptions
     );
-    vizPanel.render(this.elem?.nativeElement);
+    vizPanel.render("surveyVizPanel");
   }
 }

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { Model } from 'survey-core';
 import { Tabulator } from 'survey-analytics/survey.analytics.tabulator';
 
@@ -48,14 +48,12 @@ function generateData() {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
-  @ViewChild("surveyDataTable") elem?: ElementRef;
-
   ngAfterViewInit(): void {
     const survey = new Model(surveyJson);
     const surveyDataTable = new Tabulator(
       survey,
       generateData()
     );
-    surveyDataTable.render(this.elem?.nativeElement);
+    surveyDataTable.render("surveyDataTable");
   }
 }

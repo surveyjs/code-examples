@@ -53,7 +53,7 @@ const vizPanelOptions = {
 }
 
 export default {
-  name: 'survey-analytics',
+  name: 'survey-dashboard',
   mounted() {
     const survey = new Model(surveyJson);
     const vizPanel = new VisualizationPanel(

@@ -7,8 +7,6 @@ import 'tabulator-tables/dist/css/tabulator.min.css';
 import 'survey-analytics/survey.analytics.tabulator.min.css';
 import { Model } from 'survey-core';
 import { Tabulator } from 'survey-analytics/survey.analytics.tabulator';
-import 'jspdf';
-import 'xlsx';
 
 const surveyJson = {
   elements: [{
@@ -58,7 +56,7 @@ export default {
       survey,
       generateData()
     );
-    surveyDataTable.render(document.getElementById("surveyDataTable"));
+    surveyDataTable.render("surveyDataTable");
   }
 }
 </script>
