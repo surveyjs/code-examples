@@ -64,7 +64,6 @@ export default function App() {
       surveyResults,
       vizPanelOptions
     );
-    vizPanel.showHeader = false;
     setVizPanel(vizPanel);
   }
 

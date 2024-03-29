@@ -32,12 +32,12 @@ function randomIntFromInterval(min: number, max: number): number {
 function generateData() {
   const data = [];
   for (let index = 0; index < 100; index++) {
-      const satisfactionScore = randomIntFromInterval(1, 5);
-      const npsScore = satisfactionScore > 3 ? randomIntFromInterval(7, 10) : randomIntFromInterval(1, 6);
-      data.push({
-          "satisfaction-score": satisfactionScore,
-          "nps-score": npsScore
-      });
+    const satisfactionScore = randomIntFromInterval(1, 5);
+    const npsScore = satisfactionScore > 3 ? randomIntFromInterval(7, 10) : randomIntFromInterval(1, 6);
+    data.push({
+      "satisfaction-score": satisfactionScore,
+      "nps-score": npsScore
+    });
   }
   return data;
 }

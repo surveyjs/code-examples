@@ -53,8 +53,7 @@ const vizPanelOptions = {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
-  title = 'SurveyJS Dashboard for Angular';
-  @ViewChild("surveyVizPanel") elem: ElementRef | undefined;
+  @ViewChild("surveyVizPanel") elem?: ElementRef;
 
   ngAfterViewInit(): void {
     const survey = new Model(surveyJson);
@@ -63,7 +62,6 @@ export class AppComponent implements AfterViewInit {
       surveyResults,
       vizPanelOptions
     );
-    vizPanel.showHeader = false;
     vizPanel.render(this.elem?.nativeElement);
   }
 }

@@ -61,7 +61,6 @@ export default {
       surveyResults,
       vizPanelOptions
     );
-    vizPanel.showHeader = false;
     vizPanel.render(document.getElementById("surveyVizPanel"));
   }
 }

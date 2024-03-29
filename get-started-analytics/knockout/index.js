@@ -50,7 +50,6 @@ const vizPanel = new SurveyAnalytics.VisualizationPanel(
     surveyResults,
     vizPanelOptions
 );
-vizPanel.showHeader = false;
 
 document.addEventListener("DOMContentLoaded", function() {
     vizPanel.render(document.getElementById("surveyVizPanel"));
