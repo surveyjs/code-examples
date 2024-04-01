@@ -68,7 +68,7 @@ export default function App() {
   }
 
   useEffect(() => {
-    vizPanel.render(document.getElementById("surveyVizPanel"));
+    vizPanel.render("surveyVizPanel");
     return () => {
       document.getElementById("surveyVizPanel").innerHTML = "";
     }

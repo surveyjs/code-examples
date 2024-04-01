@@ -67,7 +67,7 @@ export default function App() {
   }
 
   useEffect(() => {
-    surveyDataTable.render(document.getElementById("surveyDataTable"));
+    surveyDataTable.render("surveyDataTable");
     return () => {
       document.getElementById("surveyDataTable").innerHTML = "";
     }
