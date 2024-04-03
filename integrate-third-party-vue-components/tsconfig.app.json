@@ -8,6 +8,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "typeRoots": [
+      "./typings",
+      "./node_modules/@types/"
+    ]
   }
 }
