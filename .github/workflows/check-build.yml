@@ -59,6 +59,12 @@ jobs:
         npm install
         npm run build
 
+    - name: Build dashboard-table-view/vue
+      run: |
+        cd dashboard-table-view/vue
+        npm install
+        npm run build
+
   build-vue3:
     runs-on: ubuntu-latest
 
@@ -171,6 +177,12 @@ jobs:
         npm install
         npm run build
 
+    - name: Build dashboard-table-view/angular
+      run: |
+        cd dashboard-table-view/angular
+        npm install
+        npm run build
+
     - name: Build integrate-third-party-angular-components
       run: |
         cd integrate-third-party-angular-components
@@ -239,5 +251,11 @@ jobs:
     - name: Build survey-creator-web-service/react
       run: |
         cd survey-creator-web-service/react
+        npm install
+        npm run build
+
+    - name: Build dashboard-table-view/react
+      run: |
+        cd dashboard-table-view/react
         npm install
         npm run build

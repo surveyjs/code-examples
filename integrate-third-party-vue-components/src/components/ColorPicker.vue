@@ -12,7 +12,7 @@ export class QuestionColorPickerModel extends Question {
   get colorPickerType(): string {
     return this.getPropertyValue("colorPickerType");
   }
-  set colorPickerType(val): string {
+  set colorPickerType(val) {
     this.setPropertyValue("colorPickerType", val);
   }
   get isSlider(): boolean {
@@ -28,7 +28,7 @@ export class QuestionColorPickerModel extends Question {
   get disableAlpha(): boolean {
     return this.getPropertyValue("disableAlpha");
   }
-  set disableAlpha(val): boolean {
+  set disableAlpha(val) {
     this.setPropertyValue("disableAlpha", val);
   }
 }

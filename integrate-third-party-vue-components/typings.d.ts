@@ -1,0 +1,1 @@
+declare module '@lk77/vue3-color'
