@@ -7,7 +7,7 @@ env:
   NODE_OPTIONS: "--max-old-space-size=8192"
 
 jobs:
-  build-vue2:
+  build-vue2-node12-node14:
     runs-on: ubuntu-latest
 
     strategy:
@@ -72,7 +72,7 @@ jobs:
         npm install survey-core
         npm run build
 
-  build-vue2:
+  build-vue2-node16:
     runs-on: ubuntu-latest
 
     strategy:
@@ -184,7 +184,7 @@ jobs:
       if: matrix.node-version == '18.x'
       run: echo "NODE_OPTIONS=" >> $GITHUB_ENV
 
-  build-angular:
+  build-angular-node12-node14:
     runs-on: ubuntu-latest
 
     strategy:
@@ -264,7 +264,7 @@ jobs:
         npm run build
       if: ${{ matrix.node-version != '12.x' }}
 
-  build-angular:
+  build-angular-node16-node18:
     runs-on: ubuntu-latest
 
     strategy:
@@ -335,7 +335,7 @@ jobs:
         npm run build
       if: ${{ matrix.node-version != '12.x' }}
 
-  build-react:
+  build-react-node12-node14:
     runs-on: ubuntu-latest
 
     strategy:
@@ -414,7 +414,7 @@ jobs:
         npm install survey-core
         npm run build
   
-  build-react:
+  build-react-node16-node18:
     runs-on: ubuntu-latest
 
     strategy:
