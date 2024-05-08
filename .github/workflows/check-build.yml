@@ -13,7 +13,72 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [12.x, 14.x]
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    
+    - name: Build get-started-library/vue
+      run: |
+        cd get-started-library/vue
+        npm install
+        npm install survey-core
+        npm run build
+
+    - name: Build get-started-creator/vue
+      run: |
+        cd get-started-creator/vue
+        npm install
+        npm install survey-core survey-knockout-ui survey-creator-core 
+        npm run build
+
+    - name: Build get-started-analytics/vue
+      run: |
+        cd get-started-analytics/vue
+        npm install
+        npm install survey-core
+        npm run build
+
+    - name: Build get-started-pdf/vue
+      run: |
+        cd get-started-pdf/vue
+        npm install
+        npm install survey-core
+        npm run build
+
+    - name: Build multi-page-survey/vue
+      run: |
+        cd multi-page-survey/vue
+        npm install
+        npm install survey-core
+        npm run build
+
+    - name: Build quiz/vue
+      run: |
+        cd quiz/vue
+        npm install
+        npm install survey-core
+        npm run build
+
+    - name: Build dashboard-table-view/vue
+      run: |
+        cd dashboard-table-view/vue
+        npm install
+        npm install survey-core
+        npm run build
+
+  build-vue2:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [16.x]
     
     steps:
     - uses: actions/checkout@v3
@@ -125,7 +190,87 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [12.x, 14.x, 16.x, 18.x]
+        node-version: [12.x, 14.x]
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Build get-started-library/angular
+      run: |
+        cd get-started-library/angular
+        npm install
+        npm install survey-core
+        npm run build
+
+    - name: Build get-started-creator/angular
+      run: |
+        cd get-started-creator/angular
+        npm install
+        npm install survey-core survey-angular-ui survey-creator-core
+        npm run build
+
+    - name: Build get-started-analytics/angular
+      run: |
+        cd get-started-analytics/angular
+        npm install
+        npm install survey-core
+        npm run build
+
+    - name: Build get-started-pdf/angular
+      run: |
+        cd get-started-pdf/angular
+        npm install
+        npm install survey-core
+        npm run build
+
+    - name: Build multi-page-survey/angular
+      run: |
+        cd multi-page-survey/angular
+        npm install
+        npm install survey-core
+        npm run build
+
+    - name: Build quiz/angular
+      run: |
+        cd quiz/angular
+        npm install
+        npm install survey-core
+        npm run build
+
+    - name: Build survey-creator-web-service/angular
+      run: |
+        cd survey-creator-web-service/angular
+        npm install
+        npm install survey-core survey-angular-ui survey-creator-core
+        npm run build
+
+    - name: Build dashboard-table-view/angular
+      run: |
+        cd dashboard-table-view/angular
+        npm install
+        npm install survey-core
+        npm run build
+
+    - name: Build integrate-third-party-angular-components
+      run: |
+        cd integrate-third-party-angular-components
+        npm install
+        npm install survey-core survey-angular-ui survey-creator-core
+        npm run build
+      if: ${{ matrix.node-version != '12.x' }}
+
+  build-angular:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [16.x, 18.x]
     
     steps:
     - uses: actions/checkout@v3
@@ -196,7 +341,86 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [12.x, 14.x, 16.x, 18.x]
+        node-version: [12.x, 14.x]
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Build get-started-library/react
+      run: |
+        cd get-started-library/react
+        npm install
+        npm install survey-core
+        npm run build
+
+    - name: Build get-started-creator/react
+      run: |
+        cd get-started-creator/react
+        npm install
+        npm install survey-core survey-react-ui survey-creator-core
+        npm run build
+
+    - name: Build get-started-analytics/react
+      run: |
+        cd get-started-analytics/react
+        npm install
+        npm install survey-core
+        npm run build
+
+    - name: Build get-started-pdf/react
+      run: |
+        cd get-started-pdf/react
+        npm install
+        npm install survey-core
+        npm run build
+
+    - name: Build integrate-third-party-react-components
+      run: |
+        cd integrate-third-party-react-components
+        npm install
+        npm install survey-core survey-react-ui survey-creator-core
+        npm run build
+
+    - name: Build multi-page-survey/react
+      run: |
+        cd multi-page-survey/react
+        npm install
+        npm install survey-core
+        npm run build
+
+    - name: Build quiz/react
+      run: |
+        cd quiz/react
+        npm install
+        npm install survey-core
+        npm run build
+
+    - name: Build survey-creator-web-service/react
+      run: |
+        cd survey-creator-web-service/react
+        npm install
+        npm install survey-core survey-react-ui survey-creator-core
+        npm run build
+
+    - name: Build dashboard-table-view/react
+      run: |
+        cd dashboard-table-view/react
+        npm install
+        npm install survey-core
+        npm run build
+  
+  build-react:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [16.x, 18.x]
     
     steps:
     - uses: actions/checkout@v3
