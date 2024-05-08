@@ -20,10 +20,7 @@
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
     "rxjs": "~7.5.0",
-    "survey-angular-ui": "^1.9.67",
-    "survey-core": "^1.9.67",
-    "survey-creator-angular": "^1.9.67",
-    "survey-creator-core": "^1.9.67",
+    "survey-creator-angular": "latest",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

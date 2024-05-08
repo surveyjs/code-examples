@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "survey-pdf": "^1.9.28",
-    "survey-vue-ui": "^1.9.28",
+    "survey-pdf": "latest",
+    "survey-vue-ui": "latest",
     "vue": "^2.6.11"
   },
   "devDependencies": {

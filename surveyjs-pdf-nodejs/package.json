@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "jsdom": "^22.1.0",
-    "survey-pdf": "^1.9.104"
+    "survey-pdf": "latest"
   }
 }

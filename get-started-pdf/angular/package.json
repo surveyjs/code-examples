@@ -20,8 +20,8 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "rxjs": "~7.4.0",
-    "survey-angular-ui": "^1.9.56",
-    "survey-pdf": "^1.9.56",
+    "survey-angular-ui": "latest",
+    "survey-pdf": "latest",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

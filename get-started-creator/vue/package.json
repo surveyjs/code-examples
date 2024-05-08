@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "survey-creator-knockout": "^1.9.20",
+    "survey-creator-knockout": "latest",
     "vue": "^2.6.11"
   },
   "devDependencies": {
