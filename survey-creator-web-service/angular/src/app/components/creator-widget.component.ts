@@ -19,7 +19,6 @@ export class CreatorWidgetComponent implements OnInit {
     const id: number = Number.parseInt(this.route.snapshot.queryParams["id"]);
     this.creator = new SurveyCreatorModel({ showLogicTab: false })
     this.creator.isAutoSave = true;
-    //todo search second arg name for callback function
     this.creator.saveSurveyFunc = (saveNo: number, callback: (saveNo: number, arg: boolean) => void) => {
       // You can use `this.creator.text` as an alternative to `this.creator.JSON`
       saveSurveyJSON(id, this.creator.JSON, () => {
