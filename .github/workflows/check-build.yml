@@ -286,9 +286,21 @@ jobs:
         npm install
         npm run build
 
+    - name: Build get-started-library/angular-standalone-components
+      run: |
+        cd get-started-library/angular-standalone-components
+        npm install
+        npm run build
+
     - name: Build get-started-creator/angular
       run: |
         cd get-started-creator/angular
+        npm install
+        npm run build
+
+    - name: Build get-started-creator/angular-standalone-components
+      run: |
+        cd get-started-creator/angular-standalone-components
         npm install
         npm run build
 
