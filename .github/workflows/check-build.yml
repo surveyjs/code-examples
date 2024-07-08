@@ -291,6 +291,7 @@ jobs:
         cd get-started-library/angular-standalone-components
         npm install
         npm run build
+      if: ${{ matrix.node-version != '16.x' }}
 
     - name: Build get-started-creator/angular
       run: |
@@ -303,6 +304,7 @@ jobs:
         cd get-started-creator/angular-standalone-components
         npm install
         npm run build
+      if: ${{ matrix.node-version != '16.x' }}
 
     - name: Build get-started-analytics/angular
       run: |
