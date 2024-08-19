@@ -53,7 +53,7 @@ creator.saveSurveyFunc = (saveNo, callback) => {
 // });
 
 document.addEventListener("DOMContentLoaded", function() {
-    creator.render("surveyCreator");
+    creator.render(document.getElementById("surveyCreator"));
 });
 
 // function saveSurveyJson(url, json, saveNo, callback) {

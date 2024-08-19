@@ -50,5 +50,5 @@ const surveyDataTable = new SurveyAnalyticsTabulator.Tabulator(
 );
 
 document.addEventListener("DOMContentLoaded", function() {
-    surveyDataTable.render("surveyDataTable");
+    surveyDataTable.render(document.getElementById("surveyDataTable"));
 });
