@@ -6,6 +6,7 @@ import { Serializer } from "survey-core";
 import { SurveyCreatorModel } from "survey-creator-core";
 import type { SurveyModel } from "survey-core";
 import type { CreatorBase } from "survey-creator-core";
+import { SurveyCreatorComponent } from "survey-creator-vue";
 
 Serializer.addProperty("survey", {
   name: "backgroundColor",
