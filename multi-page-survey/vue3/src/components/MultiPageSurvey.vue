@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import 'survey-core/defaultV2.min.css';
 import { Model } from 'survey-core';
+import { SurveyComponent } from "survey-vue3-ui";
 import { ref } from 'vue'; 
 
 const surveyJson = {

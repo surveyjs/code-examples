@@ -1,4 +1,5 @@
 <script lang="ts">
+import { Sketch, Compact, Slider } from "@lk77/vue3-color";
 import { ElementFactory, Question, Serializer, SvgRegistry } from "survey-core";
 import { PropertyGridEditorCollection, localization } from "survey-creator-core";
 
@@ -99,19 +100,19 @@ function updateValue(val: any) {
 </script>
 
 <template>
-  <slider-picker
+  <Slider
     v-if="props.question.isSlider"
     :modelValue="props.question.value"
     @update:modelValue="updateValue"
-  ></slider-picker>
-  <sketch-picker
+  />
+  <Sketch
     v-if="props.question.isSketch"
     :modelValue="props.question.value"
     @update:modelValue="updateValue"
-  ></sketch-picker>
-  <compact-picker
+  />
+  <Compact
     v-if="props.question.isColorCompact"
     :modelValue="props.question.value"
     @update:modelValue="updateValue"
-  ></compact-picker>
+  />
 </template>
