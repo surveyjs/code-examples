@@ -8,6 +8,7 @@ function renderIcons() {
 renderIcons();
 
 Object.keys(Survey.SvgRegistry.icons).map(name => {
+  if (name.indexOf("pg-v1") > -1) return;
   const element = document.createElement("div");
   element.classList.add("container")
   element.innerHTML = `
