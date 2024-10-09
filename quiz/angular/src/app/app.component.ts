@@ -4,9 +4,9 @@ import { Model } from "survey-core";
 const surveyJson = {
   title: "American History",
   showProgressBar: "bottom",
-  showTimerPanel: "top",
-  maxTimeToFinishPage: 10,
-  maxTimeToFinish: 25,
+  showTimer: true,
+  timeLimitPerPage: 10,
+  timeLimit: 25,
   firstPageIsStarted: true,
   startSurveyText: "Start Quiz",
   pages: [{
