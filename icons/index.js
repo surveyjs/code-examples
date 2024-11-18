@@ -1,6 +1,6 @@
-new Survey.Model(); // register library icons
-if (typeof SurveyCreator !== "undefined") {
-  new SurveyCreator.SurveyCreator(); // register creator icons
+new Survey.Model(); // Register Form Library icons
+if (typeof SurveyCreatorCore !== "undefined") {
+  new SurveyCreatorCore.SurveyCreatorModel({}); // Register Survey Creator icons
 }
 
 function renderIcons() {
