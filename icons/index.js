@@ -1,3 +1,8 @@
+new Survey.Model(); // register library icons
+if (typeof SurveyCreator !== "undefined") {
+  new SurveyCreator.SurveyCreator(); // register creator icons
+}
+
 function renderIcons() {
   let iconsDiv = document.createElement("div");
   iconsDiv.id = "sv-icon-holder-global-container";
