@@ -1,5 +1,5 @@
-setTimeout(()=>{
-    if (typeof SurveyCreatorCore !== "undefined") {
+Survey.SvgRegistry.registerIcons(SurveyIcons.icons);
+if (typeof SurveyCreatorCore !== "undefined") {
     new SurveyCreatorCore.SurveyCreatorModel({}); // Register Survey Creator icons
   }
   
@@ -23,4 +23,3 @@ setTimeout(()=>{
       <span class="icon-name">icon-` + name + `</span>`;
     document.getElementById("icons").appendChild(element);
   });
-}, 5000);
