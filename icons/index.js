@@ -1,4 +1,4 @@
-document.addEventListener("load", (event) => {
+setTimeout(()=>{
     if (typeof SurveyCreatorCore !== "undefined") {
     new SurveyCreatorCore.SurveyCreatorModel({}); // Register Survey Creator icons
   }
@@ -23,4 +23,4 @@ document.addEventListener("load", (event) => {
       <span class="icon-name">icon-` + name + `</span>`;
     document.getElementById("icons").appendChild(element);
   });
-});
+}, 5000);
