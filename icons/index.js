@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("load", (event) => {
     if (typeof SurveyCreatorCore !== "undefined") {
     new SurveyCreatorCore.SurveyCreatorModel({}); // Register Survey Creator icons
   }
