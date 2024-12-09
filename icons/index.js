@@ -1,4 +1,3 @@
-new Survey.Model(); // Register Form Library icons
 if (typeof SurveyCreatorCore !== "undefined") {
   new SurveyCreatorCore.SurveyCreatorModel({}); // Register Survey Creator icons
 }
