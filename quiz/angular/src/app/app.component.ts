@@ -7,7 +7,7 @@ const surveyJson = {
   showTimer: true,
   timeLimitPerPage: 10,
   timeLimit: 25,
-  firstPageIsStarted: true,
+  firstPageIsStartPage: true,
   startSurveyText: "Start Quiz",
   pages: [{
     elements: [{

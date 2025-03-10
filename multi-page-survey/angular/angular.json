@@ -120,6 +120,6 @@
           }
         }
       }
-    }},
-  "defaultProject": "multi-page-survey-angular"
+    }
+  }
 }

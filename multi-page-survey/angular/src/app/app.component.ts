@@ -53,7 +53,7 @@ const surveyJson = {
   pageNextText: "Forward",
   completeText: "Submit",
   showPrevButton: false,
-  firstPageIsStarted: true,
+  firstPageIsStartPage: true,
   startSurveyText: "Take the Survey",
   completedHtml: "Thank you for your feedback!",
   showPreviewBeforeComplete: "showAnsweredQuestions"
