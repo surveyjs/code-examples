@@ -119,6 +119,6 @@
           }
         }
       }
-    }},
-  "defaultProject": "get-started-angular"
+    }
+  }
 }
