@@ -2,6 +2,14 @@ import { AfterViewInit, Component } from '@angular/core';
 import { Model } from 'survey-core';
 import { Tabulator } from 'survey-analytics/survey.analytics.tabulator';
 
+// jsPDF for export to PDF
+import jsPDF from "jspdf";
+import { applyPlugin } from "jspdf-autotable";
+applyPlugin(jsPDF);
+
+// SheetJS for export to Excel
+import * as XLSX from "xlsx";
+
 const surveyJson = {
   elements: [{
     name: "satisfaction-score",
@@ -52,7 +60,8 @@ export class AppComponent implements AfterViewInit {
     const survey = new Model(surveyJson);
     const surveyDataTable = new Tabulator(
       survey,
-      generateData()
+      generateData(),
+      { jspdf: jsPDF, xlsx: XLSX }
     );
     surveyDataTable.render("surveyDataTable");
   }
