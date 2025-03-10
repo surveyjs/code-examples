@@ -106,6 +106,5 @@
         }
       }
     }
-  },
-  "defaultProject": "get-started-dashboard-angular"
+  }
 }
