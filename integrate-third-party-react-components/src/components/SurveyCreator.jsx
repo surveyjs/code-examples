@@ -1,7 +1,7 @@
 import { SurveyCreator, SurveyCreatorComponent } from "survey-creator-react";
 import { Serializer } from "survey-core";
 import { registerColorPicker } from "./ColorPicker";
-import "survey-core/defaultV2.css";
+import "survey-core/survey-core.css";
 import "survey-creator-core/survey-creator-core.css";
 
 registerColorPicker();

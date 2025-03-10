@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SurveyCreatorModel } from "survey-creator-core";
 import { SurveyCreatorModule } from 'survey-creator-angular';
-import "survey-core/defaultV2.css";
+import "survey-core/survey-core.css";
 import "survey-creator-core/survey-creator-core.css";
 
 const creatorOptions = {

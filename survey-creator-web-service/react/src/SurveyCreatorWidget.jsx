@@ -9,7 +9,7 @@ import {
   saveSurveyName
 } from "./WebDataService";
 // Import stylesheets for SurveyJS Library and Survey Creator
-import "survey-core/defaultV2.css";
+import "survey-core/survey-core.css";
 import "survey-creator-core/survey-creator-core.min.css";
 
 // Make survey title required. End users cannot make it empty in designer or property grid

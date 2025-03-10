@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Model } from "survey-core";
 import { SurveyModule } from 'survey-angular-ui';
-import "survey-core/defaultV2.css";
+import "survey-core/survey-core.css";
 
 // const SURVEY_ID = 1;
 

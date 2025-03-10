@@ -1,5 +1,5 @@
 import { SurveyCreatorComponent, SurveyCreator } from "survey-creator-react";
-import "survey-core/defaultV2.min.css";
+import "survey-core/survey-core.min.css";
 import "survey-creator-core/survey-creator-core.min.css";
 
 const creatorOptions = {

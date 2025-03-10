@@ -1,3 +1,3 @@
-# Create a Quiz (SurveyJS for jQuery)
+# (Obsolete) Create a Quiz (SurveyJS for jQuery)
 
-This example is used in the following help topic: [Create a Quiz](https://surveyjs.io/Documentation/Library?id=design-survey-create-a-quiz). To run the example, open `index.html` in your browser.
+Use the [vanilla JS](../html-css-js/) example instead.

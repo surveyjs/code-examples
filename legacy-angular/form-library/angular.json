@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/survey-angular/defaultV2.css"
+              "node_modules/survey-angular/survey-core.css"
             ],
             "scripts": []
           },

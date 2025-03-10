@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import 'survey-core/defaultV2.min.css';
+import 'survey-core/survey-core.min.css';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-vue-ui';
 import { SurveyPDF } from 'survey-pdf';

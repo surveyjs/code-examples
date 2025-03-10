@@ -38,7 +38,7 @@ Open the `angular.json` file and reference Survey Creator and SurveyJS Form Libr
             // ...
             "styles": [
               "src/styles.css",
-              "node_modules/survey-core/defaultV2.min.css",
+              "node_modules/survey-core/survey-core.min.css",
               "node_modules/survey-creator-core/survey-creator-core.min.css"
             ],
             // ...
