@@ -77,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "get-started-creator-angular:build:production"
+              "buildTarget": "get-started-creator-angular:build:production"
             },
             "development": {
-              "browserTarget": "get-started-creator-angular:build:development"
+              "buildTarget": "get-started-creator-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "get-started-creator-angular:build"
+            "buildTarget": "get-started-creator-angular:build"
           }
         },
         "test": {
