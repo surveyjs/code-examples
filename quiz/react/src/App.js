@@ -6,7 +6,8 @@ import { Survey } from 'survey-react-ui';
 
 const surveyJson = {
   title: "American History",
-  showProgressBar: "bottom",
+  showProgressBar: true,
+  progressBarLocation: "bottom",
   showTimer: true,
   timeLimitPerPage: 10,
   timeLimit: 25,
