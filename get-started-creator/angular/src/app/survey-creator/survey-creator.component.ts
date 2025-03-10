@@ -1,9 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { SurveyCreatorModel } from "survey-creator-core";
+// Enable Ace Editor in the JSON Editor tab
+import "ace-builds/src-noconflict/ace";
+import "ace-builds/src-noconflict/ext-searchbox";
 
 const creatorOptions = {
-  showLogicTab: true,
-  isAutoSave: true
+  autoSaveEnabled: true
 };
 
 const defaultJson = {

@@ -15,12 +15,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/export-survey-to-pdf-angular",
+            "outputPath": {
+              "base": "dist/export-survey-to-pdf-angular"
+            },
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "src/polyfills.ts"
+            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
@@ -30,7 +33,8 @@
               "src/styles.css",
               "node_modules/survey-core/survey-core.min.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "src/main.ts"
           },
           "configurations": {
             "production": {
@@ -55,9 +59,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -69,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "export-survey-to-pdf-angular:build:production"
+              "buildTarget": "export-survey-to-pdf-angular:build:production"
             },
             "development": {
-              "browserTarget": "export-survey-to-pdf-angular:build:development"
+              "buildTarget": "export-survey-to-pdf-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "export-survey-to-pdf-angular:build"
+            "buildTarget": "export-survey-to-pdf-angular:build"
           }
         },
         "test": {
@@ -102,6 +104,5 @@
         }
       }
     }
-  },
-  "defaultProject": "export-survey-to-pdf-angular"
+  }
 }

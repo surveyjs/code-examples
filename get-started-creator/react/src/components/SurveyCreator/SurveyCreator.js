@@ -3,8 +3,7 @@ import "survey-core/survey-core.min.css";
 import "survey-creator-core/survey-creator-core.min.css";
 
 const creatorOptions = {
-  showLogicTab: true,
-  isAutoSave: true
+  autoSaveEnabled: true
 };
 
 const defaultJson = {

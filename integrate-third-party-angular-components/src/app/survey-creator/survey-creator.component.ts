@@ -17,10 +17,6 @@ function handleActiveTabChange(sender, options) {
   }
 };
 
-const creatorOptions = {
-  showLogicTab: true
-};
-
 const surveyJson = {
   elements: [{
     type: "color-picker",
@@ -38,7 +34,7 @@ const surveyJson = {
 export class SurveyCreatorComponent implements OnInit {
   surveyCreatorModel!: SurveyCreatorModel;
   ngOnInit() {
-    const creator = new SurveyCreatorModel(creatorOptions);
+    const creator = new SurveyCreatorModel();
       
     Serializer.addProperty("survey", {
       name: "backgroundColor",

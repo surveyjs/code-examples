@@ -7,8 +7,7 @@ import { SurveyCreatorModel } from "survey-creator-core";
 import { SurveyCreatorComponent } from 'survey-creator-vue';
 
 const creatorOptions: ICreatorOptions = {
-  showLogicTab: true,
-  isAutoSave: true
+  autoSaveEnabled: true
 };
 
 const defaultJson = {

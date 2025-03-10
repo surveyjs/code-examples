@@ -17,9 +17,9 @@ Serializer.findProperty("survey", "title").isRequired = true;
 
 export function SurveyCreatorWidget(props) {
   // Create a Survey Creator instance
-  const creator = new SurveyCreator({ showLogicTab: true });
+  const creator = new SurveyCreator();
   // Enable auto save
-  creator.isAutoSave = true;
+  creator.autoSaveEnabled = true;
   // A function executed to save the survey definition
   creator.saveSurveyFunc = (saveNo, callback) => {
     // You can use `this.creator.text` as an alternative to `this.creator.JSON`

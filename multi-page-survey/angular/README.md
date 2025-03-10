@@ -1,6 +1,6 @@
 # Create a Multi-Page Survey (SurveyJS for Angular)
 
-This example is used in the following help topic: [Create a Multi-Page Survey](https://surveyjs.io/Documentation/Library?id=design-survey-create-a-multi-page-survey). It was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
+This example is used in the following help topic: [Create a Multi-Page Survey](https://surveyjs.io/Documentation/Library?id=design-survey-create-a-multi-page-survey). It was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.13.
 
 ## Development server
 

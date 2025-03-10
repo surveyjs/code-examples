@@ -11,12 +11,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/multi-page-survey-angular",
+            "outputPath": {
+              "base": "dist/multi-page-survey-angular"
+            },
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "src/polyfills.ts"
+            ],
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
@@ -27,7 +30,8 @@
               "src/styles.css",
               "node_modules/survey-core/survey-core.min.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "src/main.ts"
           },
           "configurations": {
             "production": {
@@ -43,8 +47,6 @@
               "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -63,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "multi-page-survey-angular:build"
+            "buildTarget": "multi-page-survey-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "multi-page-survey-angular:build:production"
+              "buildTarget": "multi-page-survey-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "multi-page-survey-angular:build"
+            "buildTarget": "multi-page-survey-angular:build"
           }
         },
         "test": {
@@ -120,6 +122,6 @@
           }
         }
       }
-    }},
-  "defaultProject": "multi-page-survey-angular"
+    }
+  }
 }

@@ -18,13 +18,16 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "allowedCommonJsDependencies": ["survey-analytics"],
-            "outputPath": "dist/get-started-dashboard-angular",
+            "outputPath": {
+              "base": "dist/get-started-dashboard-angular"
+            },
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "src/polyfills.ts"
+            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
@@ -34,7 +37,8 @@
               "src/styles.css",
               "node_modules/survey-analytics/survey.analytics.min.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "src/main.ts"
           },
           "configurations": {
             "production": {
@@ -59,9 +63,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -73,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "get-started-dashboard-angular:build:production"
+              "buildTarget": "get-started-dashboard-angular:build:production"
             },
             "development": {
-              "browserTarget": "get-started-dashboard-angular:build:development"
+              "buildTarget": "get-started-dashboard-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "get-started-dashboard-angular:build"
+            "buildTarget": "get-started-dashboard-angular:build"
           }
         },
         "test": {
@@ -106,6 +108,5 @@
         }
       }
     }
-  },
-  "defaultProject": "get-started-dashboard-angular"
+  }
 }

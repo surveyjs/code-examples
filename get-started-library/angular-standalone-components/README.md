@@ -1,6 +1,6 @@
 # Get Started with SurveyJS Form Library for Angular Using Standalone Components
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8 and contains a demo example that shows how to quickly integrate [SurveyJS Form Library](https://surveyjs.io/form-library/documentation/overview) into an Angular application using standalone components. Refer to the files in the [src/app/survey](src/app/survey) directory for full code listings.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.13 and contains a demo example that shows how to quickly integrate [SurveyJS Form Library](https://surveyjs.io/form-library/documentation/overview) into an Angular application using standalone components. Refer to the files in the [src/app/survey](src/app/survey) directory for full code listings.
 
 ## Development Server
 

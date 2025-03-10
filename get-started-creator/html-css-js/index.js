@@ -1,6 +1,5 @@
 const creatorOptions = {
-    showLogicTab: true,
-    isAutoSave: true
+    autoSaveEnabled: true
 };
 
 const defaultJson = {

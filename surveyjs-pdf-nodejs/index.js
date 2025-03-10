@@ -208,7 +208,6 @@ const json = {
       "title": "Miscellaneous"
     }
   ],
-  "showQuestionNumbers": "off",
   "questionErrorLocation": "bottom",
   "completeText": "Submit",
   "showPreviewBeforeComplete": "showAnsweredQuestions",

@@ -5,11 +5,12 @@ import { SurveyComponent } from "survey-vue3-ui";
 
 const surveyJson = {
   title: "American History",
-  showProgressBar: "bottom",
+  showProgressBar: true,
+  progressBarLocation: "bottom",
   showTimer: true,
   timeLimitPerPage: 10,
   timeLimit: 25,
-  firstPageIsStarted: true,
+  firstPageIsStartPage: true,
   startSurveyText: "Start Quiz",
   pages: [{
     elements: [{
