@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "quiz-angular:build"
+            "buildTarget": "quiz-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "quiz-angular:build:production"
+              "buildTarget": "quiz-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "quiz-angular:build"
+            "buildTarget": "quiz-angular:build"
           }
         },
         "test": {
