@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "multi-page-survey-angular:build"
+            "buildTarget": "multi-page-survey-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "multi-page-survey-angular:build:production"
+              "buildTarget": "multi-page-survey-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "multi-page-survey-angular:build"
+            "buildTarget": "multi-page-survey-angular:build"
           }
         },
         "test": {
