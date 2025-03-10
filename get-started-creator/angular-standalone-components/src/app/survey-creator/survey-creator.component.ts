@@ -5,9 +5,8 @@ import "survey-core/survey-core.css";
 import "survey-creator-core/survey-creator-core.css";
 
 const creatorOptions = {
-  showLogicTab: true,
   showThemeTab: true,
-  isAutoSave: true
+  autoSaveEnabled: true
 };
 
 const defaultJson = {
