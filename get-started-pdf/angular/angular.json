@@ -102,6 +102,5 @@
         }
       }
     }
-  },
-  "defaultProject": "export-survey-to-pdf-angular"
+  }
 }

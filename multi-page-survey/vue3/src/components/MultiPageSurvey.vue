@@ -53,7 +53,6 @@ const surveyJson = {
     }],
     visibleIf: "{satisfaction-score} =< 2"
   }],
-  showQuestionNumbers: "off",
   pageNextText: "Forward",
   completeText: "Submit",
   showPrevButton: false,
