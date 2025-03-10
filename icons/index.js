@@ -1,4 +1,3 @@
-Survey.SvgRegistry.registerIcons(SurveyIcons.icons);
 if (typeof SurveyCreatorCore !== "undefined") {
     new SurveyCreatorCore.SurveyCreatorModel(); // Register Survey Creator icons
   }
