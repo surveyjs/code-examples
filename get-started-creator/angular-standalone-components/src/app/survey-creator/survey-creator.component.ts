@@ -3,9 +3,11 @@ import { SurveyCreatorModel } from "survey-creator-core";
 import { SurveyCreatorModule } from 'survey-creator-angular';
 import "survey-core/survey-core.css";
 import "survey-creator-core/survey-creator-core.css";
+// Enable Ace Editor in the JSON Editor tab
+import "ace-builds/src-noconflict/ace";
+import "ace-builds/src-noconflict/ext-searchbox";
 
 const creatorOptions = {
-  showThemeTab: true,
   autoSaveEnabled: true
 };
 
