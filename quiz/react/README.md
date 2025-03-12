@@ -1,13 +1,11 @@
 # Create a Quiz (SurveyJS for React)
 
-This example is used in the following help topic: [Create a Quiz](https://surveyjs.io/Documentation/Library?id=design-survey-create-a-quiz). It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This example is used in the following help topic: [Create a Quiz](https://surveyjs.io/form-library/documentation/design-survey/create-a-quiz). It is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
-## Development server
+## Run the Application
 
-Run the app in the development mode:
-
-```cmd
-yarn start
+```bash
+npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page will reload if you make edits.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

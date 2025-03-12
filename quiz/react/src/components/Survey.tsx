@@ -1,6 +1,6 @@
-import './App.css'
+'use client'
 
-import 'survey-core/survey-core.min.css';
+import 'survey-core/survey-core.css';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 
@@ -69,12 +69,10 @@ const surveyJson = {
   }]
 };
 
-function App() {
+export default function SurveyComponent() {
   const survey = new Model(surveyJson);
 
   return (
       <Survey model={survey} id="surveyContainer" />      
   );
 }
-
-export default App;
