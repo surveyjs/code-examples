@@ -1,8 +1,9 @@
-import { useCallback } from 'react';
+'use client'
 
-import 'survey-core/survey-core.min.css';
-import { Model } from 'survey-core';
-import { Survey } from 'survey-react-ui';
+import { useCallback } from 'react';
+import 'survey-core/survey-core.css';
+import { Model } from 'survey-core'
+import { Survey } from 'survey-react-ui'
 
 // const SURVEY_ID = 1;
 
@@ -18,9 +19,9 @@ const surveyJson = {
   }]
 };
 
-function App() {
+export default function SurveyComponent() {
   const survey = new Model(surveyJson);
-  const alertResults = useCallback((sender) => {
+  const alertResults = useCallback((sender: Model) => {
     const results = JSON.stringify(sender.data);
     alert(results);
     // saveSurveyResults(
@@ -31,10 +32,12 @@ function App() {
 
   survey.onComplete.add(alertResults);
 
-  return <Survey model={survey} />;
+  return (
+    <Survey model={survey} />
+  );
 }
 
-// function saveSurveyResults(url, json) {
+// function saveSurveyResults(url: string, json: object) {
 //   fetch(url, {
 //     method: 'POST',
 //     headers: {
@@ -53,5 +56,3 @@ function App() {
 //     // Handle error
 //   });
 // }
-
-export default App;
