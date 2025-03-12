@@ -1,9 +1,9 @@
-import './App.css'
+'use client'
 
-import 'survey-core/survey-core.min.css';
+import 'survey-core/survey-core.css';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
-import { SurveyPDF } from 'survey-pdf';
+import { IDocOptions, SurveyPDF } from 'survey-pdf';
 
 const surveyJson = {
   elements: [{
@@ -32,17 +32,17 @@ const surveyJson = {
   completedHtml: "Thank you for your feedback!",
 };
 
-const pdfDocOptions = {
+const pdfDocOptions: IDocOptions = {
   fontSize: 12
 };
 
-const savePdf = function (surveyData) {
+const savePdf = (surveyData: any) => {
   const surveyPdf = new SurveyPDF(surveyJson, pdfDocOptions);
   surveyPdf.data = surveyData;
   surveyPdf.save();
 };
 
-function App() {
+export default function SurveyComponent() {
   const survey = new Model(surveyJson);
   
   survey.addNavigationItem({
@@ -55,5 +55,3 @@ function App() {
     <Survey model={survey} id="surveyContainer" />
   );
 }
-
-export default App;
