@@ -1,7 +1,7 @@
-import './App.css'
+'use client'
 
 import { useState, useEffect } from 'react';
-import 'survey-analytics/survey.analytics.min.css';
+import 'survey-analytics/survey.analytics.css';
 import { Model } from 'survey-core';
 import { VisualizationPanel } from 'survey-analytics';
 
