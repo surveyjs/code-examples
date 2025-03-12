@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import 'survey-analytics/survey.analytics.css';
 import { Model } from 'survey-core';
-import { VisualizationPanel } from 'survey-analytics';
+import { IVisualizationPanelOptions, VisualizationPanel } from 'survey-analytics';
 
 const surveyJson = {
   elements: [{
@@ -45,13 +45,13 @@ const surveyResults = [{
   "nps-score": 3
 }];
 
-const vizPanelOptions = {
+const vizPanelOptions: IVisualizationPanelOptions = {
   allowHideQuestions: false
 }
 
-export default function App() {
-  const [survey, setSurvey] = useState(null);
-  const [vizPanel, setVizPanel] = useState(null);
+export default function DashboardComponent() {
+  const [survey, setSurvey] = useState<Model>();
+  const [vizPanel, setVizPanel] = useState<VisualizationPanel>();
   if (!survey) {
     const survey = new Model(surveyJson);
     setSurvey(survey);
@@ -67,9 +67,9 @@ export default function App() {
   }
 
   useEffect(() => {
-    vizPanel.render("surveyVizPanel");
+    vizPanel?.render("surveyVizPanel");
     return () => {
-      document.getElementById("surveyVizPanel").innerHTML = "";
+      vizPanel?.clear();
     }
   }, [vizPanel]);
 

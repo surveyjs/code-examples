@@ -1,10 +1,15 @@
-import './App.css'
+'use client'
 
 import { useState, useEffect } from 'react';
-import 'tabulator-tables/dist/css/tabulator.min.css';
-import 'survey-analytics/survey.analytics.tabulator.min.css';
+import 'tabulator-tables/dist/css/tabulator.css';
+import 'survey-analytics/survey.analytics.tabulator.css';
 import { Model } from 'survey-core';
 import { Tabulator } from 'survey-analytics/survey.analytics.tabulator';
+
+import jsPDF from "jspdf";
+import { applyPlugin } from "jspdf-autotable";
+applyPlugin(jsPDF);
+import * as XLSX from "xlsx";
 
 const surveyJson = {
   elements: [{
@@ -29,10 +34,16 @@ const surveyJson = {
   completedHtml: "Thank you for your feedback!",
 };
 
-function randomIntFromInterval(min, max) {
+function randomIntFromInterval(min: number, max: number): number  {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-function generateData() {
+
+interface INpsDataObject {
+  "satisfaction-score": number;
+  "nps-score": number;
+}
+
+function generateData(): Array<INpsDataObject> {
   const data = [];
   for (let index = 0; index < 100; index++) {
     const satisfactionScore = randomIntFromInterval(1, 5);
@@ -45,10 +56,10 @@ function generateData() {
   return data;
 }
 
-export default function App() {
-  const [survey, setSurvey] = useState(null);
-  const [surveyDataTable, setSurveyDataTable] = useState(null);
-  const [surveyResults, setSurveyResults] = useState(null);
+export default function TableViewComponent() {
+  const [survey, setSurvey] = useState<Model>();
+  const [surveyDataTable, setSurveyDataTable] = useState<Tabulator>();
+  const [surveyResults, setSurveyResults] = useState<Array<INpsDataObject>>(generateData());
   if (!survey) {
     const survey = new Model(surveyJson);
     setSurvey(survey);
@@ -60,15 +71,16 @@ export default function App() {
   if (!surveyDataTable && !!survey) {
     const surveyDataTable = new Tabulator(
       survey,
-      surveyResults
+      surveyResults,
+      { jspdf: jsPDF, xlsx: XLSX }
     );
     setSurveyDataTable(surveyDataTable);
   }
 
   useEffect(() => {
-    surveyDataTable.render("surveyDataTable");
+    surveyDataTable?.render("surveyDataTable");
     return () => {
-      document.getElementById("surveyDataTable").innerHTML = "";
+      document.getElementById("surveyDataTable")!.innerHTML = "";
     }
   }, [surveyDataTable]);
 
