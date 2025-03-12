@@ -1,8 +1,19 @@
-import { SurveyCreatorComponent, SurveyCreator } from "survey-creator-react";
-import "survey-core/survey-core.min.css";
-import "survey-creator-core/survey-creator-core.min.css";
+'use client'
 
-const creatorOptions = {
+import { useState } from "react";
+import {
+  ICreatorOptions,
+  // SurveyCreatorModel,
+  // UploadFileEvent
+} from "survey-creator-core";
+import { SurveyCreatorComponent, SurveyCreator } from "survey-creator-react";
+import "survey-core/survey-core.css";
+import "survey-creator-core/survey-creator-core.css";
+// Enable Ace Editor in the JSON Editor tab
+import "ace-builds/src-noconflict/ace";
+import "ace-builds/src-noconflict/ext-searchbox";
+
+const defaultCreatorOptions: ICreatorOptions = {
   autoSaveEnabled: true
 };
 
@@ -21,10 +32,15 @@ const defaultJson = {
   }]
 };
 
-export function SurveyCreatorWidget() {
-  const creator = new SurveyCreator(creatorOptions);
-  creator.text = window.localStorage.getItem("survey-json") || JSON.stringify(defaultJson);
-  creator.saveSurveyFunc = (saveNo, callback) => { 
+export default function SurveyCreatorWidget(props: { json?: Object, options?: ICreatorOptions }) {
+  let [creator, setCreator] = useState<SurveyCreator>();
+
+  if (!creator) {
+    creator = new SurveyCreator(props.options || defaultCreatorOptions);
+    setCreator(creator);
+  }
+
+  creator.saveSurveyFunc = (saveNo: number, callback: (num: number, status: boolean) => void) => {
     window.localStorage.setItem("survey-json", creator.text);
     callback(saveNo, true);
     // saveSurveyJson(
@@ -34,9 +50,10 @@ export function SurveyCreatorWidget() {
     //     callback
     // );
   };
-  // creator.onUploadFile.add((_, options) => {
+
+  // creator.onUploadFile.add((_: SurveyCreatorModel, options: UploadFileEvent) => {
   //   const formData = new FormData();
-  //   options.files.forEach(file => {
+  //   options.files.forEach((file: File) => {
   //     formData.append(file.name, file);
   //   });
   //   fetch("https://example.com/uploadFiles", {
@@ -54,12 +71,17 @@ export function SurveyCreatorWidget() {
   //       options.callback('error');
   //     });
   // });
+
+  creator.text = JSON.stringify(props.json) || window.localStorage.getItem("survey-json") || JSON.stringify(defaultJson);
+
   return (
-    <SurveyCreatorComponent creator={creator} />
-  )
+    <div style={{ height: "100vh", width: "100%" }}>
+      <SurveyCreatorComponent creator={creator} />
+    </div>
+  );
 }
 
-// function saveSurveyJson(url, json, saveNo, callback) {
+// function saveSurveyJson (url: string, json: object, saveNo: number, callback: (num: number, status: boolean) => void) {
 //   fetch(url, {
 //     method: 'POST',
 //     headers: {
