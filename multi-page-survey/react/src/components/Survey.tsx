@@ -1,9 +1,9 @@
-import { useCallback, useState, useRef } from 'react';
-import './App.css'
+'use client'
 
-import 'survey-core/survey-core.min.css';
-import { Model } from 'survey-core';
-import { Survey } from 'survey-react-ui';
+import { useCallback, useState, useRef } from 'react';
+import 'survey-core/survey-core.css';
+import { Model } from 'survey-core'
+import { Survey } from 'survey-react-ui'
 
 const surveyJson = {
   pages: [{
@@ -63,13 +63,13 @@ const surveyJson = {
   showPreviewBeforeComplete: "showAnsweredQuestions"
 };
 
-function App() {
+export default function SurveyComponent() {
   // useRef enables the Model object to persist between state changes
   const survey = useRef(new Model(surveyJson)).current;
   const [surveyResults, setSurveyResults] = useState("");
   const [isSurveyCompleted, setIsSurveyCompleted] = useState(false);
-
-  const displayResults = useCallback((sender) => {
+  
+  const displayResults = useCallback((sender: Model) => {
     setSurveyResults(JSON.stringify(sender.data, null, 4));
     setIsSurveyCompleted(true);
   }, []);
@@ -91,5 +91,3 @@ function App() {
     </>
   );
 }
-
-export default App;
