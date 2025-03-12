@@ -3,6 +3,7 @@ import { Serializer } from "survey-core";
 import { registerColorPicker } from "./ColorPicker";
 import "survey-core/survey-core.css";
 import "survey-creator-core/survey-creator-core.css";
+import { ActiveTabChangedEvent, SurveyCreatorModel } from "survey-creator-core";
 
 registerColorPicker();
 addBackgroundColorProperty();
@@ -16,11 +17,15 @@ const surveyJson = {
   }]
 };
 
-export function SurveyCreatorWidget () {
+export default function SurveyCreatorWidget () {
   const creator = new SurveyCreator();
   creator.onActiveTabChanged.add(handleActiveTabChange);
   creator.JSON = surveyJson;
-  return <SurveyCreatorComponent creator={creator} />;
+  return (
+    <div style={{ height: "100vh", width: "100%" }}>
+      <SurveyCreatorComponent creator={creator} />
+    </div>
+  )
 }
 
 function addBackgroundColorProperty() {
@@ -37,16 +42,16 @@ function addBackgroundColorProperty() {
   });
 }
 
-function applyBackground(color) {
+function applyBackground(color: string) {
   setTimeout(() => {
-    const surveyEl = document.getElementsByClassName("sd-root-modern")[0];
+    const surveyEl = document.getElementsByClassName("sd-root-modern")[0] as HTMLElement;
     if (!!surveyEl) {
       surveyEl.style.setProperty("--background", color);
     }
   }, 50);
 }
 
-function handleActiveTabChange(sender, options) {
+function handleActiveTabChange(sender: SurveyCreatorModel, options: ActiveTabChangedEvent) {
   if (options.tabName === "test" || options.tabName === "designer") {
     applyBackground(sender.survey.backgroundColor);
   }

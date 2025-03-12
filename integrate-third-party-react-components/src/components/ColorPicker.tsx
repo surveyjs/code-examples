@@ -1,10 +1,10 @@
-import { createElement } from "react";
+import { createElement, CSSProperties } from "react";
 import { SliderPicker, SketchPicker, CompactPicker } from "react-color";
 import { ElementFactory, Question, Serializer, SvgRegistry } from "survey-core";
 import { SurveyQuestionElementBase, ReactQuestionFactory } from "survey-react-ui";
 import { PropertyGridEditorCollection } from "survey-creator-react";
 import { localization } from "survey-creator-core";
-import { ReactComponent as ColorPickerIcon } from "../color-picker.svg";
+import ColorPickerIcon from "./icons/color-picker";
 import ReactDOMServer from "react-dom/server";
 
 const CUSTOM_TYPE = "color-picker";
@@ -43,8 +43,8 @@ locale.pe.colorPickerType = "Color picker type";
 locale.pe.disableAlpha = "Disable alpha channel";
 
 // Register an SVG icon for the question type
-const svg = ReactDOMServer.renderToString(<ColorPickerIcon />);
-SvgRegistry.registerIconFromSvg(CUSTOM_TYPE, svg);
+const svg = ReactDOMServer.renderToString(ColorPickerIcon);
+SvgRegistry.registerIcon(CUSTOM_TYPE, svg);
 
 // Add question type metadata for further serialization into JSON
 Serializer.addClass(
@@ -72,7 +72,7 @@ Serializer.addClass(
 
 // A class that renders questions of the new type in the UI
 export class SurveyQuestionColorPicker extends SurveyQuestionElementBase {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = { value: this.question.value };
   }
@@ -88,16 +88,16 @@ export class SurveyQuestionColorPicker extends SurveyQuestionElementBase {
   get type() {
     return this.question.colorPickerType;
   }
-  handleColorChange = (data) => {
+  handleColorChange = (data: any) => {
     this.question.value = data.hex;
   };
 
   // Support the read-only and design modes
-  get style() {
-    return this.question.getPropertyValue("readOnly") || this.question.isDesignMode ? { pointerEvents: "none" } : undefined;
+  get style(): CSSProperties {
+    return this.question.getPropertyValue("readOnly") || this.question.isDesignMode ? { pointerEvents: "none" } : {};
   }
 
-  renderColorPicker(type) {
+  renderColorPicker(type: string) {
     switch (type) {
       case "Slider": {
         return (
