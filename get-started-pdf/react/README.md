@@ -1,13 +1,11 @@
 # Export Survey to PDF (SurveyJS for React)
 
-This example is used in the following help topic: [Export Survey to PDF in a React Application](https://surveyjs.io/Documentation/Pdf-Export?id=get-started-react). It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This example is used in the following help topic: [Export Survey to PDF in a React Application](https://surveyjs.io/pdf-generator/documentation/get-started-react). It is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
-## Development server
+## Run the Application
 
-Run the app in the development mode:
-
-```cmd
-yarn start
+```bash
+npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page will reload if you make edits.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
