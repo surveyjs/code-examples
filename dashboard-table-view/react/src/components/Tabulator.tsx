@@ -44,7 +44,7 @@ interface INpsDataObject {
 }
 
 function generateData(): Array<INpsDataObject> {
-  const data = [];
+  const data: Array<INpsDataObject> = [];
   for (let index = 0; index < 100; index++) {
     const satisfactionScore = randomIntFromInterval(1, 5);
     const npsScore = satisfactionScore > 3 ? randomIntFromInterval(7, 10) : randomIntFromInterval(1, 6);

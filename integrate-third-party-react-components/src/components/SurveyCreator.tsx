@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from "react";
 import { SurveyCreator, SurveyCreatorComponent } from "survey-creator-react";
 import { Serializer } from "survey-core";
 import { registerColorPicker } from "./ColorPicker";
@@ -18,7 +21,12 @@ const surveyJson = {
 };
 
 export default function SurveyCreatorWidget () {
-  const creator = new SurveyCreator();
+  let [creator, setCreator] = useState<SurveyCreator>();
+
+  if (!creator) {
+    creator = new SurveyCreator();
+    setCreator(creator);
+  }
   creator.onActiveTabChanged.add(handleActiveTabChange);
   creator.JSON = surveyJson;
   return (
@@ -52,7 +60,7 @@ function applyBackground(color: string) {
 }
 
 function handleActiveTabChange(sender: SurveyCreatorModel, options: ActiveTabChangedEvent) {
-  if (options.tabName === "test" || options.tabName === "designer") {
+  if (options.tabName === "preview" || options.tabName === "designer") {
     applyBackground(sender.survey.backgroundColor);
   }
 }

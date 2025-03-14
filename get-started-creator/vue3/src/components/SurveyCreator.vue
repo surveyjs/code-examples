@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import 'survey-core/survey-core.min.css';
-import "survey-creator-core/survey-creator-core.min.css";
+import 'survey-core/survey-core.css';
+import "survey-creator-core/survey-creator-core.css";
 
 import type { ICreatorOptions } from "survey-creator-core";
 import { SurveyCreatorModel } from "survey-creator-core";
 import { SurveyCreatorComponent } from 'survey-creator-vue';
+// Enable Ace Editor in the JSON Editor tab
+import "ace-builds/src-noconflict/ace";
+import "ace-builds/src-noconflict/ext-searchbox";
 
 const creatorOptions: ICreatorOptions = {
   autoSaveEnabled: true

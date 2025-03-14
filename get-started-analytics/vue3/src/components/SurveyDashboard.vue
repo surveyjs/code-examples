@@ -1,11 +1,8 @@
-<template>
-  <div id="surveyVizPanel" />
-</template>
-
-<script>
-import 'survey-analytics/survey.analytics.min.css';
-import { Model } from 'survey-core';
-import { VisualizationPanel } from 'survey-analytics';
+<script setup lang="ts">
+import 'survey-analytics/survey.analytics.css'
+import { Model } from 'survey-core'
+import { VisualizationPanel } from 'survey-analytics'
+import { onMounted } from "vue"
 
 const surveyJson = {
   elements: [{
@@ -51,16 +48,17 @@ const vizPanelOptions = {
   allowHideQuestions: false
 }
 
-export default {
-  name: 'survey-dashboard',
-  mounted() {
-    const survey = new Model(surveyJson);
-    const vizPanel = new VisualizationPanel(
-      survey.getAllQuestions(),
-      surveyResults,
-      vizPanelOptions
-    );
-    vizPanel.render(document.getElementById("surveyVizPanel"));
-  }
-}
+onMounted(() => {
+  const survey = new Model(surveyJson);
+  const vizPanel = new VisualizationPanel(
+    survey.getAllQuestions(),
+    surveyResults,
+    vizPanelOptions
+  );
+  vizPanel.render("surveyVizPanel");
+});
 </script>
+
+<template>
+  <div id="surveyVizPanel" />
+</template>

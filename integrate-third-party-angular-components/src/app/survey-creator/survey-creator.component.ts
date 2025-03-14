@@ -12,7 +12,7 @@ function applyBackground(color) {
 };
 
 function handleActiveTabChange(sender, options) {
-  if (options.tabName === "test" || options.tabName === "designer") {
+  if (options.tabName === "preview" || options.tabName === "designer") {
     applyBackground(sender.survey.backgroundColor);
   }
 };
