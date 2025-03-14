@@ -35,7 +35,7 @@ const pdfDocOptions = {
   fontSize: 12
 }
 
-const savePdf = function (surveyData) {
+const savePdf = function (surveyData: any) {
   const surveyPdf = new SurveyPDF(surveyJson, pdfDocOptions);
   surveyPdf.data = surveyData;
   surveyPdf.save();

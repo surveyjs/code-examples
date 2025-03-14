@@ -33,7 +33,7 @@ const surveyJson = {
   completedHtml: "Thank you for your feedback!",
 };
 
-function randomIntFromInterval(min, max) {
+function randomIntFromInterval(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 function generateData() {
