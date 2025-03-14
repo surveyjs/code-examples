@@ -1,9 +1,11 @@
+'use client'
+
 import { createElement, CSSProperties } from "react";
 import { SliderPicker, SketchPicker, CompactPicker } from "react-color";
 import { ElementFactory, Question, Serializer, SvgRegistry } from "survey-core";
 import { SurveyQuestionElementBase, ReactQuestionFactory } from "survey-react-ui";
 import { PropertyGridEditorCollection } from "survey-creator-react";
-import { localization } from "survey-creator-core";
+import { editorLocalization } from "survey-creator-core";
 import ColorPickerIcon from "./icons/color-picker";
 import ReactDOMServer from "react-dom/server";
 
@@ -37,7 +39,7 @@ export function registerColorPicker() {
 }
 
 // Specify display names for the question type and its properties 
-const locale = localization.getLocale("");
+const locale = editorLocalization.getLocale("");
 locale.qt[CUSTOM_TYPE] = "Color Picker";
 locale.pe.colorPickerType = "Color picker type";
 locale.pe.disableAlpha = "Disable alpha channel";

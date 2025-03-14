@@ -39,7 +39,7 @@ function applyBackground(color: string) {
 }
 
 function handleActiveTabChange(sender: CreatorBase, { tabName }: { tabName: string }) {
-  if (tabName === "test" || tabName === "designer") {
+  if (tabName === "preview" || tabName === "designer") {
     applyBackground(sender.survey.backgroundColor);
   }
 }

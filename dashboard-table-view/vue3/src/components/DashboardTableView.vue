@@ -1,10 +1,9 @@
-'use client'
-
-import { useState, useEffect } from 'react';
+<script setup lang="ts">
 import 'tabulator-tables/dist/css/tabulator.css';
 import 'survey-analytics/survey.analytics.tabulator.css';
-import { Model } from 'survey-core';
-import { Tabulator } from 'survey-analytics/survey.analytics.tabulator';
+import { Model } from 'survey-core'
+import { Tabulator } from 'survey-analytics/survey.analytics.tabulator'
+import { onMounted } from "vue"
 
 import jsPDF from "jspdf";
 import { applyPlugin } from "jspdf-autotable";
@@ -34,17 +33,11 @@ const surveyJson = {
   completedHtml: "Thank you for your feedback!",
 };
 
-function randomIntFromInterval(min: number, max: number): number  {
+function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-interface INpsDataObject {
-  "satisfaction-score": number;
-  "nps-score": number;
-}
-
-function generateData(): Array<INpsDataObject> {
-  const data: Array<INpsDataObject> = [];
+function generateData() {
+  const data = [];
   for (let index = 0; index < 100; index++) {
     const satisfactionScore = randomIntFromInterval(1, 5);
     const npsScore = satisfactionScore > 3 ? randomIntFromInterval(7, 10) : randomIntFromInterval(1, 6);
@@ -56,35 +49,17 @@ function generateData(): Array<INpsDataObject> {
   return data;
 }
 
-export default function TableViewComponent() {
-  const [survey, setSurvey] = useState<Model>();
-  const [surveyDataTable, setSurveyDataTable] = useState<Tabulator>();
-  const [surveyResults, setSurveyResults] = useState<Array<INpsDataObject>>(generateData());
-  if (!survey) {
-    const survey = new Model(surveyJson);
-    setSurvey(survey);
-  }
-  if (!surveyResults) {
-    setSurveyResults(generateData());
-  }
-
-  if (!surveyDataTable && !!survey) {
-    const surveyDataTable = new Tabulator(
-      survey,
-      surveyResults,
-      { jspdf: jsPDF, xlsx: XLSX }
-    );
-    setSurveyDataTable(surveyDataTable);
-  }
-
-  useEffect(() => {
-    surveyDataTable?.render("surveyDataTable");
-    return () => {
-      document.getElementById("surveyDataTable")!.innerHTML = "";
-    }
-  }, [surveyDataTable]);
-
-  return (
-    <div id="surveyDataTable" />
+onMounted(() => {
+  const survey = new Model(surveyJson);
+  const surveyDataTable = new Tabulator(
+    survey,
+    generateData(),
+    { jspdf: jsPDF, xlsx: XLSX }
   );
-}
+  surveyDataTable.render("surveyDataTable");
+});
+</script>
+
+<template>
+  <div id="surveyDataTable" />
+</template>
