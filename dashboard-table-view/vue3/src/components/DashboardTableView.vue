@@ -1,12 +1,14 @@
-<template>
-  <div id="surveyDataTable" />
-</template>
+<script setup lang="ts">
+import 'tabulator-tables/dist/css/tabulator.css';
+import 'survey-analytics/survey.analytics.tabulator.css';
+import { Model } from 'survey-core'
+import { Tabulator } from 'survey-analytics/survey.analytics.tabulator'
+import { onMounted } from "vue"
 
-<script>
-import 'tabulator-tables/dist/css/tabulator.min.css';
-import 'survey-analytics/survey.analytics.tabulator.min.css';
-import { Model } from 'survey-core';
-import { Tabulator } from 'survey-analytics/survey.analytics.tabulator';
+import jsPDF from "jspdf";
+import { applyPlugin } from "jspdf-autotable";
+applyPlugin(jsPDF);
+import * as XLSX from "xlsx";
 
 const surveyJson = {
   elements: [{
@@ -47,15 +49,17 @@ function generateData() {
   return data;
 }
 
-export default {
-  name: 'survey-dashboard-table-view',
-  mounted() {
-    const survey = new Model(surveyJson);
-    const surveyDataTable = new Tabulator(
-      survey,
-      generateData()
-    );
-    surveyDataTable.render("surveyDataTable");
-  }
-}
+onMounted(() => {
+  const survey = new Model(surveyJson);
+  const surveyDataTable = new Tabulator(
+    survey,
+    generateData(),
+    { jspdf: jsPDF, xlsx: XLSX }
+  );
+  surveyDataTable.render("surveyDataTable");
+});
 </script>
+
+<template>
+  <div id="surveyDataTable" />
+</template>
