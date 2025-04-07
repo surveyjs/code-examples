@@ -26,6 +26,7 @@ const survey = new Survey.Model(surveyJson);
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
 function generateData() {
     const data = [];
     for (let index = 0; index < 100; index++) {
