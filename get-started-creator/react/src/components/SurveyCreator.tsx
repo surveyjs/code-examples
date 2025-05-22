@@ -9,6 +9,8 @@ import {
 import { SurveyCreatorComponent, SurveyCreator } from "survey-creator-react";
 import "survey-core/survey-core.css";
 import "survey-creator-core/survey-creator-core.css";
+import "survey-core/survey.i18n";
+import "survey-creator-core/survey-creator-core.i18n";
 // Enable Ace Editor in the JSON Editor tab
 import "ace-builds/src-noconflict/ace";
 import "ace-builds/src-noconflict/ext-searchbox";
