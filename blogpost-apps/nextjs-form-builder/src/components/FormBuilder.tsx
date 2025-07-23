@@ -32,7 +32,8 @@ function addCustomTheme(theme: ICreatorTheme, userFriendlyThemeName: string) {
 addCustomTheme(creatorTheme, 'Custom Theme');
 
 const defaultCreatorOptions: ICreatorOptions = {
-  showTranslationTab: true
+  showTranslationTab: true,
+  showThemeTab: true
 };
 
 export default function FormBuilderComponent(props: {
@@ -82,6 +83,7 @@ export default function FormBuilderComponent(props: {
       visible: new ComputedUpdater(() => creator.activeTab === 'preview'),
       enabled: true,
       action: () => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const surveyModel = (creator.getPlugin("preview") as any).model.survey as SurveyModel;
         savePdf(surveyModel);
       }
