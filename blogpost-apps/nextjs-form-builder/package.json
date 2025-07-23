@@ -14,11 +14,11 @@
     "next": "15.4.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "survey-core": "2.2.5",
-    "survey-creator-core": "2.2.5",
-    "survey-creator-react": "2.2.5",
-    "survey-pdf": "2.2.5",
-    "survey-react-ui": "2.2.5"
+    "survey-core": "2.2.6",
+    "survey-creator-core": "2.2.6",
+    "survey-creator-react": "2.2.6",
+    "survey-pdf": "2.2.6",
+    "survey-react-ui": "2.2.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
