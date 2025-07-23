@@ -17,7 +17,9 @@ const FormBuilderComponent = dynamic(() => import('@/components/FormBuilder'), {
 const STORAGE_KEY = 'surveyjs-form-definitions';
 
 export default function Home() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [surveyJson, setSurveyJson] = useState<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [savedSurveys, setSavedSurveys] = useState<any[]>([]);
   const [currentSurveyName, setCurrentSurveyName] = useState<string>('');
   const [isLoading, setIsLoading] = useState(true);
@@ -28,7 +30,11 @@ export default function Home() {
       const savedList = saved ? JSON.parse(saved) : [];
 
       const preloaded = [courseEvaluationForm, healthAndWellnessAssessment, marketResearchForm, volunteerSignUpForm, websiteUsabilityForm];
-      const merged = [...preloaded, ...savedList.filter(s => !preloaded.some(p => p.id === s.id))];
+      const merged = [
+        ...preloaded,
+        ...savedList.filter((s: { id: string }) => !preloaded.some(p => p.id === s.id))
+      ];
+
 
       setSavedSurveys(merged);
       setIsLoading(false);
@@ -36,7 +42,7 @@ export default function Home() {
 
     loadInitialSurveys();
   }, []);
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSurveyChange = useCallback((json: any) => {
     setSurveyJson(json);
   }, []);
@@ -60,7 +66,7 @@ export default function Home() {
     setCurrentSurveyName('');
     alert('Survey saved successfully!');
   }, [surveyJson, currentSurveyName, savedSurveys]);
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const loadSurvey = useCallback((survey: any) => {
     setSurveyJson(survey.json);
     setCurrentSurveyName(survey.name);
@@ -85,12 +91,12 @@ export default function Home() {
     return <div className="flex items-center justify-center h-screen">Loading...</div>;
   }
 
-    return (
+  return (
     <div className="min-h-screen bg-gray-50">
       <div className="flex h-[calc(100vh-6rem)]">
         <aside className="hidden lg:block xl:w-96 bg-white shadow-sm border-r border-gray-200 overflow-y-auto p-4">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="font-semibold text-gray-800 tracking-wide uppercase text-[17px]">
+            <h2 className="font-medium text-gray-800 tracking-wide uppercase text-[17px]">
               Saved Surveys
             </h2>
             {savedSurveys.length > 0 && (
@@ -113,7 +119,7 @@ export default function Home() {
             />
             <button
               onClick={saveSurvey}
-              className="cursor-pointer py-3 px-2 bg-blue-600 text-white text-base font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+              className="cursor-pointer py-3 px-2 bg-blue-600 text-white text-base font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
             >
               Save Survey
             </button>
@@ -123,11 +129,11 @@ export default function Home() {
             <p className="text-gray-500">No saved surveys yet.</p>
           ) : (
             <div>
-              {savedSurveys.map((survey, index) => (
+              {savedSurveys.map((survey) => (
                 <div key={survey.id} className="mb-6">
                   <div className="flex justify-between items-start">
                     <div className="flex-1 pr-8">
-                      <h3 className="font-semibold text-gray-900 mb-1 text-base">
+                      <h3 className="font-medium text-gray-900 mb-1 text-base">
                         {survey.name}
                       </h3>
                       <p className="text-gray-500">
