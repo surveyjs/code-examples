@@ -94,7 +94,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="flex h-[calc(100vh-6rem)]">
-        <aside className="hidden lg:block xl:w-96 bg-white shadow-sm border-r border-gray-200 overflow-y-auto p-6">
+        <aside className="hidden lg:block xl:w-96 bg-white shadow-sm border-r border-gray-200 overflow-y-auto px-6 py-5">
           <div className="flex justify-between items-center mb-5">
             <h2 className="font-medium text-gray-800 tracking-wide uppercase text-[17px]">
               Saved Surveys
