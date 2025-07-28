@@ -18,7 +18,6 @@ import 'ace-builds/src-noconflict/ext-searchbox';
 import SurveyCreatorTheme from 'survey-creator-core/themes';
 import { creatorTheme } from '../styles/form-builder-theme';
 import { createPdfAction } from '../utils/surveyPdf';
-import { Action } from 'survey-core';
 
 registerCreatorTheme(SurveyCreatorTheme);
 
@@ -57,10 +56,8 @@ export default function FormBuilderComponent(props: {
 
     creator.applyCreatorTheme(creatorTheme);
 
-    const savePdfAction: Action = createPdfAction(creator);
-    creator.toolbar.actions.push(savePdfAction);
-    creator.footerToolbar.actions.push(savePdfAction);
-
+    createPdfAction(creator);
+    
     creatorRef.current = creator;
   }
 
