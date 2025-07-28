@@ -19,7 +19,7 @@ function savePdf(survey: SurveyModel) {
       surveyPDF.data = survey.data;
       surveyPDF.save(survey.pdfFileName);
 }
-export function createPdfAction(creator: SurveyCreator): Action {    
+export function createPdfAction(creator: SurveyCreator) {    
     const customIcon = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5zM12 13v4.17l-1.59-1.58L9 17l4 4 4-4-1.41-1.41L13 17.17V13h-1z"/></svg>';
     SvgRegistry.registerIcon("icon-savepdf", customIcon);
 
@@ -34,6 +34,7 @@ export function createPdfAction(creator: SurveyCreator): Action {
             const surveyModel = (creator.getPlugin("preview") as any).model.survey as SurveyModel;
             savePdf(surveyModel);
         }
-        });
-        return savePdfAction;
+    });
+    creator.toolbar.actions.push(savePdfAction);
+    creator.footerToolbar.actions.push(savePdfAction);
 }
