@@ -32,7 +32,8 @@ addCustomTheme(creatorTheme, 'Custom Theme');
 
 const defaultCreatorOptions: ICreatorOptions = {
   showTranslationTab: true,
-  showThemeTab: true
+  showThemeTab: true,
+  autoSaveEnabled: true
 };
 
 export default function FormBuilderComponent(props: {
@@ -45,7 +46,6 @@ export default function FormBuilderComponent(props: {
   if (!creatorRef.current) {
     const creator = new SurveyCreator(props.options || defaultCreatorOptions);
 
-    creator.autoSaveEnabled = true;
     creator.saveSurveyFunc = (
       no: number,
       callback: (no: number, success: boolean) => void
