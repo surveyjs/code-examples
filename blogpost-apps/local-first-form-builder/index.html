@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SurveyJS Creator V2 (pReact version)</title>
+
+  <script src="./survey.core.js"></script>
+  <script src="./survey.i18n.js"></script>
+  <script src="./survey-js-ui.js"></script>
+
+  <script src="./themes/index.js"></script>
+  <script src="./creator-themes/index.js"></script>
+
+  <script src="./survey-creator-core.js"></script>
+  <script src="./survey-creator-core.i18n.js"></script>
+  <script src="./survey-creator-js.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="./survey-core.css" />
+  <link rel="stylesheet" type="text/css" href="./survey-creator-core.css" />
+
+</head>
+
+<body>
+  <div id="surveyCreatorContainer" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0;"></div>
+</body>
+<script>
+  SurveyCreatorCore.registerCreatorTheme(SurveyCreatorTheme); // Add predefined Survey Creator UI themes
+  var surveyJSON = {};
+  var options = {
+    showThemeTab: true,
+    showTranslationTab: true
+  };
+  var creator = new SurveyCreator.SurveyCreator(options);
+  creator.JSON = surveyJSON;
+  creator.render("surveyCreatorContainer");
+</script>
+
+</html>
