@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SurveyJS Creator V2 (pReact version)</title>
+
+  <script src="./survey.core.js"></script>
+  <script src="./survey.i18n.js"></script>
+  <script src="./survey-js-ui.js"></script>
+  <script src="./themes/index.js"></script>
+  <script src="./creator-themes/index.js"></script>
+  <script src="./survey-creator-core.js"></script>
+  <script src="./survey-creator-core.i18n.js"></script>
+  <script src="./survey-creator-js.js"></script>
+
+  <link rel="stylesheet" href="./survey-core.css" />
+  <link rel="stylesheet" href="./survey-creator-core.css" />
+</head>
+
+<body>
+  <div id="surveyCreatorContainer" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0;"></div>
+
+  <script>
+    const LOCAL_STORAGE_KEY = "localSurveyJSON";
+    const SYNCED_FLAG_KEY = "localSurveySynced";
+
+    SurveyCreatorCore.registerCreatorTheme(SurveyCreatorTheme);
+
+    const creator = new SurveyCreator.SurveyCreator();
+
+    creator.autoSaveEnabled = true;
+
+    const savedJSON = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (savedJSON) {
+      try {
+        creator.JSON = JSON.parse(savedJSON);
+      } catch (e) {
+        console.warn("Failed to parse saved JSON from localStorage:", e);
+      }
+    }
+
+    creator.saveSurveyFunc = (saveNo, callback) => {
+      const currentJSON = creator.JSON;
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(currentJSON));
+      localStorage.setItem(SYNCED_FLAG_KEY, "false");
+      console.log("Survey auto-saved locally.");
+      callback(saveNo, true);
+    };
+
+    window.addEventListener("online", () => {
+      const json = localStorage.getItem(LOCAL_STORAGE_KEY);
+      const isSynced = localStorage.getItem(SYNCED_FLAG_KEY);
+
+      if (json && isSynced !== "true") {
+        sendToServer(JSON.parse(json));
+      }
+    });
+
+    function sendToServer(data) {
+      console.log("Syncing with server...", data);
+
+      setTimeout(() => {
+        console.log("Sync complete.");
+        localStorage.setItem(SYNCED_FLAG_KEY, "true");
+      }, 1000);
+    }
+
+    creator.render("surveyCreatorContainer");
+  </script>
+</body>
+</html>
