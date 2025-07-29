@@ -12,12 +12,6 @@ This is a lightweight demo showcasing how to use the [SurveyJS Form Builder](htt
 ## Related Blog Post  
 Read the full tutorial here: [Build Truly Offline Web Forms with SurveyJS](https://surveyjs.io/stay-updated/blog/local-fist-form-builder#try-the-demo-offline-surveyjs-creator).
 
-## Tech Stack
-
-- Preact
-- SurveyJS Form Library
-- LocalStorage API
-
 ## How to Run
 
 1. Clone this repository
