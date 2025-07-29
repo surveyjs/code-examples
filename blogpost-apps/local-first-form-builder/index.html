@@ -21,52 +21,105 @@
 <body>
   <div id="surveyCreatorContainer" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0;"></div>
 
-  <script>
-    const LOCAL_STORAGE_KEY = "localSurveyJSON";
-    const SYNCED_FLAG_KEY = "localSurveySynced";
+<script>
+  const LOCAL_STORAGE_KEY = "localSurveyJSON";
+  const THEME_STORAGE_KEY = "localSurveyTheme";
+  const SYNCED_FLAG_KEY = "localSurveySynced";
 
-    SurveyCreatorCore.registerCreatorTheme(SurveyCreatorTheme);
+  let isSurveySaved = false;
+  let isThemeSaved = false;
 
-    const creator = new SurveyCreator.SurveyCreator();
+  SurveyCreatorCore.registerCreatorTheme(SurveyCreatorTheme);
+  SurveyCreatorCore.registerSurveyTheme(SurveyTheme);
 
-    creator.autoSaveEnabled = true;
+  const creator = new SurveyCreator.SurveyCreator({
+    showThemeTab: true,
+    showTranslationTab: true
+  });
 
-    const savedJSON = localStorage.getItem(LOCAL_STORAGE_KEY);
-    if (savedJSON) {
-      try {
-        creator.JSON = JSON.parse(savedJSON);
-      } catch (e) {
-        console.warn("Failed to parse saved JSON from localStorage:", e);
-      }
+  creator.autoSaveEnabled = true;
+
+  // Restore saved JSON
+  const savedJSON = localStorage.getItem(LOCAL_STORAGE_KEY);
+  if (savedJSON) {
+    try {
+      creator.JSON = JSON.parse(savedJSON);
+    } catch (e) {
+      console.warn("Failed to parse saved JSON:", e);
     }
+  }
 
-    creator.saveSurveyFunc = (saveNo, callback) => {
+  // Restore theme
+  const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+  if (savedTheme) {
+    try {
+      creator.theme = JSON.parse(savedTheme);
+    } catch (e) {
+      console.warn("Failed to parse saved theme:", e);
+    }
+  }
+
+
+  function markSyncedIfBothSaved() {
+    if (isSurveySaved && isThemeSaved) {
+      localStorage.setItem(SYNCED_FLAG_KEY, "true");
+      console.log("Both survey and theme saved. Synced flag set.");
+    } else {
+      localStorage.setItem(SYNCED_FLAG_KEY, "false");
+    }
+  }
+
+  creator.saveSurveyFunc = (saveNo, callback) => {
+    try {
       const currentJSON = creator.JSON;
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(currentJSON));
-      localStorage.setItem(SYNCED_FLAG_KEY, "false");
-      console.log("Survey auto-saved locally.");
-      callback(saveNo, true);
-    };
-
-    window.addEventListener("online", () => {
-      const json = localStorage.getItem(LOCAL_STORAGE_KEY);
-      const isSynced = localStorage.getItem(SYNCED_FLAG_KEY);
-
-      if (json && isSynced !== "true") {
-        sendToServer(JSON.parse(json));
-      }
-    });
-
-    function sendToServer(data) {
-      console.log("Syncing with server...", data);
-
-      setTimeout(() => {
-        console.log("Sync complete.");
-        localStorage.setItem(SYNCED_FLAG_KEY, "true");
-      }, 1000);
+      isSurveySaved = true;
+      console.log("Survey saved.");
+    } catch (e) {
+      console.error("Failed to save survey JSON:", e);
+      isSurveySaved = false;
     }
+    markSyncedIfBothSaved();
+    callback(saveNo, true);
+  };
 
-    creator.render("surveyCreatorContainer");
-  </script>
+  creator.saveThemeFunc = (saveNo, callback) => {
+    try {
+      const currentTheme = creator.theme;
+      localStorage.setItem(THEME_STORAGE_KEY, JSON.stringify(currentTheme));
+      isThemeSaved = true;
+      console.log("Theme saved.");
+    } catch (e) {
+      console.error("Failed to save theme:", e);
+      isThemeSaved = false;
+    }
+    markSyncedIfBothSaved();
+    callback(saveNo, true);
+  };
+
+  window.addEventListener("online", () => {
+    const isSynced = localStorage.getItem(SYNCED_FLAG_KEY);
+    const json = localStorage.getItem(LOCAL_STORAGE_KEY);
+    const theme = localStorage.getItem(THEME_STORAGE_KEY);
+
+    if (isSynced !== "true" && json && theme) {
+      console.log("Syncing with server...");
+      sendToServer(JSON.parse(json), theme);
+    }
+  });
+
+  function sendToServer(surveyData, theme) {
+    // Simulated async sync
+    setTimeout(() => {
+      console.log("Synced survey:", surveyData);
+      console.log("Synced theme:", theme);
+      localStorage.setItem(SYNCED_FLAG_KEY, "true");
+    }, 1000);
+  }
+
+  creator.render("surveyCreatorContainer");
+</script>
+
+
 </body>
 </html>
