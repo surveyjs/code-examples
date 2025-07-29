@@ -21,6 +21,4 @@ Read the full tutorial here: [Build Truly Offline Web Forms with SurveyJS](https
 ## How to Run
 
 1. Clone this repository
-2. Open `index.html` directly in a browser — no server required
-
-This demo is static and runs 100% in the browser.
+2. Open `index.html` directly in a browser
