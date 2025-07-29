@@ -69,6 +69,7 @@
     }
   }
 
+  // Persist a survey JSON
   creator.saveSurveyFunc = (saveNo, callback) => {
     try {
       const currentJSON = creator.JSON;
@@ -82,7 +83,8 @@
     markSyncedIfBothSaved();
     callback(saveNo, true);
   };
-
+  
+  // Persist a survey theme
   creator.saveThemeFunc = (saveNo, callback) => {
     try {
       const currentTheme = creator.theme;
