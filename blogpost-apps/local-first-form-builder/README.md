@@ -1,16 +1,17 @@
 # SurveyJS Form Builder – Offline Preact Demo
 
-This is a lightweight demo showcasing how to use the [SurveyJS Form Builder](https://surveyjs.io/open-source) in an **offline-first Preact** setup.
+A minimal example showing how to use the [SurveyJS Form Builder](https://surveyjs.io/open-source) in an **offline-first Preact** application.
 
 ## Features
 
-- How to self-host the SurveyJS Form Builder
-- How to work completely offline (no internet required)
-- How to save/load survey JSON and theme to/from `localStorage`
-- How to sync survey data manually when needed
+- Self-hosted SurveyJS Form Builder&mdash;no external dependencies
+- Works entirely offline (no internet required)
+- Stores and retrieves survey JSON schemas and themes from `localStorage`
+- Supports manual syncing of survey data when needed
 
 ## Related Blog Post  
-Read the full tutorial here: [Build Truly Offline Web Forms with SurveyJS](https://surveyjs.io/stay-updated/blog/local-fist-form-builder#try-the-demo-offline-surveyjs-creator).
+
+Full tutorial: [Build Truly Offline Web Forms with SurveyJS](https://surveyjs.io/stay-updated/blog/local-first-form-builder#try-the-demo-offline-surveyjs-creator).
 
 ## How to Run
 
