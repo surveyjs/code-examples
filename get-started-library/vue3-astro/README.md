@@ -17,4 +17,11 @@ npm install
 npm run dev
 ```
 
-Open the printed local URL (usually http://localhost:4321/).
+Open http://127.0.0.1:4321/ (or the URL printed in the terminal).
+
+To preview the production build:
+
+```bash
+npm run build
+npm run preview
+```

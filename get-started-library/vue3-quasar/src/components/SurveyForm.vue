@@ -1,24 +1,34 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref, shallowRef } from 'vue'
+import { onMounted, onUnmounted, ref, shallowRef, watch } from 'vue'
 import { Model, type Question } from 'survey-core'
 import { SurveyComponent } from 'survey-vue3-ui'
+import { useQuasar } from 'quasar'
 import { medicalFormJson, medicalFormSample } from '@/survey/medicalForm'
+import { getQuasarTheme } from '@/survey/quasarTheme'
 
 import 'survey-core/survey-core.min.css'
-import '@/styles/quasar-sjs-adapter.css'
 
 const emit = defineEmits<{
   complete: [data: Record<string, unknown>]
 }>()
 
+const $q = useQuasar()
+
 function createSurveyModel() {
   const survey = new Model(medicalFormJson)
-  survey.isCompact = true
+  survey.applyTheme(getQuasarTheme($q.dark.isActive))
   return survey
 }
 
 const model = shallowRef(createSurveyModel())
 const completed = ref(false)
+
+watch(
+  () => $q.dark.isActive,
+  (isDark) => {
+    model.value.applyTheme(getQuasarTheme(isDark))
+  },
+)
 
 function addPrefillAction(survey: Model) {
   survey.addNavigationItem({

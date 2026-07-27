@@ -15,8 +15,8 @@ function onSurveyComplete(data: Record<string, unknown>) {
     <header class="hero">
       <h1>SurveyJS v3 × Nuxt</h1>
       <p>
-        Integration stress test: SurveyJS Form Library in a Nuxt + Vue SSR app,
-        side by side with a native Vue wizard. SurveyJS mounts client-only via
+        SurveyJS Form Library in a Nuxt + Vue SSR app, side by side with a
+        native Vue wizard. SurveyJS mounts client-only via
         <code>&lt;ClientOnly&gt;</code>.
       </p>
     </header>

@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       meta: [
         {
           name: 'description',
-          content: 'SurveyJS Form Library v3 integration stress test in a Nuxt + Vue app',
+          content: 'SurveyJS Form Library v3 integration demo in a Nuxt + Vue app',
         },
       ],
       link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],

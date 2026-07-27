@@ -125,6 +125,7 @@ export const medicalFormJson = {
           title: 'Do you have secondary insurance?',
           defaultValue: false,
           renderAs: 'checkbox',
+          titleLocation: 'hidden'
         },
         {
           type: 'panel',

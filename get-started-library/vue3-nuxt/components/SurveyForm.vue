@@ -3,9 +3,9 @@ import { onMounted, onUnmounted, ref, shallowRef } from 'vue'
 import { Model, type Question } from 'survey-core'
 import { SurveyComponent } from 'survey-vue3-ui'
 import { medicalFormJson, medicalFormSample } from '~/survey/medicalForm'
+import { compactTheme } from '~/survey/compactTheme'
 
 import 'survey-core/survey-core.min.css'
-import '~/assets/css/sjs-density.css'
 
 const emit = defineEmits<{
   complete: [data: Record<string, unknown>]
@@ -13,7 +13,7 @@ const emit = defineEmits<{
 
 function createSurveyModel() {
   const survey = new Model(medicalFormJson)
-  survey.isCompact = true
+  survey.applyTheme(compactTheme)
   return survey
 }
 

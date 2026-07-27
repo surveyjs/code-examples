@@ -24,7 +24,7 @@ function onSurveyComplete(data: Record<string, unknown>) {
       <q-toolbar>
         <q-toolbar-title>
           <span class="text-weight-medium">SurveyJS v3 × Quasar</span>
-          <span class="text-caption text-grey q-ml-md gt-xs">Integration stress test</span>
+          <span class="text-caption text-grey q-ml-md gt-xs">Form Library integration</span>
         </q-toolbar-title>
         <q-chip dense color="warning" text-color="white" class="q-mr-sm">
           Experimental adapter
@@ -43,12 +43,11 @@ function onSurveyComplete(data: Record<string, unknown>) {
     <q-page-container>
       <q-page padding class="q-pa-md">
         <q-banner rounded class="bg-info text-white q-mb-md">
-          <strong>What this evaluates:</strong>
-          functional Vue 3 rendering via
-          <code>survey-vue3-ui@3.0.0-beta.8</code>, plus stylistic fit through an
-          experimental CSS-variable bridge mapping Quasar
+          SurveyJS Form Library via
+          <code>survey-vue3-ui@3.0.0-beta.8</code>, with an experimental
+          theme bridge mapping Quasar
           <code>--q-*</code> tokens onto SurveyJS
-          <code>--sjs2-*</code> tokens. Toggle light/dark — both columns should track
+          <code>--sjs2-*</code> tokens. Toggle light/dark — both columns follow
           the host theme.
         </q-banner>
 
@@ -75,8 +74,8 @@ function onSurveyComplete(data: Record<string, unknown>) {
     </q-page-container>
 
     <q-footer class="bg-transparent text-grey text-center q-pa-sm text-caption">
-      No official Quasar adapter in survey-core — bridge lives in
-      <code>src/styles/quasar-sjs-adapter.css</code>
+      No official Quasar adapter in survey-core — theme bridge lives in
+      <code>src/survey/quasarTheme.ts</code>
     </q-footer>
   </q-layout>
 </template>
