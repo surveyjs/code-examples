@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue'
+import { medicalFormSample } from '@/survey/medicalForm'
 
 const PAGES = ['Patient', 'Insurance', 'History', 'Consent'] as const
 const LAST_PAGE = PAGES.length - 1
@@ -127,6 +128,33 @@ function addAllergy() {
 
 function removeAllergy(index: number) {
   form.allergies.splice(index, 1)
+}
+
+/** Load the full sample response into the form. */
+function prefillDemoData() {
+  const sample = medicalFormSample
+  form.firstName = sample.firstName
+  form.lastName = sample.lastName
+  form.dob = sample.dob
+  form.sex = sample.sex
+  form.phone = sample.phone
+  form.preferredContact = sample.preferredContact
+  form.carrier = sample.carrier
+  form.memberId = sample.memberId
+  form.groupNumber = sample.groupNumber
+  form.relationship = sample.relationshipToInsured
+  form.hasSecondary = sample.hasSecondary
+  form.carrier2 = sample.carrier2
+  form.memberId2 = sample.memberId2
+  form.medicalHistory.diabetes = sample.medicalHistory.diabetes
+  form.medicalHistory.hypertension = sample.medicalHistory.hypertension
+  form.medicalHistory.asthma = sample.medicalHistory.asthma
+  form.medicalHistory.heart = sample.medicalHistory.heart
+  form.allergies = sample.allergies.map((a) => ({ ...a }))
+  form.currentMedications = sample.currentMedications
+  form.consentTreatment = sample.consentTreatment
+  form.consentPrivacy = sample.consentPrivacy
+  form.signedDate = sample.signedDate
 }
 </script>
 
@@ -396,9 +424,11 @@ function removeAllergy(index: number) {
         </div>
       </div>
 
-      <div class="row justify-between q-mt-md">
-        <q-btn v-if="currentPage > 0" flat label="Previous" @click="goBack" />
-        <div v-else />
+      <div class="row justify-between q-mt-md items-center">
+        <div class="row q-gutter-sm items-center">
+          <q-btn flat color="primary" label="Prefill demo data" @click="prefillDemoData" />
+          <q-btn v-if="currentPage > 0" flat label="Previous" @click="goBack" />
+        </div>
         <q-btn
           v-if="currentPage < LAST_PAGE"
           outline

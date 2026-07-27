@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue'
+import { medicalFormSample } from '../survey/medicalForm'
 
 const PAGES = ['Patient', 'Insurance', 'History', 'Consent'] as const
 const LAST_PAGE = PAGES.length - 1
@@ -128,6 +129,33 @@ function addAllergy() {
 function removeAllergy(index: number) {
   form.allergies.splice(index, 1)
 }
+
+/** Load the full sample response into the form. */
+function prefillDemoData() {
+  const sample = medicalFormSample
+  form.firstName = sample.firstName
+  form.lastName = sample.lastName
+  form.dob = sample.dob
+  form.sex = sample.sex
+  form.phone = sample.phone
+  form.preferredContact = sample.preferredContact
+  form.carrier = sample.carrier
+  form.memberId = sample.memberId
+  form.groupNumber = sample.groupNumber
+  form.relationship = sample.relationshipToInsured
+  form.hasSecondary = sample.hasSecondary
+  form.carrier2 = sample.carrier2
+  form.memberId2 = sample.memberId2
+  form.medicalHistory.diabetes = sample.medicalHistory.diabetes
+  form.medicalHistory.hypertension = sample.medicalHistory.hypertension
+  form.medicalHistory.asthma = sample.medicalHistory.asthma
+  form.medicalHistory.heart = sample.medicalHistory.heart
+  form.allergies = sample.allergies.map((a) => ({ ...a }))
+  form.currentMedications = sample.currentMedications
+  form.consentTreatment = sample.consentTreatment
+  form.consentPrivacy = sample.consentPrivacy
+  form.signedDate = sample.signedDate
+}
 </script>
 
 <template>
@@ -140,7 +168,7 @@ function removeAllergy(index: number) {
 
     <template v-else>
       <h2 class="panel-title">Patient Intake (Native Vue)</h2>
-      <p class="panel-desc">Hand-built Vue controls — baseline for comparison.</p>
+      <p class="panel-desc">Hand-built Vue controls — the stylistic baseline for comparison.</p>
 
       <div class="steps" aria-hidden="true">
         <span
@@ -294,8 +322,19 @@ function removeAllergy(index: number) {
       </div>
 
       <div class="nav">
-        <button v-if="currentPage > 0" type="button" class="btn btn-text" @click="goBack">Previous</button>
-        <span v-else />
+        <div class="nav-start">
+          <button type="button" class="btn btn-text" @click="prefillDemoData">
+            Prefill demo data
+          </button>
+          <button
+            v-if="currentPage > 0"
+            type="button"
+            class="btn btn-text"
+            @click="goBack"
+          >
+            Previous
+          </button>
+        </div>
         <button
           v-if="currentPage < LAST_PAGE"
           type="button"

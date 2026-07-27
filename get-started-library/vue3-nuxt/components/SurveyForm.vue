@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, shallowRef } from 'vue'
-import { Model, type Question } from 'survey-core'
+import { Model } from 'survey-core'
 import { SurveyComponent } from 'survey-vue3-ui'
 import { medicalFormJson, medicalFormSample } from '~/survey/medicalForm'
 import { compactTheme } from '~/survey/compactTheme'
@@ -25,13 +25,7 @@ function addPrefillAction(survey: Model) {
     id: 'sv-prefill-demo',
     title: 'Prefill demo data',
     action: () => {
-      const names = new Set(
-        survey.currentPage.questions.map((q: Question) => q.getValueName()),
-      )
-      const pageData = Object.fromEntries(
-        Object.entries(medicalFormSample).filter(([key]) => names.has(key)),
-      )
-      survey.mergeData(pageData)
+      survey.mergeData({ ...medicalFormSample })
     },
   })
 }

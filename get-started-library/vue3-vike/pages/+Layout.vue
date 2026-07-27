@@ -262,7 +262,15 @@ fieldset.field {
 .nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 20px;
+}
+
+.nav-start {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
 }
 
 .btn {
