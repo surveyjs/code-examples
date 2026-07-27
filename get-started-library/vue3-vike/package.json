@@ -1,0 +1,21 @@
+{
+  "name": "surveyjs-vike-form-demo",
+  "scripts": {
+    "dev": "vike dev",
+    "build": "vike build",
+    "preview": "vike build && vike preview"
+  },
+  "dependencies": {
+    "survey-core": "3.0.0-beta.8",
+    "survey-vue3-ui": "3.0.0-beta.8",
+    "vike": "0.4.260",
+    "vike-vue": "^0.9.13",
+    "vue": "^3.5.40"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.8",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.5"
+  },
+  "type": "module"
+}

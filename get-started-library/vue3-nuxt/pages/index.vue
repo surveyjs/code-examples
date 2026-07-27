@@ -1,0 +1,45 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import NativeForm from '~/components/NativeForm.vue'
+import SurveyForm from '~/components/SurveyForm.vue'
+
+const surveyResult = ref<Record<string, unknown> | null>(null)
+
+function onSurveyComplete(data: Record<string, unknown>) {
+  surveyResult.value = data
+}
+</script>
+
+<template>
+  <div class="page">
+    <header class="hero">
+      <h1>SurveyJS v3 × Nuxt</h1>
+      <p>
+        Integration stress test: SurveyJS Form Library in a Nuxt + Vue SSR app,
+        side by side with a native Vue wizard. SurveyJS mounts client-only via
+        <code>&lt;ClientOnly&gt;</code>.
+      </p>
+    </header>
+
+    <div class="comparison">
+      <section>
+        <h2 class="col-label">SurveyJS Form Library</h2>
+        <ClientOnly>
+          <SurveyForm @complete="onSurveyComplete" />
+          <template #fallback>
+            <div class="panel loading">Loading SurveyJS…</div>
+          </template>
+        </ClientOnly>
+      </section>
+      <section>
+        <h2 class="col-label">Native Vue baseline</h2>
+        <NativeForm />
+      </section>
+    </div>
+
+    <div v-if="surveyResult" class="panel result">
+      <h3>Last SurveyJS submission</h3>
+      <pre>{{ JSON.stringify(surveyResult, null, 2) }}</pre>
+    </div>
+  </div>
+</template>
