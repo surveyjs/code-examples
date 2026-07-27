@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro'
+import SurveyCreator from '../components/SurveyCreator.vue'
+---
+
+<Layout>
+  <div class="creator-shell">
+    <SurveyCreator client:only="vue" />
+  </div>
+</Layout>

@@ -225,6 +225,30 @@ jobs:
         cd get-started-library/vue3-quasar
         npm install
         npm run build
+
+    - name: Build get-started-creator/vue3-nuxt
+      run: |
+        cd get-started-creator/vue3-nuxt
+        npm install
+        npm run build
+
+    - name: Build get-started-creator/vue3-vike
+      run: |
+        cd get-started-creator/vue3-vike
+        npm install
+        npm run build
+
+    - name: Build get-started-creator/vue3-astro
+      run: |
+        cd get-started-creator/vue3-astro
+        npm install
+        npm run build
+
+    - name: Build get-started-creator/vue3-quasar
+      run: |
+        cd get-started-creator/vue3-quasar
+        npm install
+        npm run build
   build-angular-node12-node14:
     runs-on: ubuntu-latest
 
