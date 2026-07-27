@@ -8,10 +8,10 @@ import ComparisonApp from '../components/ComparisonApp.vue'
     <h1>SurveyJS v3 × Astro</h1>
     <p>
       SurveyJS Form Library in an Astro + Vue islands app, side by side with a
-      native Vue wizard. SurveyJS mounts client-only via
-      <code>client:only="vue"</code>.
+      native Vue wizard. The Vue island is server-rendered and hydrated via
+      <code>client:load</code>.
     </p>
   </header>
 
-  <ComparisonApp client:only="vue" />
+  <ComparisonApp client:load />
 </Layout>

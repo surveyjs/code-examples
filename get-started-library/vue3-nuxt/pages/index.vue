@@ -16,20 +16,14 @@ function onSurveyComplete(data: Record<string, unknown>) {
       <h1>SurveyJS v3 × Nuxt</h1>
       <p>
         SurveyJS Form Library in a Nuxt + Vue SSR app, side by side with a
-        native Vue wizard. SurveyJS mounts client-only via
-        <code>&lt;ClientOnly&gt;</code>.
+        native Vue wizard. SurveyJS is server-rendered and hydrated on the client.
       </p>
     </header>
 
     <div class="comparison">
       <section>
         <h2 class="col-label">SurveyJS Form Library</h2>
-        <ClientOnly>
-          <SurveyForm @complete="onSurveyComplete" />
-          <template #fallback>
-            <div class="panel loading">Loading SurveyJS…</div>
-          </template>
-        </ClientOnly>
+        <SurveyForm @complete="onSurveyComplete" />
       </section>
       <section>
         <h2 class="col-label">Native Vue baseline</h2>

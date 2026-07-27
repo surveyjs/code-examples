@@ -9,4 +9,8 @@ export default defineConfig({
     host: "127.0.0.1",
     port: 3000,
   },
+  // Bundle SurveyJS for SSR so named ESM imports from the CJS/UMD build work
+  ssr: {
+    noExternal: ["survey-core", "survey-vue3-ui"],
+  },
 });

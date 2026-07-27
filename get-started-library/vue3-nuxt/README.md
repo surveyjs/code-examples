@@ -2,7 +2,7 @@
 
 Side-by-side comparison of SurveyJS Form Library v3 and a native Vue wizard inside a [Nuxt](https://nuxt.com/) + Vue SSR app.
 
-SurveyJS mounts with Nuxt's `<ClientOnly>` because the library needs browser APIs.
+SurveyJS is server-rendered with the page and hydrated on the client.
 
 ## Stack
 

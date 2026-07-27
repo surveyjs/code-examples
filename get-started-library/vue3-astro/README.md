@@ -2,7 +2,7 @@
 
 Side-by-side comparison of SurveyJS Form Library v3 and a native Vue wizard inside an [Astro](https://astro.build/) + Vue islands app.
 
-SurveyJS mounts with `client:only="vue"` because the library needs browser APIs.
+The Vue island is server-rendered and hydrated with `client:load` (not `client:only`).
 
 ## Stack
 
