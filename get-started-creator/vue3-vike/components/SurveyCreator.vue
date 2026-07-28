@@ -9,7 +9,7 @@ import 'survey-creator-core/survey-creator-core.min.css'
 import 'ace-builds/src-noconflict/ace'
 import 'ace-builds/src-noconflict/ext-searchbox'
 
-registerCreatorThemeы(SurveyTheme)
+registerCreatorTheme(SurveyTheme);
 
 const creatorOptions: ICreatorOptions = {
   autoSaveEnabled: true,
