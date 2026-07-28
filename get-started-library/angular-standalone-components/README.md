@@ -11,4 +11,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 - [Website](https://surveyjs.io/)
 - [Documentation](https://surveyjs.io/form-library/documentation/overview)
 - [Starter Demos](https://surveyjs.io/form-library/examples/overview)
-- [What's New](https://surveyjs.io/stay-updated/major-updates/2023)
+- [What's New](https://surveyjs.io/WhatsNew)
