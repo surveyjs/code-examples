@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@fontsource/open-sans": "^5.3.0",
     "@angular/animations": "^18.2.13",
     "@angular/common": "^18.2.13",
     "@angular/compiler": "^18.2.13",
@@ -21,7 +22,7 @@
     "jspdf": "^2.4.0",
     "jspdf-autotable": "^3.5.20",
     "rxjs": "~7.4.0",
-    "survey-analytics": "latest",
+    "survey-analytics": "~3.1.0",
     "tslib": "^2.3.0",
     "xlsx": "^0.18.5",
     "zone.js": "~0.14.10"

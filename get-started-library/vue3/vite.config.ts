@@ -9,7 +9,7 @@ export default defineConfig({
     vue(),
   ],
   build: {
-    chunkSizeWarningLimit: 2000
+    chunkSizeWarningLimit: Infinity,
   },
   resolve: {
     alias: {

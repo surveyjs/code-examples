@@ -11,7 +11,7 @@ export default defineConfig({
     vueDevTools(),
   ],
   build: {
-    chunkSizeWarningLimit: 3000
+    chunkSizeWarningLimit: Infinity,
   },
   resolve: {
     alias: {
