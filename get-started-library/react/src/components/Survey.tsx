@@ -1,7 +1,6 @@
 'use client'
 
-import { useCallback } from 'react';
-import 'survey-core/survey-core.css';
+import { useMemo, useCallback } from 'react';
 import { Model } from 'survey-core'
 import { Survey } from 'survey-react-ui'
 
@@ -20,7 +19,7 @@ const surveyJson = {
 };
 
 export default function SurveyComponent() {
-  const survey = new Model(surveyJson);
+  const survey = useMemo(() => new Model(surveyJson), [surveyJson]);
   const alertResults = useCallback((sender: Model) => {
     const results = JSON.stringify(sender.data);
     alert(results);
