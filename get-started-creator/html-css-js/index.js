@@ -1,5 +1,6 @@
 const creatorOptions = {
-    autoSaveEnabled: true
+    autoSaveEnabled: true,
+    collapseOnDrag: true
 };
 
 const defaultJson = {

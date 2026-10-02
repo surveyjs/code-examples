@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "ace-builds": "^1.39.0",
-    "survey-creator-vue": "latest",
+    "@fontsource/open-sans": "^5.3.0",
+    "survey-creator-vue": "~3.1.0",
     "vue": "^3.3.10"
   },
   "devDependencies": {

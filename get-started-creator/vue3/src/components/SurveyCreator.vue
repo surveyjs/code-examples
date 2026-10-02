@@ -10,7 +10,8 @@ import "ace-builds/src-noconflict/ace";
 import "ace-builds/src-noconflict/ext-searchbox";
 
 const creatorOptions: ICreatorOptions = {
-  autoSaveEnabled: true
+  autoSaveEnabled: true,
+  collapseOnDrag: true
 };
 
 const defaultJson = {
