@@ -1,6 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { Model } from 'survey-core';
-import { VisualizationPanel } from 'survey-analytics';
+import { Dashboard } from 'survey-analytics';
 
 const surveyJson = {
   elements: [{
@@ -42,10 +42,6 @@ function generateData() {
   return data;
 }
 
-const vizPanelOptions = {
-  allowHideQuestions: false
-}
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -54,11 +50,11 @@ const vizPanelOptions = {
 export class AppComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     const survey = new Model(surveyJson);
-    const vizPanel = new VisualizationPanel(
-      survey.getAllQuestions(),
-      generateData(),
-      vizPanelOptions
-    );
-    vizPanel.render("surveyVizPanel");
+    const dashboard = new Dashboard({
+      questions: survey.getAllQuestions(),
+      data: generateData(),
+      allowHideQuestions: false
+    });
+    dashboard.render("surveyDashboard");
   }
 }

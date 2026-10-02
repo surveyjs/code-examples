@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import 'survey-analytics/survey.analytics.css'
 import { Model } from 'survey-core'
-import { VisualizationPanel } from 'survey-analytics'
+import { Dashboard } from 'survey-analytics'
 import { onMounted } from "vue"
 
 const surveyJson = {
@@ -44,21 +44,18 @@ function generateData() {
   return data;
 }
 
-const vizPanelOptions = {
-  allowHideQuestions: false
-}
-
 onMounted(() => {
   const survey = new Model(surveyJson);
-  const vizPanel = new VisualizationPanel(
-    survey.getAllQuestions(),
-    generateData(),
-    vizPanelOptions
-  );
-  vizPanel.render("surveyVizPanel");
+  const dashboard = new Dashboard({
+    questions: survey.getAllQuestions(),
+    data: generateData(),
+    allowHideQuestions: false
+  });
+    
+  dashboard.render("surveyDashboard");
 });
 </script>
 
 <template>
-  <div id="surveyVizPanel" />
+  <div id="surveyDashboard" />
 </template>

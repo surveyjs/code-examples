@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import 'survey-analytics/survey.analytics.css';
 import { Model } from 'survey-core';
-import { IVisualizationPanelOptions, VisualizationPanel } from 'survey-analytics';
+import { IDashboardOptions, Dashboard } from 'survey-analytics';
 
 const surveyJson = {
   elements: [{
@@ -45,35 +45,28 @@ function generateData() {
   return data;
 }
 
-const vizPanelOptions: IVisualizationPanelOptions = {
-  allowHideQuestions: false
-}
-
 export default function DashboardComponent() {
-  const [survey, setSurvey] = useState<Model>();
-  const [vizPanel, setVizPanel] = useState<VisualizationPanel>();
-  if (!survey) {
-    const survey = new Model(surveyJson);
-    setSurvey(survey);
-  }
-
-  if (!vizPanel && !!survey) {
-    const vizPanel = new VisualizationPanel(
-      survey.getAllQuestions(),
-      generateData(),
-      vizPanelOptions
-    );
-    setVizPanel(vizPanel);
-  }
+  const [dashboard, setDashboard] = useState<Dashboard | null>(null);
 
   useEffect(() => {
-    vizPanel?.render("surveyVizPanel");
+    const survey = new Model(surveyJson);
+
+    const dashboardInstance = new Dashboard({
+      questions: survey.getAllQuestions(),
+      data: generateData(),
+      allowHideQuestions: false
+    });
+
+    setDashboard(dashboardInstance);
+
+    dashboardInstance.render("dashboard");
+
     return () => {
-      vizPanel?.clear();
-    }
-  }, [vizPanel]);
+      dashboardInstance.clear();
+    };
+  }, []);
 
   return (
-    <div id="surveyVizPanel" />
+    <div id="dashboard" />
   );
 }

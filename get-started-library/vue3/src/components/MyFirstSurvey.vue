@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import 'survey-core/survey-core.css';
 import { Model } from 'survey-core';
 import { SurveyComponent } from "survey-vue3-ui";
 
