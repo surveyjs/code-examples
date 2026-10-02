@@ -1,6 +1,6 @@
 'use client'
 
-import 'survey-core/survey-core.css';
+import { useMemo } from 'react';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 
@@ -70,7 +70,7 @@ const surveyJson = {
 };
 
 export default function SurveyComponent() {
-  const survey = new Model(surveyJson);
+  const survey = useMemo(() => new Model(surveyJson), []);
 
   return (
       <Survey model={survey} id="surveyContainer" />      

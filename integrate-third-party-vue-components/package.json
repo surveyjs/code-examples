@@ -13,8 +13,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "survey-creator-vue": "latest",
+    "@fontsource/open-sans": "^5.3.0",
     "@lk77/vue3-color": "latest",
+    "survey-creator-vue": "~3.1.2",
     "vue": "^3.3.11"
   },
   "devDependencies": {

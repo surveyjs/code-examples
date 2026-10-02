@@ -4,8 +4,6 @@ import { useState } from "react";
 import { SurveyCreator, SurveyCreatorComponent } from "survey-creator-react";
 import { Serializer } from "survey-core";
 import { registerColorPicker } from "./ColorPicker";
-import "survey-core/survey-core.css";
-import "survey-creator-core/survey-creator-core.css";
 import { ActiveTabChangedEvent, SurveyCreatorModel } from "survey-creator-core";
 
 registerColorPicker();
@@ -21,14 +19,12 @@ const surveyJson = {
 };
 
 export default function SurveyCreatorWidget () {
-  let [creator, setCreator] = useState<SurveyCreator>();
-
-  if (!creator) {
-    creator = new SurveyCreator();
-    setCreator(creator);
-  }
-  creator.onActiveTabChanged.add(handleActiveTabChange);
-  creator.JSON = surveyJson;
+  const [creator] = useState(() => {
+    const creator = new SurveyCreator();
+    creator.onActiveTabChanged.add(handleActiveTabChange);
+    creator.JSON = surveyJson;
+    return creator;
+  });
   return (
     <div style={{ height: "100vh", width: "100%" }}>
       <SurveyCreatorComponent creator={creator} />
@@ -54,7 +50,7 @@ function applyBackground(color: string) {
   setTimeout(() => {
     const surveyEl = document.getElementsByClassName("sd-root-modern")[0] as HTMLElement;
     if (!!surveyEl) {
-      surveyEl.style.setProperty("--background", color);
+      surveyEl.style.setProperty("--sjs2-color-utility-surface-survey", color);
     }
   }, 50);
 }

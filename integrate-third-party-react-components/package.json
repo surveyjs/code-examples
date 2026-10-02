@@ -9,12 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/open-sans": "^5.3.0",
     "@types/react-color": "^3.0.13",
     "next": "15.2.2",
     "react": "^19.0.0",
     "react-color": "^2.19.3",
     "react-dom": "^19.0.0",
-    "survey-creator-react": "^2.0.0"
+    "survey-creator-react": "~3.1.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -6,7 +6,7 @@ function applyBackground(color) {
   setTimeout(() => {
     const surveyEl = document.getElementsByClassName("sd-root-modern")[0] as HTMLElement;
     if (!!surveyEl) {
-      surveyEl.style.setProperty("--background", color);
+      surveyEl.style.setProperty("--sjs2-color-utility-surface-survey", color);
     }
   }, 50);
 };

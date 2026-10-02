@@ -1,5 +1,6 @@
 'use client'
 
+import { useMemo } from 'react';
 import 'survey-core/survey-core.css';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
@@ -43,13 +44,17 @@ const savePdf = (surveyData: any) => {
 };
 
 export default function SurveyComponent() {
-  const survey = new Model(surveyJson);
-  
-  survey.addNavigationItem({
-    id: "pdf-export",
-    title: "Save as PDF",
-    action: () => savePdf(survey.data)
-  });
+  const survey = useMemo(() => {
+    const model = new Model(surveyJson);
+
+    model.addNavigationItem({
+      id: "pdf-export",
+      title: "Save as PDF",
+      action: () => savePdf(model.data)
+    });
+
+    return model;
+  }, [surveyJson]);
 
   return (
     <Survey model={survey} id="surveyContainer" />

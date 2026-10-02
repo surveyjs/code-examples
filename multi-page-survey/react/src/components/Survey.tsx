@@ -1,7 +1,6 @@
 'use client'
 
-import { useCallback, useState, useRef } from 'react';
-import 'survey-core/survey-core.css';
+import { useCallback, useState, useMemo } from 'react';
 import { Model } from 'survey-core'
 import { Survey } from 'survey-react-ui'
 
@@ -64,8 +63,8 @@ const surveyJson = {
 };
 
 export default function SurveyComponent() {
-  // useRef enables the Model object to persist between state changes
-  const survey = useRef(new Model(surveyJson)).current;
+  // Keep the Model object across renders
+  const survey = useMemo(() => new Model(surveyJson), []);
   const [surveyResults, setSurveyResults] = useState("");
   const [isSurveyCompleted, setIsSurveyCompleted] = useState(false);
   

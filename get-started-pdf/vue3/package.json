@@ -10,8 +10,9 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
   },
   "dependencies": {
-    "survey-pdf": "latest",
-    "survey-vue3-ui": "latest",
+    "@fontsource/open-sans": "^5.3.0",
+    "survey-pdf": "~3.1.0",
+    "survey-vue3-ui": "~3.1.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {
