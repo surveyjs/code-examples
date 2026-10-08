@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, provideZoneChangeDetection } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SurveyCreatorModule } from 'survey-creator-angular';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,7 +17,7 @@ import { SurveyListComponent } from './components/survey-list.component';
     AppRoutingModule,
     SurveyCreatorModule
   ],
-  providers: [],
+  providers: [provideZoneChangeDetection()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

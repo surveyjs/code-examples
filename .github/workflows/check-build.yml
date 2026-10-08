@@ -184,170 +184,36 @@ jobs:
       if: matrix.node-version == '18.x'
       run: echo "NODE_OPTIONS=" >> $GITHUB_ENV
 
-  build-angular-node12-node14:
+  build-angular:
     runs-on: ubuntu-latest
-
     strategy:
       fail-fast: false
       matrix:
-        node-version: [12.x, 14.x]
-    
+        node-version: [22.x, 24.x, 26.x]
+        project:
+          - dashboard-table-view/angular
+          - get-started-analytics/angular
+          - get-started-creator/angular
+          - get-started-creator/angular-standalone-components
+          - get-started-library/angular
+          - get-started-library/angular-standalone-components
+          - get-started-pdf/angular
+          - integrate-third-party-angular-components
+          - multi-page-survey/angular
+          - quiz/angular
+          - survey-creator-web-service/angular
+    defaults:
+      run:
+        working-directory: ${{ matrix.project }}
     steps:
-    - uses: actions/checkout@v3
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-
-    - name: Build get-started-library/angular
-      run: |
-        cd get-started-library/angular
-        npm install
-        npm install survey-core
-        npm run build
-
-    - name: Build get-started-creator/angular
-      run: |
-        cd get-started-creator/angular
-        npm install
-        npm install survey-core survey-angular-ui survey-creator-core
-        npm run build
-
-    - name: Build get-started-analytics/angular
-      run: |
-        cd get-started-analytics/angular
-        npm install
-        npm install survey-core
-        npm run build
-
-    - name: Build get-started-pdf/angular
-      run: |
-        cd get-started-pdf/angular
-        npm install
-        npm install survey-core
-        npm run build
-
-    - name: Build multi-page-survey/angular
-      run: |
-        cd multi-page-survey/angular
-        npm install
-        npm install survey-core
-        npm run build
-
-    - name: Build quiz/angular
-      run: |
-        cd quiz/angular
-        npm install
-        npm install survey-core
-        npm run build
-
-    - name: Build survey-creator-web-service/angular
-      run: |
-        cd survey-creator-web-service/angular
-        npm install
-        npm install survey-core survey-angular-ui survey-creator-core
-        npm run build
-
-    - name: Build dashboard-table-view/angular
-      run: |
-        cd dashboard-table-view/angular
-        npm install
-        npm install survey-core
-        npm run build
-
-    - name: Build integrate-third-party-angular-components
-      run: |
-        cd integrate-third-party-angular-components
-        npm install
-        npm install survey-core survey-angular-ui survey-creator-core
-        npm run build
-      if: ${{ matrix.node-version != '12.x' }}
-
-  build-angular-node16-node18:
-    runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [16.x, 18.x]
-    
-    steps:
-    - uses: actions/checkout@v3
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-
-    - name: Build get-started-library/angular
-      run: |
-        cd get-started-library/angular
-        npm install
-        npm run build
-
-    - name: Build get-started-library/angular-standalone-components
-      run: |
-        cd get-started-library/angular-standalone-components
-        npm install
-        npm run build
-      if: ${{ matrix.node-version != '16.x' }}
-
-    - name: Build get-started-creator/angular
-      run: |
-        cd get-started-creator/angular
-        npm install
-        npm run build
-
-    - name: Build get-started-creator/angular-standalone-components
-      run: |
-        cd get-started-creator/angular-standalone-components
-        npm install
-        npm run build
-      if: ${{ matrix.node-version != '16.x' }}
-
-    - name: Build get-started-analytics/angular
-      run: |
-        cd get-started-analytics/angular
-        npm install
-        npm run build
-
-    - name: Build get-started-pdf/angular
-      run: |
-        cd get-started-pdf/angular
-        npm install
-        npm run build
-
-    - name: Build multi-page-survey/angular
-      run: |
-        cd multi-page-survey/angular
-        npm install
-        npm run build
-
-    - name: Build quiz/angular
-      run: |
-        cd quiz/angular
-        npm install
-        npm run build
-
-    - name: Build survey-creator-web-service/angular
-      run: |
-        cd survey-creator-web-service/angular
-        npm install
-        npm run build
-
-    - name: Build dashboard-table-view/angular
-      run: |
-        cd dashboard-table-view/angular
-        npm install
-        npm run build
-
-    - name: Build integrate-third-party-angular-components
-      run: |
-        cd integrate-third-party-angular-components
-        npm install
-        npm run build
-      if: ${{ matrix.node-version != '12.x' }}
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+          cache-dependency-path: ${{ matrix.project }}/package-lock.json
+      - run: npm ci
+      - run: npm run build -- --configuration production
 
   build-react-node12-node14:
     runs-on: ubuntu-latest

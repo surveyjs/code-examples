@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, provideZoneChangeDetection } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SurveyCreatorModule } from 'survey-creator-angular';
 import { ColorSketchModule } from "ngx-color/sketch";
@@ -22,7 +22,7 @@ import { ColorPickerComponent } from './color-picker/color-picker.component';
     ColorSliderModule,
     ColorCompactModule
   ],
-  providers: [],
+  providers: [provideZoneChangeDetection()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

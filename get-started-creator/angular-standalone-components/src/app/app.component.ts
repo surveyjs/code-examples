@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SurveyCreatorComponent } from './survey-creator/survey-creator.component';
 
@@ -7,6 +7,7 @@ import { SurveyCreatorComponent } from './survey-creator/survey-creator.componen
   standalone: true,
   imports: [RouterOutlet, SurveyCreatorComponent],
   templateUrl: './app.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.component.css'
 })
 export class AppComponent {

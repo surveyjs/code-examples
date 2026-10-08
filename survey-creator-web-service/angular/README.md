@@ -1,6 +1,6 @@
 # Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.13.
+This project uses Angular 22.2.1 and Angular CLI 22.2.2
 
 ## Development server
 
@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Requirements
+
+Use Node.js 22.22.3 or newer in the 22.x line, 24.15.0 or newer in the 24.x line, or 26.x or newer. Run `npm ci` to install the locked dependencies.
