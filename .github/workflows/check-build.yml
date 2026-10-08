@@ -7,129 +7,6 @@ env:
   NODE_OPTIONS: "--max-old-space-size=8192"
 
 jobs:
-  build-vue2-node12-node14:
-    runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [12.x, 14.x]
-    
-    steps:
-    - uses: actions/checkout@v3
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    
-    - name: Build get-started-library/vue
-      run: |
-        cd get-started-library/vue
-        npm install
-        npm install survey-core
-        npm run build
-
-    - name: Build get-started-creator/vue
-      run: |
-        cd get-started-creator/vue
-        npm install
-        npm install survey-core survey-knockout-ui survey-creator-core 
-        npm run build
-
-    - name: Build get-started-analytics/vue
-      run: |
-        cd get-started-analytics/vue
-        npm install
-        npm install survey-core
-        npm run build
-
-    - name: Build get-started-pdf/vue
-      run: |
-        cd get-started-pdf/vue
-        npm install
-        npm install survey-core
-        npm run build
-
-    - name: Build multi-page-survey/vue
-      run: |
-        cd multi-page-survey/vue
-        npm install
-        npm install survey-core
-        npm run build
-
-    - name: Build quiz/vue
-      run: |
-        cd quiz/vue
-        npm install
-        npm install survey-core
-        npm run build
-
-    - name: Build dashboard-table-view/vue
-      run: |
-        cd dashboard-table-view/vue
-        npm install
-        npm install survey-core
-        npm run build
-
-  build-vue2-node16:
-    runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [16.x]
-    
-    steps:
-    - uses: actions/checkout@v3
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    
-    - name: Build get-started-library/vue
-      run: |
-        cd get-started-library/vue
-        npm install
-        npm run build
-
-    - name: Build get-started-creator/vue
-      run: |
-        cd get-started-creator/vue
-        npm install
-        npm run build
-
-    - name: Build get-started-analytics/vue
-      run: |
-        cd get-started-analytics/vue
-        npm install
-        npm run build
-
-    - name: Build get-started-pdf/vue
-      run: |
-        cd get-started-pdf/vue
-        npm install
-        npm run build
-
-    - name: Build multi-page-survey/vue
-      run: |
-        cd multi-page-survey/vue
-        npm install
-        npm run build
-
-    - name: Build quiz/vue
-      run: |
-        cd quiz/vue
-        npm install
-        npm run build
-
-    - name: Build dashboard-table-view/vue
-      run: |
-        cd dashboard-table-view/vue
-        npm install
-        npm run build
-
   build-vue3:
     runs-on: ubuntu-latest
 
@@ -139,10 +16,10 @@ jobs:
         node-version: [18.x]
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
 
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v7
       with:
         node-version: ${{ matrix.node-version }}
     
@@ -206,8 +83,8 @@ jobs:
       run:
         working-directory: ${{ matrix.project }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
@@ -215,19 +92,19 @@ jobs:
       - run: npm ci
       - run: npm run build -- --configuration production
 
-  build-react-node12-node14:
+  build-react-latest-dependencies:
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
       matrix:
-        node-version: [12.x, 14.x]
+        node-version: [22.x, 24.x, 26.x]
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
 
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v7
       with:
         node-version: ${{ matrix.node-version }}
 
@@ -294,19 +171,19 @@ jobs:
         npm install survey-core
         npm run build
   
-  build-react-node16-node18:
+  build-react:
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
       matrix:
-        node-version: [16.x, 18.x]
+        node-version: [22.x, 24.x, 26.x]
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
 
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v7
       with:
         node-version: ${{ matrix.node-version }}
 
