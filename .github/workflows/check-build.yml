@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [18.x]
+        node-version: [22.x, 24.x, 26.x]
     
     steps:
     - uses: actions/checkout@v7
@@ -22,10 +22,6 @@ jobs:
       uses: actions/setup-node@v7
       with:
         node-version: ${{ matrix.node-version }}
-    
-    - name: Override NODE options for the most recent version
-      if: matrix.node-version == '18.x'
-      run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
     
     - name: Build get-started-library/vue3
       run: |
@@ -57,10 +53,6 @@ jobs:
         npm install
         npm run build
     
-    - name: Reset overridden NODE options
-      if: matrix.node-version == '18.x'
-      run: echo "NODE_OPTIONS=" >> $GITHUB_ENV
-
   build-angular:
     runs-on: ubuntu-latest
     strategy:
