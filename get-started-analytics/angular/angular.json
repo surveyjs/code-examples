@@ -20,7 +20,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "allowedCommonJsDependencies": ["survey-analytics"],
+            "allowedCommonJsDependencies": [
+              "survey-analytics"
+            ],
             "outputPath": {
               "base": "dist/get-started-dashboard-angular"
             },
@@ -93,7 +95,9 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "src/polyfills.ts"
+            ],
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [

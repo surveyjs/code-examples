@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { AngularComponentFactory, QuestionAngular } from "survey-angular-ui";
 import { ElementFactory, Question, Serializer, SvgRegistry } from "survey-core";
 import { PropertyGridEditorCollection, localization } from "survey-creator-core";
@@ -7,8 +7,10 @@ import { ColorEvent } from 'ngx-color';
 const CUSTOM_TYPE = "color-picker";
 
 @Component({
+  standalone: false,
   selector: "color-picker",
   templateUrl: "./color-picker.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: [ "./color-picker.component.css" ]
 })
 export class ColorPickerComponent extends QuestionAngular<QuestionColorPickerModel> {

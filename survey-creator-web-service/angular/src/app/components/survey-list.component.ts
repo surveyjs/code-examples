@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { Router } from "@angular/router";
 import { createSurvey, deleteSurvey, getSurveyItems } from "../WebDataService";
 
@@ -8,7 +8,9 @@ interface SurveyListItem {
 }
 
 @Component({
+  standalone: false,
   templateUrl: "./survey-list.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   selector: "survey-list"
 })
 export class SurveyListComponent {

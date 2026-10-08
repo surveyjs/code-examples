@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { SurveyCreatorModel } from "survey-creator-core";
 import { Serializer, SurveyModel } from "survey-core";
 
@@ -27,8 +27,10 @@ const surveyJson = {
 };
 
 @Component({
+  standalone: false,
   selector: "survey-creator-component",
   templateUrl: "./survey-creator.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ["./survey-creator.component.css"]
 })
 export class SurveyCreatorComponent implements OnInit {

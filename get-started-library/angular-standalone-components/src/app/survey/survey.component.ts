@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Model } from "survey-core";
 import { SurveyModule } from 'survey-angular-ui';
 
@@ -9,6 +9,7 @@ import { SurveyModule } from 'survey-angular-ui';
   standalone: true,
   imports: [ SurveyModule ],
   templateUrl: './survey.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './survey.component.css'
 })
 export class SurveyComponent implements OnInit {

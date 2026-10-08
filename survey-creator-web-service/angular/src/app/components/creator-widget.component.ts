@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Serializer } from "survey-core";
 import { SurveyCreatorModel } from "survey-creator-core";
@@ -7,7 +7,9 @@ import { getSurveyJSON, getSurveyName, saveSurveyJSON, saveSurveyName } from "..
 Serializer.findProperty("survey", "title").isRequired = true;
 
 @Component({
+  standalone: false,
   templateUrl: "./creator-widget.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   selector: "creator-widget"
 })
 export class CreatorWidgetComponent implements OnInit {

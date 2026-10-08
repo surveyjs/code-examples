@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { SurveyCreatorModel } from "survey-creator-core";
 import { SurveyCreatorModule } from 'survey-creator-angular';
 // Enable Ace Editor in the JSON Editor tab
@@ -30,6 +30,7 @@ const defaultJson = {
   standalone: true,
   imports: [SurveyCreatorModule],
   templateUrl: './survey-creator.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './survey-creator.component.css'
 })
 export class SurveyCreatorComponent implements OnInit {
