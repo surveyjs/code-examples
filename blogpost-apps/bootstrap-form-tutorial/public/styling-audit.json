@@ -1,0 +1,128 @@
+{
+  "surveyCore": "3.2.3",
+  "bootstrap": "5.3.8",
+  "file": "src/survey/layout.css",
+  "nonemptyLines": 48,
+  "customPropertyDeclarations": 28,
+  "properties": [
+    {
+      "name": "--sjs2-layout-component-survey-box-gap-vertical",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-survey-box-padding-bottom",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-page-box-padding-top",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-page-box-padding-bottom",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-page-box-padding-horizontal",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-page-box-gap-vertical",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-page-content-area-padding-top",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-page-content-area-padding-bottom",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-page-content-area-padding-horizontal",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-page-content-area-gap-vertical",
+      "value": "1rem"
+    },
+    {
+      "name": "--sjs2-layout-component-page-header-padding-top",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-page-header-padding-bottom",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-page-header-padding-horizontal",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-page-header-gap-vertical",
+      "value": "0.5rem"
+    },
+    {
+      "name": "--sjs2-layout-component-page-title-padding-horizontal",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-page-title-padding-vertical",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-typography-font-size-component-page-title",
+      "value": "1.75rem"
+    },
+    {
+      "name": "--sjs2-typography-line-height-component-page-title",
+      "value": "1.2"
+    },
+    {
+      "name": "--sjs2-typography-font-weight-component-page-title",
+      "value": "500"
+    },
+    {
+      "name": "--sjs2-layout-component-panel-simple-box-padding-top",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-panel-simple-box-padding-bottom",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-panel-simple-box-padding-horizontal",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-survey-footer-padding-top",
+      "value": "1rem"
+    },
+    {
+      "name": "--sjs2-layout-component-survey-footer-padding-bottom",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-layout-component-survey-footer-padding-horizontal",
+      "value": "0px"
+    },
+    {
+      "name": "--sjs2-typography-font-size-component-page-title",
+      "value": "calc(1.3rem + 0.6vw)"
+    },
+    {
+      "name": "--sjs2-color-component-action-brand-secondary-default-bg",
+      "value": "transparent"
+    },
+    {
+      "name": "--sjs2-color-component-action-brand-secondary-default-label",
+      "value": "var(--bs-secondary)"
+    }
+  ],
+  "selectorRules": [
+    ".comparison-survey .sjs-theme-overrides (layout tokens)",
+    ".comparison-survey .sd-root-modern--mobile ... (compact navigation)",
+    "@media max-width 1199.98px (Bootstrap-like responsive page heading)",
+    ".comparison-survey .sd-paneldynamic__add-btn (Bootstrap outline Add button)"
+  ],
+  "disclosure": "Adapter-only mode does not import this file. Shared shell CSS and explicit widthMode/renderAs settings still apply. Line count describes actual added styling, not productivity."
+}

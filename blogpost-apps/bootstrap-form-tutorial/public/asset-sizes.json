@@ -1,0 +1,51 @@
+{
+  "unit": "bytes",
+  "scope": "JS/CSS dependency closure per embedded renderer, including shared styles and embed integration. Excludes HTML, definition JSON and network/cache effects. gzip level 9; Brotli quality 11, applied per file. Not a runtime benchmark.",
+  "results": {
+    "native": {
+      "files": [
+        "assets/embed-BKIL60m8.js",
+        "assets/style-DpmwyHMJ.js",
+        "assets/style-TKmfmkgJ.css",
+        "assets/scenario-DSXq3W2w.js",
+        "assets/preload-helper-BLdHbfdN.js",
+        "assets/form-1s4YVmRq.js",
+        "assets/contract-D9rF_rqX.js"
+      ],
+      "raw": 248619,
+      "gzip": 38282,
+      "brotli": 29391
+    },
+    "survey_adapter": {
+      "files": [
+        "assets/embed-BKIL60m8.js",
+        "assets/style-DpmwyHMJ.js",
+        "assets/style-TKmfmkgJ.css",
+        "assets/scenario-DSXq3W2w.js",
+        "assets/preload-helper-BLdHbfdN.js",
+        "assets/form-BxIkGkr3.js",
+        "assets/form-B5uWmuZy.css",
+        "assets/contract-D9rF_rqX.js"
+      ],
+      "raw": 2774191,
+      "gzip": 536742,
+      "brotli": 414578
+    },
+    "survey_aligned": {
+      "files": [
+        "assets/embed-BKIL60m8.js",
+        "assets/style-DpmwyHMJ.js",
+        "assets/style-TKmfmkgJ.css",
+        "assets/scenario-DSXq3W2w.js",
+        "assets/preload-helper-BLdHbfdN.js",
+        "assets/form-BxIkGkr3.js",
+        "assets/form-B5uWmuZy.css",
+        "assets/contract-D9rF_rqX.js",
+        "assets/layout-BS9XKML1.css"
+      ],
+      "raw": 2776429,
+      "gzip": 537243,
+      "brotli": 414987
+    }
+  }
+}

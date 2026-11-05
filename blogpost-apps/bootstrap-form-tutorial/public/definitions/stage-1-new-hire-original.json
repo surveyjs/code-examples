@@ -1,0 +1,42 @@
+{
+  "widthMode": "responsive",
+  "showQuestionNumbers": "off",
+  "clearInvisibleValues": "none",
+  "completeText": "Complete",
+  "showCompletedPage": false,
+  "pages": [
+    {
+      "name": "employee",
+      "title": "Employee contact",
+      "elements": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Full name",
+          "isRequired": true,
+          "autocomplete": "name"
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "title": "Email",
+          "inputType": "email",
+          "isRequired": true,
+          "autocomplete": "email"
+        },
+        {
+          "type": "dropdown",
+          "renderAs": "select",
+          "name": "department",
+          "title": "Department",
+          "choices": [
+            "Engineering",
+            "Operations",
+            "Sales"
+          ],
+          "isRequired": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "bootstrap-forms-vs-form-engines",
+  "version": "2.1.6",
+  "description": "Progressive native Bootstrap and SurveyJS employee onboarding comparison",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/asset-sizes.mjs",
+    "preview": "vite preview",
+    "test": "node --test tests/*.test.js",
+    "test:browser": "playwright test tests/browser.spec.js",
+    "definitions": "node scripts/export-definitions.mjs",
+    "predev": "npm run definitions",
+    "prebuild": "npm run definitions"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "dependencies": {
+    "bootstrap": "5.3.8",
+    "survey-core": "3.2.3",
+    "survey-js-ui": "3.2.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "vite": "8.3.5"
+  },
+  "private": true
+}

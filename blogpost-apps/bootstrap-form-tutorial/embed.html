@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Employee form and response</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <button
+        type="button"
+        id="fill-sample"
+        disabled
+        class="btn btn-outline-secondary mb-2"
+      >
+        Fill sample data
+      </button>
+      <p id="sample-status" role="status" class="small text-body-secondary">
+        Fills all steps, including confirmation. Replaces this form's current
+        answers; does not submit.
+      </p>
+
+      <div id="app"></div>
+
+      <section id="output" hidden>
+        <h2 class="h4 mt-4">Response data (JSON)</h2>
+        <p id="status" role="status"></p>
+        <pre
+          id="result"
+          class="border rounded p-3"
+          tabindex="0"
+          aria-label="Submitted JSON"
+        ></pre>
+      </section>
+    </main>
+
+    <script type="module" src="/src/embed.js"></script>
+  </body>
+</html>

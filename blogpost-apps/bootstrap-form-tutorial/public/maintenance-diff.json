@@ -1,0 +1,81 @@
+{
+  "note": "Generated from original and revised stage-5 definitions; paths are JSON object paths, not development effort metrics.",
+  "workflows": {
+    "new-hire": [
+      {
+        "path": "$.pages.2.elements.0.templateElements.4.visibleIf",
+        "before": "{panel.contactMethod} = 'phone'",
+        "after": null
+      },
+      {
+        "path": "$.pages.2.elements.0.templateElements.5",
+        "before": null,
+        "after": {
+          "type": "text",
+          "name": "notes",
+          "title": "Contact notes"
+        }
+      },
+      {
+        "path": "$.pages.4.elements.1.isRequired",
+        "before": false,
+        "after": true
+      }
+    ],
+    "profile-update": [
+      {
+        "path": "$.pages.2.elements.0.templateElements.4.visibleIf",
+        "before": "{panel.contactMethod} = 'phone'",
+        "after": null
+      },
+      {
+        "path": "$.pages.2.elements.0.templateElements.5",
+        "before": null,
+        "after": {
+          "type": "text",
+          "name": "notes",
+          "title": "Contact notes"
+        }
+      }
+    ]
+  },
+  "native": {
+    "note": "Generated from the actual runtime policy branches and contactFields() factory. Both revisions coexist; this is a semantic before/after list, not a historical git patch.",
+    "workflows": {
+      "new-hire": [
+        {
+          "file": "src/native/rules.js",
+          "change": "Phone visibility/required policy, reused by both workflows",
+          "before": "emergencyPhoneRequired(\"email\", original): false; emergencyPhoneRequired(\"phone\", original): true",
+          "after": "emergencyPhoneRequired(\"email\", revised): true; emergencyPhoneRequired(\"phone\", revised): true\nActual helper: (method, options) =>\n  method === \"phone\" || (options.stage === 5 && options.revision === \"revised\")"
+        },
+        {
+          "file": "src/native/contact-fields.js",
+          "change": "One shared factory: show phone unconditionally and append optional notes (unchanged fields omitted)",
+          "before": "local(\"phone\", \"Contact phone\", {\"type\":\"tel\",\"hidden\":true})",
+          "after": "local(\"phone\", \"Contact phone\", {\"type\":\"tel\",\"hidden\":false})\nlocal(\"notes\", \"Contact notes\", {})"
+        },
+        {
+          "file": "src/native/rules.js",
+          "change": "Delivery required for visible remote/hybrid new-hire field only",
+          "before": "deliveryRequired(original): false",
+          "after": "deliveryRequired(revised): true\nActual helper: options => options.stage === 5 && options.revision === \"revised\" && options.variant === \"new-hire\""
+        }
+      ],
+      "profile-update": [
+        {
+          "file": "src/native/rules.js",
+          "change": "Phone visibility/required policy, reused by both workflows",
+          "before": "emergencyPhoneRequired(\"email\", original): false; emergencyPhoneRequired(\"phone\", original): true",
+          "after": "emergencyPhoneRequired(\"email\", revised): true; emergencyPhoneRequired(\"phone\", revised): true\nActual helper: (method, options) =>\n  method === \"phone\" || (options.stage === 5 && options.revision === \"revised\")"
+        },
+        {
+          "file": "src/native/contact-fields.js",
+          "change": "One shared factory: show phone unconditionally and append optional notes (unchanged fields omitted)",
+          "before": "local(\"phone\", \"Contact phone\", {\"type\":\"tel\",\"hidden\":true})",
+          "after": "local(\"phone\", \"Contact phone\", {\"type\":\"tel\",\"hidden\":false})\nlocal(\"notes\", \"Contact notes\", {})"
+        }
+      ]
+    }
+  }
+}

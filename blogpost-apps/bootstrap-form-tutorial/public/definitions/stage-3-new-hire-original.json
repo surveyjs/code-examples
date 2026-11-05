@@ -1,0 +1,189 @@
+{
+  "widthMode": "responsive",
+  "showQuestionNumbers": "off",
+  "clearInvisibleValues": "none",
+  "completeText": "Complete",
+  "showCompletedPage": false,
+  "pages": [
+    {
+      "name": "employee",
+      "title": "Employee details",
+      "elements": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Full name",
+          "isRequired": true,
+          "autocomplete": "name"
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "title": "Email",
+          "inputType": "email",
+          "isRequired": true,
+          "autocomplete": "email"
+        },
+        {
+          "type": "dropdown",
+          "renderAs": "select",
+          "name": "department",
+          "title": "Department",
+          "choices": [
+            "Engineering",
+            "Operations",
+            "Sales"
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "renderAs": "select",
+          "name": "workMode",
+          "title": "Work mode",
+          "choices": [
+            {
+              "value": "office",
+              "text": "Office"
+            },
+            {
+              "value": "remote",
+              "text": "Remote"
+            },
+            {
+              "value": "hybrid",
+              "text": "Hybrid"
+            }
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "renderAs": "select",
+          "name": "contractType",
+          "title": "Contract type",
+          "choices": [
+            {
+              "value": "permanent",
+              "text": "Permanent"
+            },
+            {
+              "value": "fixed",
+              "text": "Fixed term"
+            }
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "startDate",
+          "title": "Start date",
+          "inputType": "date",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "contractEnd",
+          "title": "Contract end date",
+          "inputType": "date",
+          "visibleIf": "{contractType} = 'fixed'",
+          "isRequired": true,
+          "validators": [
+            {
+              "type": "expression",
+              "expression": "{contractEnd} >= {startDate}",
+              "text": "End date must be on or after start date."
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "renderAs": "select",
+          "name": "officeLocation",
+          "title": "Office location",
+          "choices": [
+            "London",
+            "Berlin",
+            "Yerevan"
+          ],
+          "isRequired": true,
+          "visibleIf": "{workMode} = 'office' or {workMode} = 'hybrid'"
+        },
+        {
+          "type": "comment",
+          "rows": 3,
+          "name": "homeAddress",
+          "title": "Home working address",
+          "isRequired": true,
+          "visibleIf": "{workMode} = 'remote' or {workMode} = 'hybrid'"
+        },
+        {
+          "type": "paneldynamic",
+          "name": "contacts",
+          "title": "Emergency contacts",
+          "description": "Include 1 to 3 emergency contacts.",
+          "descriptionLocation": "underTitle",
+          "templateTitle": "Contact {panelIndex}",
+          "panelCount": 1,
+          "minPanelCount": 1,
+          "maxPanelCount": 3,
+          "addPanelText": "Add contact",
+          "removePanelText": "Remove contact",
+          "templateElements": [
+            {
+              "type": "text",
+              "name": "name",
+              "title": "Contact name",
+              "isRequired": true
+            },
+            {
+              "type": "dropdown",
+              "renderAs": "select",
+              "name": "relationship",
+              "title": "Relationship",
+              "choices": [
+                "Family",
+                "Partner",
+                "Friend"
+              ],
+              "isRequired": true
+            },
+            {
+              "type": "dropdown",
+              "renderAs": "select",
+              "name": "contactMethod",
+              "title": "Preferred contact method",
+              "choices": [
+                {
+                  "value": "email",
+                  "text": "Email"
+                },
+                {
+                  "value": "phone",
+                  "text": "Phone"
+                }
+              ],
+              "isRequired": true
+            },
+            {
+              "type": "text",
+              "name": "email",
+              "title": "Contact email",
+              "inputType": "email",
+              "isRequired": true,
+              "visibleIf": "{panel.contactMethod} = 'email'"
+            },
+            {
+              "type": "text",
+              "name": "phone",
+              "title": "Contact phone",
+              "inputType": "tel",
+              "isRequired": true,
+              "visibleIf": "{panel.contactMethod} = 'phone'"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

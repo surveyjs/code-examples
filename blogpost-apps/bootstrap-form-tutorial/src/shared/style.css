@@ -1,0 +1,63 @@
+[hidden] {
+  display: none !important;
+}
+
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+:focus-visible {
+  outline-offset: 3px;
+}
+
+/* Independent frames preserve each implementation's CSS, IDs, and answer state. */
+main.comparison-wide {
+  max-width: 1500px !important;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+}
+
+.comparison-grid > section {
+  min-width: 0;
+}
+
+.comparison-grid iframe {
+  display: block;
+  width: 100%;
+  min-height: 400px;
+  border: 0;
+}
+
+.embedded-comparison main.container {
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+@media (max-width: 999px) {
+  .comparison-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.required-marker {
+  color: var(--bs-danger);
+}
+
+.embedded-document,
+.embedded-document body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.embedded-comparison main.container {
+  display: flow-root;
+}
+
+.comparison-grid iframe {
+  min-height: 500px;
+}

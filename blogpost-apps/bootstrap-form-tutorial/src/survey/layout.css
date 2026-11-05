@@ -1,0 +1,58 @@
+/* Host-application layout choices, loaded after the Bootstrap adapter.
+   Match the native example's full-width content and Bootstrap mb-3 spacing. */
+.comparison-survey .sjs-theme-overrides {
+  --sjs2-layout-component-survey-box-gap-vertical: 0px;
+  --sjs2-layout-component-survey-box-padding-bottom: 0px;
+  --sjs2-layout-component-page-box-padding-top: 0px;
+  --sjs2-layout-component-page-box-padding-bottom: 0px;
+  --sjs2-layout-component-page-box-padding-horizontal: 0px;
+  --sjs2-layout-component-page-box-gap-vertical: 0px;
+  --sjs2-layout-component-page-content-area-padding-top: 0px;
+  --sjs2-layout-component-page-content-area-padding-bottom: 0px;
+  --sjs2-layout-component-page-content-area-padding-horizontal: 0px;
+  --sjs2-layout-component-page-content-area-gap-vertical: 1rem;
+  --sjs2-layout-component-page-header-padding-top: 0px;
+  --sjs2-layout-component-page-header-padding-bottom: 0px;
+  --sjs2-layout-component-page-header-padding-horizontal: 0px;
+  --sjs2-layout-component-page-header-gap-vertical: 0.5rem;
+  --sjs2-layout-component-page-title-padding-horizontal: 0px;
+  --sjs2-layout-component-page-title-padding-vertical: 0px;
+  --sjs2-typography-font-size-component-page-title: 1.75rem;
+  --sjs2-typography-line-height-component-page-title: 1.2;
+  --sjs2-typography-font-weight-component-page-title: 500;
+  --sjs2-layout-component-panel-simple-box-padding-top: 0px;
+  --sjs2-layout-component-panel-simple-box-padding-bottom: 0px;
+  --sjs2-layout-component-panel-simple-box-padding-horizontal: 0px;
+  --sjs2-layout-component-survey-footer-padding-top: 1rem;
+  --sjs2-layout-component-survey-footer-padding-bottom: 0px;
+  --sjs2-layout-component-survey-footer-padding-horizontal: 0px;
+}
+
+/* Keep comparison buttons compact even when the engine sees a narrow column. */
+.comparison-survey .sd-root-modern--mobile .sd-body__navigation .sd-action,
+.comparison-survey
+  .sd-root-modern--mobile
+  .sd-body__navigation
+  .sd-action-bar__item:not(.sd-action-bar__item--hidden) {
+  flex-grow: 0;
+}
+
+.comparison-survey .sd-root-modern--mobile .sd-body__navigation .sd-action {
+  padding: var(--sjs2-layout-component-action-large-box-padding-vertical)
+    var(--sjs2-layout-component-action-large-box-padding-horizontal);
+}
+
+@media (max-width: 1199.98px) {
+  .comparison-survey .sjs-theme-overrides {
+    --sjs2-typography-font-size-component-page-title: calc(1.3rem + 0.6vw);
+  }
+}
+
+/* Match the native outline Add button using Bootstrap tokens. */
+.comparison-survey .sd-paneldynamic__add-btn {
+  --sjs2-color-component-action-brand-secondary-default-bg: transparent;
+  --sjs2-color-component-action-brand-secondary-default-label: var(
+    --bs-secondary
+  );
+  border: 1px solid var(--bs-secondary);
+}

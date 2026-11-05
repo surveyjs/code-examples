@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bootstrap forms vs form engines — Employee onboarding</title>
+  </head>
+
+  <body>
+    <main class="container py-4" style="max-width:900px">
+      <h1>From three fields to employee onboarding</h1>
+      <p>
+        Compare the same requirements in both implementations. Use fictional
+        data. Nothing is sent or saved. Fields marked
+        <span class="required-marker" aria-hidden="true">*</span> are required.
+      </p>
+
+      <form id="options" class="d-flex flex-wrap gap-3 mb-4">
+        <label
+          >Stage<select name="stage" class="form-select">
+            <option value="1">1 — Three fields</option>
+            <option value="2">2 — Conditional employment</option>
+            <option value="3">3 — Repeating contacts</option>
+            <option value="4">4 — Onboarding workflow</option>
+            <option value="5">5 — Reuse and change</option>
+          </select></label
+        >
+        <label
+          >Workflow<select name="variant" class="form-select">
+            <option value="new-hire">New hire</option>
+            <option value="profile-update">Profile update</option>
+          </select></label
+        >
+        <label
+          >Requirements<select name="revision" class="form-select">
+            <option value="original">Original policy</option>
+            <option value="revised">Revised policy</option>
+          </select></label
+        >
+        <label
+          >SurveyJS styling<select name="styling" class="form-select">
+            <option value="adapter">Adapter only</option>
+            <option value="aligned">Aligned layout (extra CSS)</option>
+          </select></label
+        >
+        <button class="btn btn-secondary align-self-end">Load comparison</button
+        ><button
+          type="button"
+          id="theme"
+          class="btn btn-outline-secondary align-self-end"
+        >
+          Toggle color mode
+        </button>
+      </form>
+
+      <section id="stage-guide" class="border rounded p-3 mb-3">
+        <h2 id="stage-title" class="h4"></h2>
+        <p id="stage-change"></p>
+        <p id="stage-verdict" class="mb-0"></p>
+      </section>
+
+      <div id="app"></div>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

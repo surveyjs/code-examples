@@ -1,0 +1,123 @@
+{
+  "widthMode": "responsive",
+  "showQuestionNumbers": "off",
+  "clearInvisibleValues": "none",
+  "completeText": "Complete",
+  "showCompletedPage": false,
+  "pages": [
+    {
+      "name": "employee",
+      "title": "Employee details",
+      "elements": [
+        {
+          "type": "text",
+          "name": "name",
+          "title": "Full name",
+          "isRequired": true,
+          "autocomplete": "name"
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "title": "Email",
+          "inputType": "email",
+          "isRequired": true,
+          "autocomplete": "email"
+        },
+        {
+          "type": "dropdown",
+          "renderAs": "select",
+          "name": "department",
+          "title": "Department",
+          "choices": [
+            "Engineering",
+            "Operations",
+            "Sales"
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "renderAs": "select",
+          "name": "workMode",
+          "title": "Work mode",
+          "choices": [
+            {
+              "value": "office",
+              "text": "Office"
+            },
+            {
+              "value": "remote",
+              "text": "Remote"
+            },
+            {
+              "value": "hybrid",
+              "text": "Hybrid"
+            }
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "renderAs": "select",
+          "name": "contractType",
+          "title": "Contract type",
+          "choices": [
+            {
+              "value": "permanent",
+              "text": "Permanent"
+            },
+            {
+              "value": "fixed",
+              "text": "Fixed term"
+            }
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "startDate",
+          "title": "Start date",
+          "inputType": "date",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "contractEnd",
+          "title": "Contract end date",
+          "inputType": "date",
+          "visibleIf": "{contractType} = 'fixed'",
+          "isRequired": true,
+          "validators": [
+            {
+              "type": "expression",
+              "expression": "{contractEnd} >= {startDate}",
+              "text": "End date must be on or after start date."
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "renderAs": "select",
+          "name": "officeLocation",
+          "title": "Office location",
+          "choices": [
+            "London",
+            "Berlin",
+            "Yerevan"
+          ],
+          "isRequired": true,
+          "visibleIf": "{workMode} = 'office' or {workMode} = 'hybrid'"
+        },
+        {
+          "type": "comment",
+          "rows": 3,
+          "name": "homeAddress",
+          "title": "Home working address",
+          "isRequired": true,
+          "visibleIf": "{workMode} = 'remote' or {workMode} = 'hybrid'"
+        }
+      ]
+    }
+  ]
+}
