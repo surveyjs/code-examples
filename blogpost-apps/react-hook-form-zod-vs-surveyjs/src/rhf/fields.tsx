@@ -76,14 +76,15 @@ export function RadioInput<T extends FieldValues>({
     <Controller
       control={control}
       name={name}
-      render={({ field }) => (
-        <FormControl fullWidth>
+      render={({ field, fieldState }) => (
+        <FormControl fullWidth error={!!fieldState.error}>
           <FormLabel>{label}</FormLabel>
           <RadioGroup {...field}>
             {options.map((o) => (
               <FormControlLabel key={o.value} value={o.value} control={<Radio />} label={o.label} />
             ))}
           </RadioGroup>
+          {fieldState.error && <FormHelperText>{fieldState.error.message}</FormHelperText>}
         </FormControl>
       )}
     />

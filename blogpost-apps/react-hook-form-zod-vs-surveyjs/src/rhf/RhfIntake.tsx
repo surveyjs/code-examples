@@ -33,7 +33,7 @@ type Fields = FieldPath<PatientIntakeInput>;
 const PAGES: { title: string; fields: Fields[] }[] = [
   { title: "Patient", fields: ["firstName", "lastName", "dob", "phone"] },
   { title: "Insurance", fields: ["carrier", "memberId", "carrier2", "memberId2"] },
-  { title: "History", fields: ["allergies"] },
+  { title: "History", fields: ["allergies", "carriesEpinephrine"] },
   { title: "Consent", fields: ["consentTreatment", "consentPrivacy"] },
 ];
 
@@ -63,6 +63,8 @@ export default function RhfIntake() {
   });
   const allergies = useFieldArray({ control, name: "allergies" });
   const hasSecondary = useWatch({ control, name: "hasSecondary" });
+  const watchedAllergies = useWatch({ control, name: "allergies" });
+  const hasSevereAllergy = watchedAllergies.some((a) => a.severity === "Severe");
   const isLast = page === PAGES.length - 1;
 
   async function next() {
@@ -73,6 +75,9 @@ export default function RhfIntake() {
     // Drop answers to hidden questions, then POST to your API here.
     if (!data.hasSecondary) {
       data = { ...data, carrier2: "", memberId2: "" };
+    }
+    if (!data.allergies.some((a) => a.severity === "Severe")) {
+      data = { ...data, carriesEpinephrine: "" };
     }
     setResult(data);
   };
@@ -248,6 +253,17 @@ export default function RhfIntake() {
             Add allergy
           </Button>
 
+          {hasSevereAllergy && (
+            <RadioInput
+              control={control}
+              name="carriesEpinephrine"
+              label="Do you carry an epinephrine auto-injector?"
+              options={[
+                { value: "yes", label: "Yes" },
+                { value: "no", label: "No" },
+              ]}
+            />
+          )}
           <TextInput
             control={control}
             name="currentMedications"

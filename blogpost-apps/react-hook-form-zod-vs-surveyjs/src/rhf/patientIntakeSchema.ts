@@ -32,6 +32,7 @@ export const patientIntakeSchema = z
         reaction: z.string(),
       }),
     ),
+    carriesEpinephrine: z.enum(["yes", "no", ""]),
     currentMedications: z.string(),
     // Consent
     consentTreatment: z.boolean().refine((v) => v, "Consent to treatment is required."),
@@ -40,6 +41,13 @@ export const patientIntakeSchema = z
     signedDate: z.string(),
   })
   .superRefine((v, ctx) => {
+    // Severe allergies need a reaction and an answer about epinephrine.
+    v.allergies.forEach((a, i) => {
+      if (a.severity === "Severe" && !a.reaction.trim())
+        ctx.addIssue({ code: "custom", path: ["allergies", i, "reaction"], message: "Describe the reaction for severe allergies." });
+    });
+    if (v.allergies.some((a) => a.severity === "Severe") && !v.carriesEpinephrine)
+      ctx.addIssue({ code: "custom", path: ["carriesEpinephrine"], message: "Response required." });
     // Secondary insurance fields are required only when the switch is on.
     if (!v.hasSecondary) return;
     if (!v.carrier2.trim())
@@ -67,6 +75,7 @@ export const defaultValues: PatientIntakeInput = {
   memberId2: "",
   medicalHistory: {},
   allergies: [],
+  carriesEpinephrine: "",
   currentMedications: "",
   consentTreatment: false,
   consentPrivacy: false,

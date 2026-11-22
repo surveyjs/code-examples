@@ -189,8 +189,22 @@ export const patientIntakeJson = {
               choices: ["Mild", "Moderate", "Severe"],
               placeholder: "Severity..."
             },
-            { name: "reaction", title: "Reaction", cellType: "text", placeholder: "Reaction" },
+            {
+              name: "reaction",
+              title: "Reaction",
+              cellType: "text",
+              placeholder: "Reaction",
+              requiredIf: "{row.severity} = 'Severe'",
+              requiredErrorText: "Describe the reaction for severe allergies.",
+            },
           ],
+        },
+        {
+          type: "boolean",
+          name: "carriesEpinephrine",
+          title: "Do you carry an epinephrine auto-injector?",
+          visibleIf: "countInArray({allergies}, 'severity', {severity} = 'Severe') > 0",
+          isRequired: true,
         },
         {
           type: "comment",
