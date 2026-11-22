@@ -300,7 +300,7 @@ export default function RhfIntake() {
             Complete
           </Button>
         ) : (
-          <Button variant="contained" onClick={next}>
+          <Button variant="outlined" onClick={next}>
             Next
           </Button>
         )}

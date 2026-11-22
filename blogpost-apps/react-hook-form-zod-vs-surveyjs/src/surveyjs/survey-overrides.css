@@ -1,0 +1,7 @@
+/* App-owned tweaks, loaded after the MUI adapter.
+   SurveyJS stretches questions in the same row to equal height and pins the
+   error message to the bottom, so a short input next to a tall radio group gets
+   its error far below it. MUI puts helper text right under the input; match that. */
+.sd-question__header-and-content-container {
+  flex-grow: 0;
+}

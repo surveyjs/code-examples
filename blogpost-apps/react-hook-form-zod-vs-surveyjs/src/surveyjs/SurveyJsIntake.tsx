@@ -3,6 +3,7 @@ import { Model, setupThemeAdapter } from "survey-core";
 import { Survey } from "survey-react-ui";
 import "survey-core/survey-core.css";
 import "survey-core/themes/adapters/mui.css";
+import "./survey-overrides.css";
 import { patientIntakeJson } from "./patientIntakeSchema";
 import { FormCompleted } from "../shared/FormCompleted";
 
